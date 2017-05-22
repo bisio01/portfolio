@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,38 +8,63 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   titleAlert:string = 'This field is required';
-  rForm : FormGroup;
-  post:any;                     // A property for our submitted form
-  description:string = '';
-  name:string = '';
+  public rForm: FormGroup = new FormGroup({
+    firstName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
+    pass: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
+    form_type: new FormControl('simple'),
+  });
+
+
+
+  post:any;
+  /*rForm : FormGroup;
+
+  firstName:string = '';
+  lastName:string = '';
+  gender:string = '';*/
 
   constructor(private fb: FormBuilder) {
-    this.rForm = fb.group({
-      'name' : [null, Validators.required],
-      'description' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],
+    /*this.rForm = fb.group({
+      'first-name' : [null, Validators.compose([Validators.required, Validators.minLength(3)])],
+      'last-name' : [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(16)])],
+      'email' : [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
+      'pass' : [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       'validate' : ''
-    });
+    });*/
   };
 
-  addPost(post) {
-    this.description = post.description;
-    this.name = post.name;
+
+
+  public setInviteType(event, data: string): void {
+    event.preventDefault();
+    this.rForm.controls['form_type'].patchValue(data);
+  }
+  
+  public addPost(post) {
+    this.rForm.controls['lastName'] = post.lastName;
+    this.rForm.controls['firstName'] = post.firstName;
   }
 
+
   ngOnInit() {
-    this.rForm.get('validate').valueChanges.subscribe(
-
-      (validate) => {
-
-        if (validate == '1') {
-          this.rForm.get('name').setValidators([Validators.required, Validators.minLength(3)]);
-          this.titleAlert = 'You need to specify at least 3 characters';
-        } else {
-          this.rForm.get('name').setValidators(Validators.required);
-        }
-        this.rForm.get('name').updateValueAndValidity();
-
-      });
   }
 
 }
