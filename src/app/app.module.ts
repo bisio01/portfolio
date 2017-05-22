@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,7 +8,7 @@ import { MaterializeModule } from 'ng2-materialize';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +20,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     HttpModule,
     MaterializeModule.forRoot(),
-    RouterModule.forRoot(<any>ROUTES)
+    RouterModule.forRoot(<any>ROUTES),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
