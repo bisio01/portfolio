@@ -11,7 +11,8 @@
     "target": "es5",
     "types": [
       "jquery",
-      "materialize-css"
+      "materialize-css",
+      "firebase"
     ],
     "typeRoots": [
       "node_modules/@types"

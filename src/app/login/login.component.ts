@@ -29,17 +29,12 @@ export class LoginComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(24),
     ]),
-    form_type: new FormControl('simple'),
+    form_type: new FormControl(''),
   });
-
-
-
-  post:any;
-  /*rForm : FormGroup;
 
   firstName:string = '';
   lastName:string = '';
-  gender:string = '';*/
+  gender:string = '';
 
   constructor(private fb: FormBuilder) {
     /*this.rForm = fb.group({
@@ -53,14 +48,11 @@ export class LoginComponent implements OnInit {
 
 
 
-  public setInviteType(event, data: string): void {
-    event.preventDefault();
-    this.rForm.controls['form_type'].patchValue(data);
-  }
-  
   public addPost(post) {
-    this.rForm.controls['lastName'] = post.lastName;
-    this.rForm.controls['firstName'] = post.firstName;
+
+     this.firstName = this.rForm.value.firstName;
+     this.gender = this.rForm.value.form_type;
+
   }
 
 
