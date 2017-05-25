@@ -1,5 +1,5 @@
 import { RouterModule } from '@angular/router';
-import { LoginRoutes } from './login/login.routes';
+import { LoginRoutes } from './auth/login/login.routes';
 import { DashboardRoutes } from './dashboard/dashboard.routes';
 
 

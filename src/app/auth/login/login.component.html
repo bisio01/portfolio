@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="login-wrapper">
+      <form [formGroup]="rForm" (ngSubmit)="login()">
+        <div class="form-container">
+          <div class="row columns">
+            <h3>Login</h3>
+            <label>Email
+              <input type="email" formControlName="email">
+            </label>
+            <div class="alert" *ngIf="!rForm.get('email').valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+            <label>Password
+              <input type="password" formControlName="password">
+            </label>
+            <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
+            <div>
+              <h4>Gender</h4>
+              <div>
+                <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'male'" id="male" value="male" type="radio">
+                <label for="male">Male</label>
+              </div>
+              <div>
+                <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'female'" id="female" value="female" type="radio">
+                <label for="female">Female</label>
+              </div>
+            </div>
+
+            <button class="btn waves-effect waves-light" value="" [disabled]="!rForm.valid">Submit Form</button>
+          </div>
+        </div>
+      </form>
+      <p class="alert">{{ firstName }} </p>
+      <p class="alert">{{ lastName }}</p>
+      <p class="alert">{{ gender }}</p>
+    </div>
+</div>

@@ -1,3 +1,30 @@
-<p>
-  dashboard works! here
-</p>
+<aside class="aside">
+
+</aside>
+<div class="content">
+  <mz-navbar>
+    <a href="#" class="brand-logo">Logo</a>
+    <mz-navbar-item-container [align]="'right'">
+      <mz-navbar-item><a href="#">Sass</a></mz-navbar-item>
+      <mz-navbar-item><a href="#">Components</a></mz-navbar-item>
+      <mz-navbar-item><a routerLink="/login">exit</a></mz-navbar-item>
+    </mz-navbar-item-container>
+  </mz-navbar>
+  <div class="content-inner">
+    <mz-card
+      [backgroundClass]="'blue-grey darken-1'"
+      [textClass]="'white-text'"
+      [hoverable]="true">
+      <mz-card-title>
+        Card Title
+      </mz-card-title>
+      <mz-card-content>
+        I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+      </mz-card-content>
+      <mz-card-action>
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </mz-card-action>
+    </mz-card>
+  </div>
+</div>
