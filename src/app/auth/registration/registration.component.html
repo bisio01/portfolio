@@ -4,14 +4,33 @@
       <div class="form-container">
         <div class="row columns">
           <h3>Registration</h3>
+          <label>Name
+            <input type="text" formControlName="name">
+          </label>
+          <div class="alert" *ngIf="!regForm.get('name').valid && regForm.controls['name'].touched">{{ titleAlert }}
+          </div>
           <label>Email
             <input type="email" formControlName="email">
           </label>
-          <div class="alert" *ngIf="!regForm.get('email').valid && regForm.controls['email'].touched">{{ titleAlert }}</div>
-          <label>Password
-            <input type="password" formControlName="password">
-          </label>
-          <div class="alert" *ngIf="!regForm.controls['password'].valid && regForm.controls['password'].touched">{{ titleAlert }}</div>
+          <div class="alert" *ngIf="!regForm.get('email').valid && regForm.controls['email'].touched">{{ titleAlert }}
+          </div>
+          <div formGroupName="pwd">
+
+            <label>Password
+              <input type="password" formControlName="password">
+            </label>
+            <!--<div class="alert"-->
+                 <!--*ngIf="!regForm.pwd.controls['password'].valid && regForm.pwd.controls['password'].touched">{{-->
+              <!--titleAlert }}-->
+            <!--</div>-->
+            <label>Repeat Password
+              <input type="password" formControlName="confirmPass" validateEqual="password">
+            </label>
+          </div>
+
+          <!--<div class="alert" *ngIf="!regForm.controls['confirmPass'].valid && regForm.controls['confirmPass'].touched">-->
+            <!--{{ titleAlert }}-->
+          <!--</div>-->
 
           <button class="btn waves-effect waves-light" value="" [disabled]="!regForm.valid">registration</button>
         </div>

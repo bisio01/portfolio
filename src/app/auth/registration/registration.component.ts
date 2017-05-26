@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl, ValidatorFn, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -13,6 +13,9 @@ export class RegistrationComponent implements OnInit {
   loading = false;
   email:string = '';
   password:string = '';
+  confirmPass:string = '';
+  name:string = '';
+
 
   constructor(
     private route: ActivatedRoute,
@@ -21,18 +24,38 @@ export class RegistrationComponent implements OnInit {
 
 
   public regForm: FormGroup = new FormGroup({
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(24),
-    ]),
+    pwd:new FormGroup({
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(24),
+      ]),
+      confirmPass: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(24),
+      ])
+    }, this.passwordMath()),
     email: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(24),
     ]),
-    form_type: new FormControl(''),
+    name: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ])
   });
+
+  passwordMath():ValidatorFn{
+    return (gr: FormGroup): { [key: string]: any } => {
+      console.log(gr);
+     return null;
+    };
+  }
+
+
 
   register() {
     this.loading = true;

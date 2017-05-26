@@ -1,3 +1,22 @@
-<p>
-  lesson-page works!
-</p>
+<aside class="aside blue-grey darken-3">
+  <ul class="navigation">
+    <li>
+      <a routerLink="/user">Profile</a>
+    </li>
+    <li>
+      <a routerLink="/dashboard">Dashboard</a>
+    </li>
+  </ul>
+</aside>
+<div class="content">
+  <mz-navbar [navbarClass]="'light-blue darken-4'">
+    <mz-navbar-item-container [align]="'right'">
+      <mz-navbar-item><a href="#">Sass</a></mz-navbar-item>
+      <mz-navbar-item><a href="#">Components</a></mz-navbar-item>
+      <mz-navbar-item><a routerLink="/login">Exit</a></mz-navbar-item>
+    </mz-navbar-item-container>
+  </mz-navbar>
+  <div class="content-inner">
+    lesson
+  </div>
+</div>

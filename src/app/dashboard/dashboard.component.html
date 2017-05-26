@@ -1,24 +1,37 @@
-<aside class="aside">
+<aside class="aside blue-grey darken-3">
   <ul class="navigation">
     <li>
       <a routerLink="/user">Profile</a>
     </li>
+    <li>
+      <a routerLink="/dashboard">Dashboard</a>
+    </li>
   </ul>
 </aside>
 <div class="content">
-  <mz-navbar>
-    <a href="#" class="brand-logo">Logo</a>
+  <mz-navbar [navbarClass]="'light-blue darken-4'">
     <mz-navbar-item-container [align]="'right'">
-      <mz-navbar-item><a href="#">Sass</a></mz-navbar-item>
-      <mz-navbar-item><a href="#">Components</a></mz-navbar-item>
-      <mz-navbar-item><a routerLink="/login">exit</a></mz-navbar-item>
+      <mz-navbar-item><a routerLink="/login">Exit</a></mz-navbar-item>
     </mz-navbar-item-container>
   </mz-navbar>
   <div class="content-inner">
     <mz-card
       [backgroundClass]="'blue-grey darken-1'"
-      [textClass]="'white-text'"
-      [hoverable]="true">
+      [textClass]="'white-text'">
+      <mz-card-title>
+        Lesson Title
+      </mz-card-title>
+      <mz-card-content>
+        I am a very simple card. I am good at containing small bits of information. I am convenient because I require
+        little markup to use effectively.
+      </mz-card-content>
+      <mz-card-action>
+        <a href="#" routerLink="/lesson">Link to lesson</a>
+      </mz-card-action>
+    </mz-card>
+    <mz-card
+      [backgroundClass]="'blue-grey darken-1'"
+      [textClass]="'white-text'">
       <mz-card-title>
         Card Title
       </mz-card-title>
@@ -33,24 +46,7 @@
     </mz-card>
     <mz-card
       [backgroundClass]="'blue-grey darken-1'"
-      [textClass]="'white-text'"
-      [hoverable]="true">
-      <mz-card-title>
-        Card Title
-      </mz-card-title>
-      <mz-card-content>
-        I am a very simple card. I am good at containing small bits of information. I am convenient because I require
-        little markup to use effectively.
-      </mz-card-content>
-      <mz-card-action>
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
-      </mz-card-action>
-    </mz-card>
-    <mz-card
-      [backgroundClass]="'blue-grey darken-1'"
-      [textClass]="'white-text'"
-      [hoverable]="true">
+      [textClass]="'white-text'">
       <mz-card-title>
         Card Title
       </mz-card-title>
