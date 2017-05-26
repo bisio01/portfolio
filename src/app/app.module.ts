@@ -12,8 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './auth/service/auth.service';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { ResetPassComponent } from './auth/reset-pass/reset-pass.component';
-import { UserPageComponent } from './user-page/user-page.component';
-import { LessonPageComponent } from './lesson-page/lesson-page.component';
+import { UserPageComponent } from './user/user-page/user-page.component';
+import { LessonPageComponent } from './lesson/lesson-page/lesson-page.component';
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
