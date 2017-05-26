@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
@@ -16,4 +16,11 @@ export class AuthenticationService {
         }
       });
   }
+
+
+  create(username: string, password: string) {
+    return this.http.post('http://localhost:3000/auth/sign-up', { email: username, password: password });
+  }
+
+
 }

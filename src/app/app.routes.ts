@@ -1,5 +1,5 @@
 import { RouterModule } from '@angular/router';
-import { LoginRoutes } from './auth/login/login.routes';
+import { AuthRoutes } from './auth/auth.routes';
 import { DashboardRoutes } from './dashboard/dashboard.routes';
 
 
@@ -9,6 +9,6 @@ export const ROUTES: RouterModule = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  ...LoginRoutes,
+  ...AuthRoutes,
   ...DashboardRoutes
 ];

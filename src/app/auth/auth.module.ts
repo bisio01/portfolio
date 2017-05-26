@@ -2,7 +2,8 @@ import {BrowserModule} from "@angular/platform-browser/public_api";
 import {HttpModule} from "@angular/http/http";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -11,9 +12,11 @@ import { LoginComponent } from './login.component';
     BrowserModule,
     HttpModule,
     CommonModule,
-    
+
   ],
-  declarations: [LoginComponent]
+  declarations: [
+    LoginComponent,
+    RegistrationComponent]
 
 })
-export class LoginModule { }
+export class AppModule { }

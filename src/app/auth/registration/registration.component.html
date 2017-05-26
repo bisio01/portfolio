@@ -1,3 +1,21 @@
-<p>
-  registration works!
-</p>
+<div class="container">
+  <div class="login-wrapper">
+    <form [formGroup]="regForm" (ngSubmit)="register()">
+      <div class="form-container">
+        <div class="row columns">
+          <h3>Registration</h3>
+          <label>Email
+            <input type="email" formControlName="email">
+          </label>
+          <div class="alert" *ngIf="!regForm.get('email').valid && regForm.controls['email'].touched">{{ titleAlert }}</div>
+          <label>Password
+            <input type="password" formControlName="password">
+          </label>
+          <div class="alert" *ngIf="!regForm.controls['password'].valid && regForm.controls['password'].touched">{{ titleAlert }}</div>
+
+          <button class="btn waves-effect waves-light" value="" [disabled]="!regForm.valid">registration</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

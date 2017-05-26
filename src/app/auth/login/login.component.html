@@ -12,7 +12,7 @@
               <input type="password" formControlName="password">
             </label>
             <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
-            <div>
+            <!--<div>
               <h4>Gender</h4>
               <div>
                 <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'male'" id="male" value="male" type="radio">
@@ -22,14 +22,12 @@
                 <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'female'" id="female" value="female" type="radio">
                 <label for="female">Female</label>
               </div>
-            </div>
+            </div>-->
 
             <button class="btn waves-effect waves-light" value="" [disabled]="!rForm.valid">Submit Form</button>
+            <button class="btn waves-effect waves-light" value="" routerLink="/registration">Registration</button>
           </div>
         </div>
       </form>
-      <p class="alert">{{ firstName }} </p>
-      <p class="alert">{{ lastName }}</p>
-      <p class="alert">{{ gender }}</p>
     </div>
 </div>
