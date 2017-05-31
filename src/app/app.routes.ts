@@ -4,7 +4,6 @@ import {DashboardRoutes} from './dashboard/dashboard.routes';
 import {UserRoutes} from './user/user.routes';
 import {LessonRoutes} from './lesson/lesson.routes';
 import {ToDoListRoutes} from "./todo-list/todo-list.routes";
-import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
