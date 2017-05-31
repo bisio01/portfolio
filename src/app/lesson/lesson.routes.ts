@@ -4,7 +4,7 @@ import {LessonListComponent} from "./lesson-list/lesson-list.component";
 
 export const LessonRoutes: Routes = [
   {
-    path: 'lesson',
+    path: 'lessons',
     children: [
       {
         path: '',
@@ -12,7 +12,7 @@ export const LessonRoutes: Routes = [
         pathMatch: 'prefix'
       },
       {
-        path: 'lesson-list',
+        path: 'list',
         children: [
           {
             path: '',
@@ -21,7 +21,7 @@ export const LessonRoutes: Routes = [
         ]
       },
       {
-        path: 'create',
+        path: 'lesson',
         children: [
           {
             path: '',

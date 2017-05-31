@@ -14,7 +14,7 @@ export const ROUTES:RouterModule = [
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     children: [
       ...AuthRoutes,
