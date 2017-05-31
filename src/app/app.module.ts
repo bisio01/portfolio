@@ -15,6 +15,7 @@ import { ResetPassComponent } from './auth/reset-pass/reset-pass.component';
 import { UserPageComponent } from './user/user-page/user-page.component';
 import { LessonPageComponent } from './lesson/lesson-page/lesson-page.component';
 import { AuthModule } from './auth/auth.module';
+import { ToDoListComponent } from './todo-list/todo-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { AuthModule } from './auth/auth.module';
     RegistrationComponent,
     ResetPassComponent,
     UserPageComponent,
-    LessonPageComponent
+    LessonPageComponent,
+    ToDoListComponent
   ],
   imports: [
     BrowserModule,
