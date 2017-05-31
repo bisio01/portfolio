@@ -13,7 +13,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   titleAlert:string = 'This field is required';
 
-
   model: any = {};
   loading = false;
   returnUrl: string;
@@ -71,14 +70,10 @@ export class LoginComponent implements OnInit {
 /*    this.firstName = this.rForm.value.firstName;
     this.gender = this.rForm.value.form_type;*/
   }
-
-
+  
   public addPost(post) {
 
-
-
   }
-
 
   ngOnInit() {
   }
