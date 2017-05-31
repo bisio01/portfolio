@@ -3,6 +3,7 @@ import {HttpModule} from "@angular/http/http";
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserPageComponent } from './user-page/user-page.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 
@@ -14,7 +15,8 @@ import { UserPageComponent } from './user-page/user-page.component';
 
   ],
   declarations: [
-    UserPageComponent
+    UserPageComponent,
+    UserUpdateComponent
   ]
 
 })
