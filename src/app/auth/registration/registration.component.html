@@ -1,39 +1,48 @@
-<div class="container">
+<div class="flex-container">
   <div class="login-wrapper">
     <form [formGroup]="regForm" (ngSubmit)="register()">
+      <div class="form-header">
+        <h3>Sign Up</h3>
+        <p>Join our community with email</p>
+      </div>
       <div class="form-container">
-        <div class="row columns">
-          <h3>Registration</h3>
+        <div class="field-wrapper">
           <label>Name
-            <input type="text" formControlName="name">
+            <input class="field" type="text" formControlName="name">
           </label>
           <div class="alert" *ngIf="!regForm.get('name').valid && regForm.controls['name'].touched">{{ titleAlert }}
           </div>
+        </div>
+        <div class="field-wrapper">
           <label>Email
-            <input type="email" formControlName="email">
+            <input class="field" type="email" formControlName="email">
           </label>
           <div class="alert" *ngIf="!regForm.get('email').valid && regForm.controls['email'].touched">{{ titleAlert }}
           </div>
-          <div formGroupName="pwd">
-
+        </div>
+        <div formGroupName="pwd">
+          <div class="field-wrapper">
             <label>Password
-              <input type="password" formControlName="password">
+              <input class="field" type="password" formControlName="password">
             </label>
-            <!--<div class="alert"-->
-                 <!--*ngIf="!regForm.pwd.controls['password'].valid && regForm.pwd.controls['password'].touched">{{-->
-              <!--titleAlert }}-->
-            <!--</div>-->
+          </div>
+          <div class="field-wrapper">
+            <!-- <div class="alert" *ngIf="!regForm.get('password').valid && regForm.get('password').touched">{{ titleAlert }}</div>-->
             <label>Repeat Password
-              <input type="password" formControlName="confirmPass" validateEqual="password">
+              <input class="field" type="password" formControlName="confirmPass" validateEqual="password">
             </label>
           </div>
 
-          <!--<div class="alert" *ngIf="!regForm.controls['confirmPass'].valid && regForm.controls['confirmPass'].touched">-->
-            <!--{{ titleAlert }}-->
-          <!--</div>-->
-
-          <button class="btn waves-effect waves-light" value="" [disabled]="!regForm.valid">registration</button>
         </div>
+
+        <!--<div class="alert" *ngIf="!regForm.controls['confirmPass'].valid && regForm.controls['confirmPass'].touched">-->
+        <!--{{ titleAlert }}-->
+        <!--</div>-->
+
+        <button class="btn light-blue waves-effect waves-light" value="" [disabled]="!regForm.valid">Create account</button>
+      </div>
+      <div class="form-footer">
+        <p>&copy; Swibo 2017. All rights reserved.</p>
       </div>
     </form>
   </div>

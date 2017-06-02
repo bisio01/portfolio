@@ -18,7 +18,9 @@ import { AuthModule } from './auth/auth.module';
 import { ToDoListComponent } from './todo-list/todo-list.component';
 import {LessonListComponent} from "./lesson/lesson-list/lesson-list.component";
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
+import { UserService } from './user/service/user.service';
 
+//noinspection TypeScriptUnresolvedVariable
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import {UserUpdateComponent} from "./user/user-update/user-update.component";
     ReactiveFormsModule,
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

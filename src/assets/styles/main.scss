@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box !important;
+}
+
+.login-wrapper {
+  .btn:disabled {
+    background: rgba(3, 169, 244, 0.5) !important;
+    color: #fff !important;
+    min-height: 40px;
+  }
+}
+
+.alert {
+  color: #f4315a;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.yellow.darken-1 {
+  color: #1a1a1a;
+}

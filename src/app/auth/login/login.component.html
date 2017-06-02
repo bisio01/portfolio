@@ -1,33 +1,51 @@
-<div class="container">
+<div class="flex-container">
   <div class="login-wrapper">
-      <form [formGroup]="rForm" (ngSubmit)="login()">
-        <div class="form-container">
-          <div class="row columns">
-            <h3>Login</h3>
-            <label>Email
-              <input type="email" formControlName="email">
-            </label>
-            <div class="alert" *ngIf="!rForm.get('email').valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
-            <label>Password
-              <input type="password" formControlName="password">
-            </label>
-            <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
-            <!--<div>
-              <h4>Gender</h4>
-              <div>
-                <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'male'" id="male" value="male" type="radio">
-                <label for="male">Male</label>
-              </div>
-              <div>
-                <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'female'" id="female" value="female" type="radio">
-                <label for="female">Female</label>
-              </div>
-            </div>-->
+    <form [formGroup]="rForm" (ngSubmit)="login()">
+      <div class="form-header">
+        <i class="login-icon" mz-icon-mdi
+           [flip]="'vertical'"
+           [icon]="'account-circle'"
+           [size]="'36px'">
+        </i>
+        <h3>Already a member?</h3>
+        <p>Sign in to your account</p>
+      </div>
+      <div class="form-container">
+        <div class="field-wrapper">
+          <label>Email
+            <input class="field" type="email" formControlName="email">
+          </label>
+          <div class="alert" *ngIf="!rForm.get('email').valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+        </div>
 
-            <button class="btn waves-effect waves-light" value="" [disabled]="!rForm.valid">Submit Form</button>
-            <button class="btn waves-effect waves-light" value="" routerLink="/registration">Registration</button>
+        <div class="field-wrapper">
+          <label>Password
+            <input class="field" type="password" formControlName="password">
+          </label>
+          <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{
+            titleAlert}}
           </div>
         </div>
-      </form>
-    </div>
+        <!--<div>
+          <h4>Gender</h4>
+          <div>
+            <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'male'" id="male" value="male" type="radio">
+            <label for="male">Male</label>
+          </div>
+          <div>
+            <input formControlName="form_type" [checked]="rForm.controls['form_type'].value === 'female'" id="female" value="female" type="radio">
+            <label for="female">Female</label>
+          </div>
+        </div>-->
+
+
+        <button class="btn light-blue waves-effect waves-light" value="" [disabled]="!rForm.valid">Submit Form</button>
+        <button class="btn green accent-4 waves-effect waves-light" value="" routerLink="/registration">Registration</button>
+
+      </div>
+      <div class="form-footer">
+        <p>&copy; Swibo 2017. All rights reserved.</p>
+      </div>
+    </form>
+  </div>
 </div>

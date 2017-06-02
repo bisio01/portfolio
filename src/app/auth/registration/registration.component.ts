@@ -9,7 +9,7 @@ import { FormGroup, Validators, FormControl, ValidatorFn, AbstractControl } from
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
+  titleAlert:string = 'This field is required';
   loading = false;
   email:string = '';
   password:string = '';
@@ -50,8 +50,15 @@ export class RegistrationComponent implements OnInit {
 
   passwordMath():ValidatorFn{
     return (gr: FormGroup): { [key: string]: any } => {
-      console.log(gr);
-     return null;
+      if( gr.value.confirmPass === gr.value.password) {
+        return null;
+      }
+      return {
+        confirmPass: {
+          valid: false
+        }
+      }
+
     };
   }
 
@@ -59,7 +66,7 @@ export class RegistrationComponent implements OnInit {
 
   register() {
     this.loading = true;
-    this.authenticationService.create(this.regForm.value.email, this.regForm.value.password)
+    this.authenticationService.create(this.regForm.value.email, this.regForm.value.pwd.password)
       .subscribe(
         data => {
           console.log('login');

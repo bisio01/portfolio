@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, Validators, FormControl} from "@angular/forms";
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-user-update',
@@ -8,7 +9,9 @@ import {FormGroup, Validators, FormControl} from "@angular/forms";
 })
 export class UserUpdateComponent implements OnInit {
 
-  constructor() {
+
+
+  constructor(public userService: UserService) {
   }
 
   ngOnInit() {
@@ -31,10 +34,15 @@ export class UserUpdateComponent implements OnInit {
     form_type: new FormControl(''),
   });
 
-  public viewUser() {
-    this.firstName = this.UserForm.value.firstName;
-    this.lastName = this.UserForm.value.lastName;
+  public update() {
+    let user = this.UserForm.value;
+
+    this.userService.setData(user);
+    console.log(user)
   }
+
+
+
 
 
 }

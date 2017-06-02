@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.rForm.value.email, this.rForm.value.password)
       .subscribe(
         data => {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/user/page']);
           console.log('done');
         },
         error => {
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
 /*    this.firstName = this.rForm.value.firstName;
     this.gender = this.rForm.value.form_type;*/
   }
-  
+
   public addPost(post) {
 
   }

@@ -10,14 +10,15 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 export const ROUTES:RouterModule = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  ...AuthRoutes,
   {
     path: '',
     component: DashboardComponent,
     children: [
-      ...AuthRoutes,
+
       ...DashboardRoutes,
       ...UserRoutes,
       ...LessonRoutes,

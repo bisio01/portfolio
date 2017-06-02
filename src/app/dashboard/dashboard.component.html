@@ -1,19 +1,128 @@
-<aside class="aside blue-grey darken-3">
-  <ul class="navigation">
-    <li>
-      <a [routerLink]="['/user']">User</a>
-    </li>
-    <li>
-      <a [routerLink]="['/lessons']">Lessons</a>
-    </li>
-    <li>
-      <a [routerLink]="['/todo-list']">Todo list</a>
-    </li>
-  </ul>
+<aside class="aside">
+  <div class="aside-header">
+    <div class="profile-wrapper">
+      <div class="aside-profile">
+
+        <div class="profile-img-wrapper">
+          <img class="profile-img" src="assets/img/img-person.png">
+        </div>
+        <div class="profile-container">
+          <span class="profile-name" href="#">
+            <i class="login-icon" mz-icon-mdi
+               [flip]="'vertical'"
+               [icon]="'account'"
+               [size]="'24px'">
+            </i>
+            Christopher Van Sanders
+          </span>
+          <span class="profile-birthday">
+            <i class="login-icon" mz-icon-mdi
+               [flip]="'vertical'"
+               [icon]="'calendar-text'"
+               [size]="'24px'">
+            </i>
+            16 august 1984 <b> (31 year old)</b>
+          </span>
+          <span>
+          <i class="login-icon" mz-icon-mdi
+             [flip]="'vertical'"
+             [icon]="'map-marker'"
+             [size]="'24px'">
+          </i>
+          Kharkov
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="aside-content">
+    <div class="aside-team">
+      <div class="team-header">
+        <h3 class="aside-title">Your Team</h3>
+        <p class="team-description">You can invite more friends to your team.</p>
+      </div>
+      <div class="team-content">
+        <div class="row">
+          <div class="col s4">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <img src="assets/img/team-img.png">
+              </div>
+              <a href="#" class="team-name">Erin Stewart</a>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <img src="assets/img/team-img.png">
+              </div>
+              <a href="#" class="team-name">Erin Stewart</a>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <img src="assets/img/team-img.png">
+              </div>
+              <a href="#" class="team-name">Erin Stewart</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s4">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <img src="assets/img/team-img.png">
+              </div>
+              <a href="#" class="team-name">Erin Stewart</a>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <img src="assets/img/team-img.png">
+              </div>
+              <a href="#" class="team-name">Erin Stewart</a>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <img src="assets/img/team-img.png">
+              </div>
+              <a href="#" class="team-name">Erin Stewart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="team-footer">
+        <button mz-button class="yellow darken-1">
+         More friends
+        </button>
+      </div>
+    </div>
+  </div>
 </aside>
 <div class="content">
   <mz-navbar [navbarClass]="'light-blue darken-4'">
+    <mz-navbar-item-container>
+      <mz-navbar-item>
+        <ul class="navigation">
+          <li>
+            <a [routerLink]="['/user']">User</a>
+          </li>
+          <li>
+            <a [routerLink]="['/lessons']">Lessons</a>
+          </li>
+          <li>
+            <a [routerLink]="['/todo-list']">Todo list</a>
+          </li>
+        </ul>
+      </mz-navbar-item>
+    </mz-navbar-item-container>
+
     <mz-navbar-item-container [align]="'right'">
+
       <mz-navbar-item><a routerLink="/login">Exit</a></mz-navbar-item>
     </mz-navbar-item-container>
   </mz-navbar>
