@@ -3,7 +3,6 @@ import {AuthRoutes} from './auth/auth.routes';
 import {DashboardRoutes} from './dashboard/dashboard.routes';
 import {UserRoutes} from './user/user.routes';
 import {LessonRoutes} from './lesson/lesson.routes';
-import {ToDoListRoutes} from "./todo-list/todo-list.routes";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
@@ -22,7 +21,6 @@ export const ROUTES:RouterModule = [
       ...DashboardRoutes,
       ...UserRoutes,
       ...LessonRoutes,
-      ...ToDoListRoutes
     ]
   },
 

@@ -15,7 +15,6 @@ import { ResetPassComponent } from './auth/reset-pass/reset-pass.component';
 import { UserPageComponent } from './user/user-page/user-page.component';
 import { LessonPageComponent } from './lesson/lesson-page/lesson-page.component';
 import { AuthModule } from './auth/auth.module';
-import { ToDoListComponent } from './todo-list/todo-list.component';
 import {LessonListComponent} from "./lesson/lesson-list/lesson-list.component";
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
 import { UserService } from './user/service/user.service';
@@ -32,7 +31,6 @@ import { UserService } from './user/service/user.service';
     UserUpdateComponent,
     LessonPageComponent,
     LessonListComponent,
-    ToDoListComponent
   ],
   imports: [
     BrowserModule,
