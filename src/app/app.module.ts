@@ -13,9 +13,6 @@ import { AuthenticationService } from './auth/service/auth.service';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { ResetPassComponent } from './auth/reset-pass/reset-pass.component';
 import { UserPageComponent } from './user/user-page/user-page.component';
-import { LessonPageComponent } from './lesson/lesson-page/lesson-page.component';
-import { AuthModule } from './auth/auth.module';
-import {LessonListComponent} from "./lesson/lesson-list/lesson-list.component";
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
 import { UserService } from './user/service/user.service';
 import { EventsListComponent } from './events/events-list/events-list/events-list.component';
@@ -24,7 +21,8 @@ import { PlacesCreateComponent } from './places/places-create/places-create/plac
 import { PlacesListComponent } from './places/places-list/places-list/places-list.component';
 import { PlacesPageComponent } from './places/places-page/places-page/places-page.component';
 
-//noinspection TypeScriptUnresolvedVariable
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +32,6 @@ import { PlacesPageComponent } from './places/places-page/places-page/places-pag
     ResetPassComponent,
     UserPageComponent,
     UserUpdateComponent,
-    LessonPageComponent,
-    LessonListComponent,
     EventsListComponent,
     EventsCreateComponent,
     PlacesCreateComponent,
