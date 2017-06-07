@@ -20,6 +20,8 @@ import { EventsCreateComponent } from './events/events-create/events-create.comp
 import { PlacesCreateComponent } from './places/places-create/places-create.component';
 import { PlacesListComponent } from './places/places-list/places-list.component';
 import { PlacesPageComponent } from './places/places-page/places-page.component';
+import { PeopleListComponent } from './people/people-list/people-list.component';
+import { PeoplePageComponent } from './people/people-page/people-page.component';
 
 
 
@@ -37,6 +39,8 @@ import { PlacesPageComponent } from './places/places-page/places-page.component'
     PlacesCreateComponent,
     PlacesListComponent,
     PlacesPageComponent,
+    PeopleListComponent,
+    PeoplePageComponent,
   ],
   imports: [
     BrowserModule,
