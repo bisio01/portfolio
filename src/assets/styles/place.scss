@@ -1,0 +1,40 @@
+.place {
+  &-item {
+    padding: 3px;
+    background: #fff;
+    border: 1px solid #dadada;
+    margin-bottom: 20px;
+  }
+  &-description {
+    padding: 15px;
+    color: #454545;
+    .place-city {
+      float: left;
+      display: flex;
+      align-items: center;
+      i:before {
+        font-size: 18px;
+        margin-right: 5px;
+        color: #454545;
+      }
+    }
+    .place-date {
+      float: right;
+    }
+  }
+  &-info {
+    margin-bottom: 7px;
+  }
+  &-img {
+    position: relative;
+    img {
+      display: block;
+      width: 100%;
+      transition: .3s ease-in-out;
+      &:hover {
+        filter: grayscale(0);
+
+      }
+    }
+  }
+}

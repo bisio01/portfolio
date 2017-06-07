@@ -1,12 +1,18 @@
 .content {
   margin-left: 440px;
-  background: #edeff0;
+  background: #fafafa;
   height: 100vh;
   min-height: 700px;
   overflow-y: auto;
 }
 
 .content-inner {
-  padding: 20px;
+  padding: 40px  20px;
 }
 
+.content-title {
+  padding: 0 0.75rem;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}

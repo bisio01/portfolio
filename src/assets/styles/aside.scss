@@ -45,7 +45,7 @@
           right: 0;
           top: 0;
           bottom: 0;
-          background: linear-gradient(rgba(0,0,0,0) 71%, rgba(0,0,0, .53));
+          background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.73));
           z-index: 1;
         }
       }
@@ -95,6 +95,7 @@
   i.mdi:before {
     font-size: 18px;
     color: #6c6c6c;
+    margin-right: 5px;
   }
 }
 

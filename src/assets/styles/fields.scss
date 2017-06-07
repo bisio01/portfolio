@@ -1,5 +1,8 @@
 .field-wrapper {
   margin-bottom: 20px;
+  label {
+    font-size: 13px;
+  }
   .field {
     width: 100%;
     padding: 5px 10px;
@@ -11,7 +14,7 @@
     box-shadow: none;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     height: 40px;
-    margin: 0;
+    margin: 5px 0 0 0;
     &:focus:not([readonly]) {
       border: 1px solid #00C853;
       box-shadow: none;

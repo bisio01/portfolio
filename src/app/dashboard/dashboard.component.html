@@ -50,26 +50,26 @@
         </button>
         <button type="button" class="profile-info-item">
           <span class="profile-info-number">
-            11
+            23
           </span>
           <span class="profile-info-name">
-            Friends
+            Places
           </span>
         </button>
         <button type="button" class="profile-info-item">
           <span class="profile-info-number">
-            11
+            08
           </span>
           <span class="profile-info-name">
-            Friends
+            Events
           </span>
         </button>
         <button type="button" class="profile-info-item">
           <span class="profile-info-number">
-            11
+            44
           </span>
           <span class="profile-info-name">
-            Friends
+            Photo
           </span>
         </button>
       </div>
@@ -90,15 +90,15 @@
           <li class="skill-item">
             <button type="button">
               <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football'"></i>
+                 [icon]="'gondola'"></i>
               Snowboard
             </button>
           </li>
           <li class="skill-item">
             <button type="button">
               <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football'"></i>
-              basketball
+                 [icon]="'football-australian'"></i>
+              Basketball
             </button>
           </li>
           <li class="skill-item">
@@ -118,7 +118,7 @@
           <li class="skill-item">
             <button type="button">
               <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football'"></i>
+                 [icon]="'bike'"></i>
               Bike
             </button>
           </li>
@@ -235,26 +235,44 @@
   </div>
 </aside>
 <div class="content">
-  <mz-navbar [navbarClass]="'light-blue darken-4'">
+  <mz-navbar [navbarClass]="'navbar-bg'">
+    <mz-navbar-item-container>
+      <a href="#" class="logo"></a>
+    </mz-navbar-item-container>
     <mz-navbar-item-container>
       <mz-navbar-item>
         <ul class="navigation">
           <li>
-            <a [routerLink]="['/user']">User</a>
-          </li>
-          <li>
-            <a [routerLink]="['/lessons']">Lessons</a>
+            <a [routerLink]="['/user']">Profile</a>
           </li>
           <li>
             <a [routerLink]="['/events']">Events</a>
           </li>
+          <li>
+            <a [routerLink]="['/events']">Places</a>
+          </li>
+          <li>
+            <a [routerLink]="['/lessons']">People</a>
+          </li>
         </ul>
       </mz-navbar-item>
     </mz-navbar-item-container>
-
+    <mz-navbar-item-container>
+      <div class="navigation-search-wrapper">
+        <div class="navigation-search-container">
+          <input class="navigation-search" type="search" placeholder="Search"/>
+          <button type="button" class="navigation-search-button">
+            <i mz-icon-mdi
+               [flip]="'vertical'"
+               [icon]="'magnify'">
+            </i>
+          </button>
+        </div>
+      </div>
+    </mz-navbar-item-container>
     <mz-navbar-item-container [align]="'right'">
 
-      <mz-navbar-item><a class="nav-exit" routerLink="/login">Exit</a></mz-navbar-item>
+      <mz-navbar-item><a class="nav-exit" routerLink="/login">Log out</a></mz-navbar-item>
     </mz-navbar-item-container>
   </mz-navbar>
   <div class="content-inner">
