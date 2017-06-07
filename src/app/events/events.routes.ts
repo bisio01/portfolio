@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { EventsListComponent } from './events-list/events-list/events-list.component';
-import { EventsCreateComponent } from './events-create/events-create/events-create.component';
+import { EventsListComponent } from './events-list/events-list.component';
+import { EventsCreateComponent } from './events-create/events-create.component';
 
 export const EventsRoutes: Routes = [
   {

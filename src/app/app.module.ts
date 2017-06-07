@@ -15,11 +15,11 @@ import { ResetPassComponent } from './auth/reset-pass/reset-pass.component';
 import { UserPageComponent } from './user/user-page/user-page.component';
 import {UserUpdateComponent} from "./user/user-update/user-update.component";
 import { UserService } from './user/service/user.service';
-import { EventsListComponent } from './events/events-list/events-list/events-list.component';
-import { EventsCreateComponent } from './events/events-create/events-create/events-create.component';
-import { PlacesCreateComponent } from './places/places-create/places-create/places-create.component';
-import { PlacesListComponent } from './places/places-list/places-list/places-list.component';
-import { PlacesPageComponent } from './places/places-page/places-page/places-page.component';
+import { EventsListComponent } from './events/events-list/events-list.component';
+import { EventsCreateComponent } from './events/events-create/events-create.component';
+import { PlacesCreateComponent } from './places/places-create/places-create.component';
+import { PlacesListComponent } from './places/places-list/places-list.component';
+import { PlacesPageComponent } from './places/places-page/places-page.component';
 
 
 

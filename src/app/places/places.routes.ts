@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { PlacesListComponent } from './places-list/places-list/places-list.component';
-import { PlacesPageComponent } from './places-page/places-page/places-page.component';
+import { PlacesListComponent } from './places-list/places-list.component';
+import { PlacesPageComponent } from './places-page/places-page.component';
 
 export const PlacesRoutes: Routes = [
   {
