@@ -8,6 +8,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+b {
+  font-weight: 700;
+}
+
 button {
   box-shadow: none;
   background: transparent;
@@ -23,9 +27,15 @@ button {
   height: 0;
 }
 
+.flex-pull-right {
+  margin-left: auto;
+}
+
 .btn {
   border-radius: 8px;
   background: #66c33f;
+  text-transform: inherit;
+  font-weight: 300;
   &:hover,
   &:focus{
     background: lighten(#66c33f,15%);

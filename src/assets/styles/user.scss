@@ -1,0 +1,88 @@
+.user {
+  &-main-bg {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    &-wrapper {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.73));
+        z-index: 1;
+        border-radius: 4px;
+      }
+    }
+  }
+  &-header {
+    position: relative;
+    padding-left: 210px;
+    padding-top: 15px;
+  }
+  &-name {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+  &-info {
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    span {
+      i.mdi {
+        &:before {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  &-date {
+    margin-right: 20px;
+  }
+  &-content {
+    max-width: 1000px;
+    margin: -100px auto 0;
+    position: relative;
+    z-index: 2;
+    .profile-info-item {
+      border-left: 1px solid #dadada;
+      width: 25%;
+      &:last-child {
+        border-right: 1px solid #dadada;
+      }
+    }
+  }
+  &-img-wrapper {
+    width: 174px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    padding: 3px;
+    border: 1px solid #DBE0E4;
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  &-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    color: #252525;
+    margin-bottom: 40px;
+    i.mdi {
+      &:before {
+        color: #6c6c6c;
+        font-size: 18px;
+      }
+    }
+
+  }
+}

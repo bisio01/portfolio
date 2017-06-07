@@ -1,2 +1,119 @@
-<button type="button" mz-button [routerLink]="['/user/update']">Info Update</button>
-{{user?.firstName}}
+<div class="user-wrapper">
+  <div class="user-main-bg-wrapper">
+    <img class="user-main-bg" src="assets/img/cover.jpg"/>
+  </div>
+  <div class="user-content">
+    <div class="user-header">
+      <div class="user-img-wrapper">
+        <img class="user-img" src="assets/img/img-person.png"/>
+      </div>
+      <div class="user-container">
+        <h4 class="user-name">{{user?.firstName}} Test test</h4>
+        <div class="user-info">
+          <span class="user-date">
+             <i mz-icon-mdi
+                [flip]="'vertical'"
+                [icon]="'calendar-text'"
+                [size]="'24px'">
+            </i>
+            16 august 1984 <b> (31 year old)</b>
+          </span>
+          <span class="user-city">
+            <i mz-icon-mdi
+               [flip]="'vertical'"
+               [icon]="'map-marker'"
+               [size]="'24px'">
+            </i>
+            Kharkov
+          </span>
+          <button type="button" class="flex-pull-right" mz-button [routerLink]="['/user/update']">Info update</button>
+        </div>
+        <div class="user-skills">
+          <ul class="user-skills-list">
+            <li>
+              <button type="button">
+                <i mz-icon-mdi [flip]="'vertical'"
+                   [icon]="'football'"></i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i mz-icon-mdi [flip]="'vertical'"
+                   [icon]="'football'"></i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i mz-icon-mdi [flip]="'vertical'"
+                   [icon]="'football'"></i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i mz-icon-mdi [flip]="'vertical'"
+                   [icon]="'football'"></i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i mz-icon-mdi [flip]="'vertical'"
+                   [icon]="'football'"></i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i mz-icon-mdi [flip]="'vertical'"
+                   [icon]="'football'"></i>
+                Football
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="profile-info-wrapper">
+        <button type="button" class="profile-info-item">
+          <span class="profile-info-number">
+            11
+          </span>
+          <span class="profile-info-name">
+            Friends
+          </span>
+        </button>
+        <button type="button" class="profile-info-item">
+          <span class="profile-info-number">
+            23
+          </span>
+          <span class="profile-info-name">
+            Places
+          </span>
+        </button>
+        <button type="button" class="profile-info-item">
+          <span class="profile-info-number">
+            08
+          </span>
+          <span class="profile-info-name">
+            Events
+          </span>
+        </button>
+        <button type="button" class="profile-info-item">
+          <span class="profile-info-number">
+            44
+          </span>
+          <span class="profile-info-name">
+            Photo
+          </span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+

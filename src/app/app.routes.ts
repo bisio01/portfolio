@@ -5,6 +5,7 @@ import {UserRoutes} from './user/user.routes';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import { EventsRoutes } from './events/events.routes';
 import { PlacesRoutes } from './places/places.routes';
+import { PeopleRoutes } from './people/people.routes';
 
 
 export const ROUTES:RouterModule = [
@@ -22,7 +23,8 @@ export const ROUTES:RouterModule = [
       ...DashboardRoutes,
       ...UserRoutes,
       ...EventsRoutes,
-      ...PlacesRoutes
+      ...PlacesRoutes,
+      ...PeopleRoutes
     ]
   },
 
