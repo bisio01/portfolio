@@ -8,7 +8,7 @@
         <img class="user-img" src="assets/img/img-person.png"/>
       </div>
       <div class="user-container">
-        <h4 class="user-name">{{user?.firstName}} Test test</h4>
+        <h4 class="user-name">{{userLocal?.firstName}} {{userLocal?.lastName}}</h4>
         <div class="user-info">
           <span class="user-date">
              <i mz-icon-mdi
@@ -111,7 +111,9 @@
         </button>
       </div>
     </div>
-
+    <div class="user-container">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
 

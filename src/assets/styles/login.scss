@@ -1,12 +1,45 @@
+.auth-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #6d5cae;
+  &.registration-bg {
+    background: #1fefdb;
+  }
+  img {
+    height: 100%;
+    opacity: 0.9;
+  }
+}
+
+.auth-info {
+  position: absolute;
+  left: 20px;
+  bottom: 30px;
+  color: #fff;
+  max-width: 450px;
+  h2 {
+    font-size: 31px;
+    line-height: 40px;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
 .login-wrapper {
-  width: 420px;
+  width: 500px;
   background: #FFF;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
   zoom: 1;
   box-shadow: 0 4px 20px 5px rgba(0, 0, 0, .05);
-
+  float: right;
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
   .login-icon {
     border: 1px solid #DBE0E4;
     border-radius: 50%;
@@ -21,23 +54,24 @@
 }
 
 .form-header {
-  text-align: center;
-  padding: 20px 20px 0;
+  text-align: left;
+  padding: 90px 60px 0;
   h3 {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 21px;
+    font-weight: 700;
     color: #1B2431;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     color: #7F8FA4;
-    text-align: center;
+    text-align: left;
+    font-weight: 300;
   }
 }
 
 .form-container {
-  padding: 20px;
+  padding: 20px 60px;
   .btn {
     display: block;
     margin-bottom: 10px;
@@ -47,7 +81,8 @@
 }
 
 .form-footer {
-  float: left;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   background: #fafafa;
   padding: 15px 30px;

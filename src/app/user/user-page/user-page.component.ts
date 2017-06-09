@@ -10,8 +10,14 @@ export class UserPageComponent implements OnInit {
 
   public user;
 
+  public userLocal;
+
+
   constructor(public userService: UserService) {
-     this.user = this.userService.getData();
+    this.user = this.userService.getData();
+
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
+
   }
 
 

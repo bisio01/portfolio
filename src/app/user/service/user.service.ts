@@ -13,7 +13,8 @@ export class UserService {
   }
 
   public getData() {
-    return this._userData
+    return this._userData;
+
   }
 
 

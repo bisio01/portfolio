@@ -1,3 +1,5 @@
+import 'hammerjs';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -17,11 +19,10 @@ import {UserUpdateComponent} from "./user/user-update/user-update.component";
 import { UserService } from './user/service/user.service';
 import { EventsListComponent } from './events/events-list/events-list.component';
 import { EventsCreateComponent } from './events/events-create/events-create.component';
-import { PlacesCreateComponent } from './places/places-create/places-create.component';
-import { PlacesListComponent } from './places/places-list/places-list.component';
-import { PlacesPageComponent } from './places/places-page/places-page.component';
-import { PeopleListComponent } from './people/people-list/people-list.component';
-import { PeoplePageComponent } from './people/people-page/people-page.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import { PlacesModule } from './places/places.module';
+import { PeopleModule } from './people/people.module';
 
 
 
@@ -36,11 +37,6 @@ import { PeoplePageComponent } from './people/people-page/people-page.component'
     UserUpdateComponent,
     EventsListComponent,
     EventsCreateComponent,
-    PlacesCreateComponent,
-    PlacesListComponent,
-    PlacesPageComponent,
-    PeopleListComponent,
-    PeoplePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +45,11 @@ import { PeoplePageComponent } from './people/people-page/people-page.component'
     MaterializeModule.forRoot(),
     RouterModule.forRoot(<any>ROUTES),
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdCheckboxModule,
+    PlacesModule,
+    PeopleModule
   ],
   providers: [
     AuthenticationService,

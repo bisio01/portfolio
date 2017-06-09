@@ -1,10 +1,13 @@
-import {BrowserModule} from "@angular/platform-browser/public_api";
-import {HttpModule} from "@angular/http/http";
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MdTabsModule} from '@angular/material';
 import { PlacesCreateComponent } from './places-create/places-create.component';
 import { PlacesListComponent } from './places-list/places-list.component';
 import { PlacesPageComponent } from './places-page/places-page.component';
+
+
 
 
 
@@ -14,6 +17,7 @@ import { PlacesPageComponent } from './places-page/places-page.component';
     BrowserModule,
     HttpModule,
     CommonModule,
+    MdTabsModule
 
   ],
   declarations: [
@@ -23,4 +27,6 @@ import { PlacesPageComponent } from './places-page/places-page.component';
   ]
 
 })
-export class EventsModule { }
+export class PlacesModule {
+
+}
