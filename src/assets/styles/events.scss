@@ -1,3 +1,24 @@
 .event {
+  color: #969696;
   display: flex;
+  font-size: 14px;
+  &-name {
+    font-size: 25px;
+    color: #252525;
+    margin-bottom: 20px;
+  }
+  &-date {
+    font-size: 16px;
+    color: #252525;
+    margin-bottom: 20px;
+    display: block;
+  }
+  &-description {
+    margin-bottom: 15px;
+  }
+  &-author {
+    font-style: italic;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
