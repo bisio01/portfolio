@@ -36,10 +36,11 @@
     align-items: center;
     margin-bottom: 25px;
     span {
-      i.mdi {
-        &:before {
-          font-size: 18px;
-        }
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 18px;
+        margin-right: 10px;
       }
     }
   }
@@ -77,13 +78,16 @@
     flex-wrap: wrap;
     color: #252525;
     margin-bottom: 40px;
-    i.mdi {
-      &:before {
-        color: #6c6c6c;
-        font-size: 18px;
-      }
+    button {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
     }
-
+    i {
+      color: #6c6c6c;
+      font-size: 18px;
+      margin-right: 7px;
+    }
   }
 }
 

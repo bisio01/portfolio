@@ -2,15 +2,18 @@
   color: #969696;
   display: flex;
   font-size: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dfdede;
+  margin-bottom: 20px;
   &-name {
     font-size: 25px;
     color: #252525;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   &-date {
     font-size: 16px;
     color: #252525;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: block;
   }
   &-description {
@@ -20,5 +23,39 @@
     font-style: italic;
     display: block;
     margin-bottom: 20px;
+  }
+  &-info {
+    margin: auto;
+    span {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+      i {
+        margin-right: 18px;
+        font-size: 18px;
+      }
+    }
+  }
+  &-img-wrapper {
+    margin-right: 5%;
+  }
+  &-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-skill {
+    border: 1px solid  #6c6c6c;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 15px;
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+    i {
+      margin-right: 12px;
+    }
   }
 }

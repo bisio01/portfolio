@@ -42,6 +42,10 @@ button {
   background: #66c33f;
   text-transform: inherit;
   font-weight: 300;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 22px;
   &:hover,
   &:focus{
     background: lighten(#66c33f,15%);
