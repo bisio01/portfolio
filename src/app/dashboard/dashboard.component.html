@@ -276,27 +276,30 @@
       </mz-navbar-item>
       <mz-navbar-item>
         <div class="nav-notification">
-          <button type="button" class="nav-element nav-notification-toggle "><i class="material-icons">notifications</i>
+          <button type="button" (click)="notificationToggle(1)" [ngClass]="{'active': notification === 1}"
+                  class="nav-element nav-notification-toggle "><i class="material-icons">notifications</i>
           </button>
-          <div class="nav-notification-wrapper">
-            <div class="notification-header">
-              <h4>Last Notifications</h4>
-              <button type="button" class="pull-right" [routerLink]="['/notification']">View all</button>
-            </div>
-            <div class="notification-content">
-              <div class="notification-item">
-                <div class="notification-inner">
-                  <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
-                  <span class="notification-date">1 day ago</span>
-                </div>
+          <div class="nav-notification-wrapper" [ngClass]="{'active': notification === 1}">
+            <div class="nav-notification-container">
+              <div class="notification-header">
+                <h4>Last Notifications</h4>
+                <button type="button" class="pull-right" [routerLink]="['/notification']">View all</button>
               </div>
-              <div class="notification-item">
-                <div class="notification-img">
-                  <img src=""/>
+              <div class="notification-content">
+                <div class="notification-item">
+                  <div class="notification-inner">
+                    <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
+                    <span class="notification-date">1 day ago</span>
+                  </div>
                 </div>
-                <div class="notification-inner">
-                  <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
-                  <span class="notification-date">1 day ago</span>
+                <div class="notification-item">
+                  <div class="notification-img">
+                    <img src=""/>
+                  </div>
+                  <div class="notification-inner">
+                    <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
+                    <span class="notification-date">1 day ago</span>
+                  </div>
                 </div>
               </div>
             </div>

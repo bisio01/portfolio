@@ -46,14 +46,15 @@ button {
 }
 
 .btn {
-  border-radius: 8px;
+  border-radius: 3px;
   background: #66c33f;
   text-transform: inherit;
   font-weight: 300;
-  height: 30px;
-  line-height: 30px;
+  height: 36px;
+  line-height: 36px;
   font-size: 14px;
   padding: 0 22px;
+  box-shadow: none;
   &:hover,
   &:focus{
     background: lighten(#66c33f,15%);

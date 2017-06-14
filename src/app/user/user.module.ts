@@ -9,6 +9,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterializeModule } from 'ng2-materialize';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserEventsComponent } from './user-inner/user-events/user-events.component';
+import { UserFriendsComponent } from './user-inner/user-friends/user-friends.component';
+import { UserPhotosComponent } from './user-inner/user-photos/user-photos.component';
+import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
+import { MdTabsModule } from '@angular/material';
 
 
 
@@ -22,12 +27,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     MaterializeModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MdTabsModule,
 
   ],
   declarations: [
     UserPageComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    UserEventsComponent,
+    UserFriendsComponent,
+    UserPhotosComponent,
+    UserPlacesComponent
   ]
 
 })

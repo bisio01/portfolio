@@ -6,6 +6,9 @@ import {MdTabsModule} from '@angular/material';
 import { PlacesCreateComponent } from './places-create/places-create.component';
 import { PlacesListComponent } from './places-list/places-list.component';
 import { PlacesPageComponent } from './places-page/places-page.component';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterializeModule } from 'ng2-materialize';
 
 
 
@@ -17,7 +20,10 @@ import { PlacesPageComponent } from './places-page/places-page.component';
     BrowserModule,
     HttpModule,
     CommonModule,
-    MdTabsModule
+    RouterModule,
+    MaterializeModule.forRoot(),
+    BrowserAnimationsModule,
+    MdTabsModule,
 
   ],
   declarations: [

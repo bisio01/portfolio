@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit {
+
+  notification: number;
 
   constructor() { }
+
+  notificationToggle(newValue: number) {
+    if (this.notification === newValue) {
+      this.notification = 0;
+    }
+    else {
+      this.notification = newValue;
+    }
+  }
+
+  ngAfterViewInit() {
+  }
 
   ngOnInit() {
   }

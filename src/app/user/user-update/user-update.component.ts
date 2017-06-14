@@ -58,11 +58,7 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
       if(!($form.hasClass('focused'))){
         this.linksArr.removeClass('focused');
         $form.addClass('focused');
-      } else {
-
       }
-
-
     }));
   }
 

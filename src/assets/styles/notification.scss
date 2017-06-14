@@ -11,6 +11,41 @@
     font-size: 13px;
     width: 320px;
     right: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeOut 0.3s ease-in both;
+    &.active {
+      animation: fadeIn 0.3s ease-in both;
+    }
+  }
+  &-container {
+
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(20%, 0, 0);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(20%, 0, 0);
   }
 }
 

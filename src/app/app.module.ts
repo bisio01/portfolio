@@ -21,11 +21,12 @@ import { NotificationComponent } from './notification/notification.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NotificationComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

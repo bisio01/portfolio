@@ -1,3 +1,56 @@
+
+.profile {
+  &-wrapper {
+    padding: 0 15px 30px;
+    border-bottom: 1px solid #dadada;
+  }
+  &-img {
+    width: 100px;
+    display: block;
+    &-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      padding: 3px;
+      border: 1px solid #DBE0E4;
+    }
+  }
+  &-name {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+
+  }
+  &-birthday {
+    color: #fff;
+  }
+  &-info {
+    &-wrapper {
+      display: flex;
+    }
+    &-item {
+      display: flex;
+      flex-wrap: wrap;
+      color: #252525;
+      width: 25%;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.5;
+      }
+      span {
+        width: 100%;
+      }
+
+    }
+    &-number {
+      font-size: 37px;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+  }
+}
+
 .user {
   &-main-bg {
     width: 100%;

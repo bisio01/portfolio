@@ -1,6 +1,10 @@
 import { Routes } from '@angular/router';
 import { PeopleListComponent } from './people-list/people-list.component';
 import { PeoplePageComponent } from './people-page/people-page.component';
+import { PeoplePhotosComponent } from './people-inner/people-photos/people-photos.component';
+import { PeopleFriendsComponent } from './people-inner/people-friends/people-friends.component';
+import { PeopleEventsComponent } from './people-inner/people-events/people-events.component';
+import { PeoplePlacesComponent } from './people-inner/people-places/people-places.component';
 
 export const PeopleRoutes: Routes = [
   {
@@ -21,11 +25,29 @@ export const PeopleRoutes: Routes = [
         ]
       },
       {
-        path: 'people',
+        path: 'page',
         children: [
           {
             path: '',
             component: <any>PeoplePageComponent,
+            children: [
+              {
+                path: 'events',
+                component: <any>PeopleEventsComponent,
+              },
+              {
+                path: 'friends',
+                component: <any>PeopleFriendsComponent,
+              },
+              {
+                path: 'photo',
+                component: <any>PeoplePhotosComponent,
+              },
+              {
+                path: 'places',
+                component: <any>PeoplePlacesComponent,
+              },
+            ]
           },
         ]
       },

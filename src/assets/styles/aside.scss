@@ -56,34 +56,7 @@
   }
 }
 
-.profile {
-  &-wrapper {
-    padding: 0 15px 30px;
-    border-bottom: 1px solid #dadada;
-  }
-  &-img {
-    width: 100px;
-    display: block;
-    &-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 50%;
-      padding: 3px;
-      border: 1px solid #DBE0E4;
-    }
-  }
-  &-name {
-    font-size: 15px;
-    color: #fff;
-    font-weight: 600;
 
-  }
-}
-
-.profile-birthday {
-  color: #fff;
-}
 
 .aside-skills {
   margin-bottom: 20px;
@@ -131,18 +104,7 @@
   color: #1B2431;
 }
 
-.profile-info-wrapper {
-  display: flex;
-}
 
-.profile-info-item {
-  display: flex;
-  flex-wrap: wrap;
-  color: #252525;
-  span {
-    width: 100%;
-  }
-}
 
 .aside-profile-info {
   margin-bottom: 20px;
@@ -150,14 +112,6 @@
   border-bottom: 1px solid #dadada;
 }
 
-.profile-info-number {
-  font-size: 37px;
-  margin-bottom: 12px;
-  font-weight: 300;
-}
-
-.navigation li {
-}
 
 .navigation a {
   color: #fff;
