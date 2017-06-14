@@ -12,10 +12,18 @@ b {
   font-weight: 700;
 }
 
+
+textarea {
+  resize: none;
+}
 button {
   box-shadow: none;
   background: transparent;
   border: none;
+  padding: 0;
+  &:focus {
+    background: transparent;
+  }
 }
 
 .clearfix:after {

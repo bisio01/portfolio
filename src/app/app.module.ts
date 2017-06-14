@@ -11,12 +11,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './auth/service/auth.service';
 import { UserService } from './user/service/user.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import { MdDatepickerModule } from '@angular/material';
 import { PlacesModule } from './places/places.module';
 import { PeopleModule } from './people/people.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { EventsModule } from './events/events.module';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -24,6 +25,7 @@ import { EventsModule } from './events/events.module';
   declarations: [
     AppComponent,
     DashboardComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { EventsModule } from './events/events.module';
     RouterModule.forRoot(<any>ROUTES),
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MdDatepickerModule,
     PlacesModule,
     PeopleModule,
     AuthModule,

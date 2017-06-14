@@ -1,0 +1,241 @@
+.nav-notification {
+  position: relative;
+  &-wrapper {
+    position: absolute;
+    top: 100%;
+    box-shadow: 0 3px 10px rgba(40, 40, 40, 0.1);
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    color: #252525;
+    z-index: 1000;
+    font-size: 13px;
+    width: 320px;
+    right: 0;
+  }
+}
+
+.notification {
+  &-header {
+    background-color: #f4f9fc;
+    padding: 10px;
+    h4 {
+      display: inline-block;
+      font-weight: 600;
+    }
+    button {
+      color: #f4315a;
+      text-decoration: underline;
+      &:hover {
+        background: none;
+        text-decoration: none;
+      }
+    }
+  }
+  &-content {
+    padding: 1px 20px;
+    p {
+      margin-bottom: 13px;
+      a {
+        display: inline;
+        color: #252525;
+        text-decoration: underline;
+        font-size: 13px;
+        padding: 0;
+        &:hover {
+          background: transparent;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &-date {
+    color: #969696;
+    font-size: 12px;
+  }
+  &-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #dfdfdf;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &-timeline {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #48b5e7;
+      left: 220px;
+    }
+  }
+}
+
+.timeline {
+  &-point {
+    position: absolute;
+    top: 12px;
+    border-radius: 50%;
+    text-align: center;
+    border: 2px solid #fff;
+    left: 220px;
+    margin-left: -20px;
+    -webkit-transform: translateZ(0);
+    width: 40px;
+    height: 40px;
+    &.small {
+      background: #b3b3b3;
+      height: 12px;
+      margin-left: -5px;
+      margin-top: 14px;
+      width: 12px;
+    }
+    &.success {
+      background: #10cfbd;
+    }
+    &.message {
+      background: #f8d053;
+    }
+    i {
+      color: #fff;
+      font-size: 14px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      top: 50%;
+    }
+  }
+  &-block {
+    margin: 4em 0;
+    position: relative;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &-content {
+    padding-left: 260px;
+    width: 85%;
+    position: relative;
+
+  }
+  &-cart {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background: #FFF;
+    position: relative;
+    border-radius: 4px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    float: right;
+    cursor: pointer;
+    &:hover {
+      .cart-header {
+        background: #daeffd;
+        cursor: pointer;
+      }
+      .cart-description {
+        background: #eee;
+      }
+      .cart-img-wrapper {
+        &:before {
+          opacity: 1;
+        }
+      }
+      .cart-img-description {
+        opacity: 1;
+      }
+    }
+  }
+  &-date {
+    position: absolute;
+    width: 180px;
+    left: 0;
+    top: -2px;
+    font-size: 14px;
+    float: left;
+    padding: .8em 0;
+    opacity: .7;
+    height: 58px;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 21px;
+    align-items: center;
+    text-align: right;
+    h6 {
+      width: 100%;
+    }
+    span {
+      width: 100%;
+    }
+  }
+}
+
+.cart {
+  &-header {
+    padding: 15px 15px 12px;
+    border-bottom: 1px solid #daeffd;
+    transition: all 0.4s;
+  }
+  &-img {
+    border-radius: 50%;
+    border: 1px solid #dadada;
+    float: left;
+    margin-right: 10px;
+    img {
+      width: 30px;
+      border-radius: 50%;
+      display: block;
+      padding: 3px;
+      background: #fff;
+    }
+  }
+  &-name {
+    font-size: 13px;
+  }
+  &-description {
+    padding: 12px 16px 11px;
+    font-size: 13px;
+    transition: all 0.3s;
+    p {
+      letter-spacing: 0.01em;
+      line-height: 22px;
+    }
+  }
+  &-img {
+    &-description {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      color: #fff;
+      transition: all 0.4s;
+      z-index: 2;
+      padding: 30px 16px;
+      font-size: 18px;
+    }
+    &-wrapper {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.73));
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.4s;
+      }
+      img {
+        width: 100%;
+        transition: all 0.4s;
+        display: block;
+      }
+    }
+  }
+}

@@ -4,6 +4,16 @@
     background: #fff;
     border: 1px solid #dadada;
     margin-bottom: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+      background: #eee;
+      .place-img {
+        img {
+          transform: scale(1.03);
+        }
+      }
+    }
   }
   &-wrapper {
     margin: 0 -0.75rem;
@@ -30,14 +40,11 @@
   }
   &-img {
     position: relative;
+    overflow: hidden;
     img {
       display: block;
       width: 100%;
       transition: .3s ease-in-out;
-      &:hover {
-        filter: grayscale(0);
-
-      }
     }
   }
 }

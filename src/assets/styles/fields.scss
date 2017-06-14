@@ -70,21 +70,40 @@
   padding-left: 12px;
   padding-right: 12px;
   padding-bottom: 4px;
-  transition: background-color 0.2s ease;
   margin-bottom: 20px;
+  transition: all 0.3s;
+  &.focused {
+    border-color: rgba(0,0,0,0.1)!important;
+    background-color: #f0f0f0;
+    label {
+      opacity: 0.4;
+    }
+  }
+  input {
+    border: none;
+    line-height: 36px;
+    height: 36px;
+    &:focus {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
   label {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 600;
+    transition: all 0.3s;
   }
   .dropdown-content {
     top: 100% !important;
     left: 0 !important;
     width: 100% !important;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.15);
      li > a, li > span {
        padding: 6px 12px;
        font-size: 14px;
        line-height: 30px;
+       color: #626262;
      }
     &.select-dropdown li.optgroup ~ li.optgroup-option {
       padding: 0;
@@ -94,6 +113,46 @@
   .optgroup {
     display: none;
   }
+  textarea {
+    border: none;
+    min-height: 100px;
+    padding: 0;
+    line-height: 24px;
+    margin-top: 7px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &.form-icon {
+    .input-field {
+      position: relative;
+      i {
+        position: absolute;
+        color: #000;
+        font-size: 18px;
+        top: 50%;
+        transform: translate(0, -50%)
+      }
+      input {
+        padding-left: 25px;
+      }
+    }
+  }
 }
 
+.form-datepicker {
+  position: relative;
+  input {
+    margin: 0;
+    padding-right: 25px;
+  }
+  button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 16px;
+  }
+
+}
 

@@ -8,6 +8,7 @@ import { UserService } from './service/user.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterializeModule } from 'ng2-materialize';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -21,6 +22,7 @@ import { MaterializeModule } from 'ng2-materialize';
     FormsModule,
     ReactiveFormsModule,
     MaterializeModule.forRoot(),
+    BrowserAnimationsModule
 
   ],
   declarations: [

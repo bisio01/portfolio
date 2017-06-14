@@ -6,6 +6,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import { EventsRoutes } from './events/events.routes';
 import { PlacesRoutes } from './places/places.routes';
 import { PeopleRoutes } from './people/people.routes';
+import { NotificationRoutes } from './notification/notification.routes';
 
 
 export const ROUTES:RouterModule = [
@@ -24,7 +25,8 @@ export const ROUTES:RouterModule = [
       ...UserRoutes,
       ...EventsRoutes,
       ...PlacesRoutes,
-      ...PeopleRoutes
+      ...PeopleRoutes,
+      ...NotificationRoutes
     ]
   },
 

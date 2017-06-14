@@ -5,13 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EventsListComponent } from './events-list/events-list.component';
-import { EventsCreateComponent } from './events-create/events-create.component';
-import { EventsPageComponent } from './events-page/events-page.component';
-import { MdTabsModule } from '@angular/material';
+import { MdTabsModule, MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 import { MaterializeModule } from 'ng2-materialize';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventsListComponent } from './events-list/events-list.component';
+import { EventsCreateComponent } from './events-create/events-create.component';
+import { EventsPageComponent } from './events-page/events-page.component';
+
 
 
 
@@ -27,6 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    MdDatepickerModule,
+    MdNativeDateModule
   ],
   declarations: [
     EventsListComponent,
