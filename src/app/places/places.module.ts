@@ -9,6 +9,10 @@ import { PlacesPageComponent } from './places-page/places-page.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterializeModule } from 'ng2-materialize';
+import { PlacesInfoComponent } from './places-inner/places-info/places-info.component';
+import { PlacesPeopleComponent } from './places-inner/places-people/places-people.component';
+import { PlacesContactComponent } from './places-inner/places-contact/places-contact.component';
+import { PlacesPhotoComponent } from './places-inner/places-photo/places-photo.component';
 
 
 
@@ -29,7 +33,11 @@ import { MaterializeModule } from 'ng2-materialize';
   declarations: [
     PlacesCreateComponent,
     PlacesListComponent,
-    PlacesPageComponent
+    PlacesPageComponent,
+    PlacesInfoComponent,
+    PlacesPeopleComponent,
+    PlacesContactComponent,
+    PlacesPhotoComponent
   ]
 
 })

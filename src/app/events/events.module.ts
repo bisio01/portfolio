@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventsListComponent } from './events-list/events-list.component';
 import { EventsCreateComponent } from './events-create/events-create.component';
 import { EventsPageComponent } from './events-page/events-page.component';
+import { EventsInfoComponent } from './events-inner/events-info/events-info.component';
+import { EventsPeopleComponent } from './events-inner/events-people/events-people.component';
+import { EventsPlaceComponent } from './events-inner/events-place/events-place.component';
+import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.component';
 
 
 
@@ -34,7 +38,11 @@ import { EventsPageComponent } from './events-page/events-page.component';
   declarations: [
     EventsListComponent,
     EventsCreateComponent,
-    EventsPageComponent
+    EventsPageComponent,
+    EventsInfoComponent,
+    EventsPeopleComponent,
+    EventsPlaceComponent,
+    EventsPhotoComponent
   ]
 
 })

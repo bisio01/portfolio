@@ -7,6 +7,7 @@ import { EventsRoutes } from './events/events.routes';
 import { PlacesRoutes } from './places/places.routes';
 import { PeopleRoutes } from './people/people.routes';
 import { NotificationRoutes } from './notification/notification.routes';
+import { LandingComponent } from './landing/landing.component';
 
 
 export const ROUTES:RouterModule = [
@@ -29,5 +30,9 @@ export const ROUTES:RouterModule = [
       ...NotificationRoutes
     ]
   },
+  {
+    path: 'landing',
+    component: LandingComponent,
+  }
 
 ];

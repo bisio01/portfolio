@@ -18,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { EventsModule } from './events/events.module';
 import { NotificationComponent } from './notification/notification.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 
@@ -26,7 +27,8 @@ import { NotificationComponent } from './notification/notification.component';
   declarations: [
     AppComponent,
     DashboardComponent,
-    NotificationComponent
+    NotificationComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
