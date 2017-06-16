@@ -19,6 +19,7 @@ import { UserModule } from './user/user.module';
 import { EventsModule } from './events/events.module';
 import { NotificationComponent } from './notification/notification.component';
 import { LandingComponent } from './landing/landing.component';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 
 
 
@@ -43,7 +44,8 @@ import { LandingComponent } from './landing/landing.component';
     PeopleModule,
     AuthModule,
     UserModule,
-    EventsModule
+    EventsModule,
+    Angular2ImageGalleryModule
   ],
   providers: [
     AuthenticationService,

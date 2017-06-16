@@ -12,7 +12,7 @@ export const UserRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'page',
+        redirectTo: 'page/friends',
         pathMatch: 'prefix'
       },
       {

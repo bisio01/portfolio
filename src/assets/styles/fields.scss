@@ -159,3 +159,13 @@
 
 }
 
+.select-wrapper span.caret {
+  right: 7px;
+  top: 50%;
+  transform: translate(-50%, 0);
+  font-size: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #949494;
+}
+

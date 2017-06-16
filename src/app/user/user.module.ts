@@ -14,6 +14,7 @@ import { UserFriendsComponent } from './user-inner/user-friends/user-friends.com
 import { UserPhotosComponent } from './user-inner/user-photos/user-photos.component';
 import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
 import { MdTabsModule } from '@angular/material';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 
 
 
@@ -29,7 +30,7 @@ import { MdTabsModule } from '@angular/material';
     MaterializeModule.forRoot(),
     BrowserAnimationsModule,
     MdTabsModule,
-
+    Angular2ImageGalleryModule
   ],
   declarations: [
     UserPageComponent,
