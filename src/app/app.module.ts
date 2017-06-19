@@ -20,6 +20,7 @@ import { EventsModule } from './events/events.module';
 import { NotificationComponent } from './notification/notification.component';
 import { LandingComponent } from './landing/landing.component';
 import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
+import { EventsService } from './events/service/events.service';
 
 
 
@@ -50,6 +51,7 @@ import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
   providers: [
     AuthenticationService,
     UserService,
+    EventsService
   ],
   bootstrap: [AppComponent]
 })

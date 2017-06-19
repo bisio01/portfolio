@@ -42,7 +42,7 @@ import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.c
     EventsInfoComponent,
     EventsPeopleComponent,
     EventsPlaceComponent,
-    EventsPhotoComponent
+    EventsPhotoComponent,
   ]
 
 })
