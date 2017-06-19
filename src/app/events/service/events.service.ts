@@ -76,16 +76,6 @@ export class EventsService {
     this.updateStore();
   }
 
-  /*remove(event: Events) {
-   this.events.splice(this.events.indexOf(event), 1);
-   this.updateStore();
-   }*/
-
-  /*  public getData() {
-   return this._eventData;
-
-   }*/
-
 
 }
 

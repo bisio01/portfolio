@@ -8,9 +8,6 @@ import { EventsService } from '../service/events.service';
 })
 
 
-
-
-
 export class EventsListComponent implements OnInit {
 
   public events: EventsService;
@@ -18,11 +15,7 @@ export class EventsListComponent implements OnInit {
 
 
   constructor(public eventsService: EventsService) {
-   this.events = eventsService;
-
-    console.log(this.events);
-
-   // this.userLocal = JSON.parse(localStorage.getItem('events'));
+    this.events = eventsService;
 
   }
 

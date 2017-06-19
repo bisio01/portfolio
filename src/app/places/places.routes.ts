@@ -32,19 +32,19 @@ export const PlacesRoutes: Routes = [
             component: <any>PlacesPageComponent,
             children: [
               {
-                path: 'events',
+                path: 'contact',
                 component: <any>PlacesContactComponent,
               },
               {
-                path: 'friends',
+                path: 'info',
                 component: <any>PlacesInfoComponent,
               },
               {
-                path: 'photos',
+                path: 'people',
                 component: <any>PlacesPeopleComponent,
               },
               {
-                path: 'places',
+                path: 'photo',
                 component: <any>PlacesPhotoComponent,
               },
             ]

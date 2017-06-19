@@ -72,7 +72,11 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
     let eventVal = this.eventForm.value;
 
     this.eventsService.create(eventVal);
+    this._router.navigate(['/events/list']);
   }
+
+
+
 
 
   ngOnInit() {
