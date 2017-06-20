@@ -1,7 +1,11 @@
+import * as _ from "lodash";
 import { Injectable }    from '@angular/core';
+
 
 @Injectable()
 export class EventsService {
+
+  currentEventId:number;
 
   public events: any = [
     {
@@ -74,6 +78,42 @@ export class EventsService {
     this.events.push({...data, id: Date.now()});
     console.log(this.events, 'events');
     this.updateStore();
+  }
+
+  public getById(id: number) {
+    return new Promise((resolve, reject) => {
+      const f = this.events.filter(el => el.id == id);
+      if(f.length){
+        this.currentEventId = id;
+        resolve(f[0]);
+      }else {
+        reject();
+      }
+
+    })
+  }
+
+  public getCurrentEvent() {
+    return new Promise((resolve, reject) => {
+      const f = this.events.filter(el => el.id == this.currentEventId);
+      if(f.length){
+        resolve(f[0]);
+      }else {
+        reject();
+      }
+
+    })
+  }
+
+  public getList() {
+    return new Promise((resolve, reject)=> {
+      if(this.events) {
+        resolve(this.events)
+      } else {
+        reject();
+      }
+
+    })
   }
 
 

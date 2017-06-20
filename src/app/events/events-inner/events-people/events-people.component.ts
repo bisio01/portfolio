@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
+import { EventsInnerBaseComponent } from '../events.inner.base.component';
 
 @Component({
   selector: 'app-events-people',
   templateUrl: './events-people.component.html',
   styleUrls: ['./events-people.component.css']
 })
-export class EventsPeopleComponent implements OnInit {
+export class EventsPeopleComponent extends EventsInnerBaseComponent{
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public injector: Injector) {
+    super(injector);
   }
 
 }

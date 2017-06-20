@@ -10,12 +10,12 @@ import { EventsService } from '../service/events.service';
 
 export class EventsListComponent implements OnInit {
 
-  public events: EventsService;
-  public eventLocal;
-
+  public events: any[] = [];
 
   constructor(public eventsService: EventsService) {
-    this.events = eventsService;
+    eventsService.getList().then((res: any[])=>{
+      this.events = res;
+    });
 
   }
 

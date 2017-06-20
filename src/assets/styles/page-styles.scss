@@ -20,3 +20,32 @@
     display: inline-block;
   }
 }
+
+.inner {
+  &-title {
+    font-size: 21px;
+    font-weight: 300;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dadada;
+  }
+  &-description {
+    margin-bottom: 25px;
+    line-height: 24px;
+  }
+}
+
+.websites-list {
+  li {
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 10px;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

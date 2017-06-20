@@ -1,3 +1,107 @@
-<p>
-  events-page works!
-</p>
+<div class="user-wrapper">
+  <div class="user-main-bg-wrapper">
+    <img class="user-main-bg" src="assets/img/cover.jpg"/>
+  </div>
+  <div class="user-content">
+    <div class="user-header">
+      <div class="user-img-wrapper">
+        <img class="user-img" src="assets/img/img-person.png"/>
+      </div>
+      <div class="user-container">
+        <h4 class="user-name">{{currentEvent.title}}</h4>
+        <div class="user-info">
+          <span class="user-date">
+          <i class="material-icons">today</i>
+            16 august 1984
+          </span>
+          <span class="user-city">
+           <i class="material-icons">place</i>
+            Kharkov
+          </span>
+
+        </div>
+        <div class="user-skills">
+          <ul class="user-skills-list">
+            <li>
+              <button type="button">
+                <i class="material-icons">directions_bike</i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i class="material-icons">directions_bike</i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i class="material-icons">directions_bike</i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i class="material-icons">directions_bike</i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i class="material-icons">directions_bike</i>
+                Football
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <i class="material-icons">directions_bike</i>
+                Football
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="profile-info-wrapper">
+        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/info']">
+          <span class="profile-info-number m-profile-info-number">
+            <i class="material-icons">info_outline</i>
+          </span>
+          <span class="profile-info-name">
+            Info
+          </span>
+        </button>
+        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/people']">
+          <span class="profile-info-number m-profile-info-number">
+            <i class="material-icons">people</i>
+          </span>
+          <span class="profile-info-name">
+            People
+          </span>
+        </button>
+        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/contact']">
+          <span class="profile-info-number m-profile-info-number">
+            <i class="material-icons">place</i>
+          </span>
+          <span class="profile-info-name">
+            Contact
+          </span>
+        </button>
+        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/photos']">
+          <span class="profile-info-number m-profile-info-number">
+           <i class="material-icons">photo_camera</i>
+          </span>
+          <span class="profile-info-name">
+            Photo
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="user-router-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
+
