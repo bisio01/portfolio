@@ -33,6 +33,7 @@
       position: relative;
       height: 215px;
       margin-bottom: 45px;
+      width: 100%;
       &:before {
         content: '';
         width: 70%;
@@ -75,7 +76,7 @@
 
 .logo-wrapper {
   display: flex;
-  padding-top: 15px;
+  padding-top: 40px;
   p {
     color: #fff;
     padding-left: 60px;
@@ -109,6 +110,17 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    &.events-section {
+      background-color: #eeeeee;
+      .landing-title-wrapper {
+        height: auto;
+      }
+      .landing-title {
+        color: #f4315a;
+        font-size: 100px;
+
+      }
+    }
   }
   &-footer {
     align-self: flex-end;
