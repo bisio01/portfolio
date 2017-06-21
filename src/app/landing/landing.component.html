@@ -1,45 +1,64 @@
 <div class="landing">
   <div class="landing-inner">
-    <section class="landing-section">
-      <div class="section-content">
+    <section class="landing-section main-section">
+      <div class="section-container">
         <div class="section-header">
           <div class="logo-wrapper">
             <a href="#" class="landing-logo"></a>
-            <p>sport<span>without</span> borders</p>
+            <p>sport<br><span>without</span> borders</p>
           </div>
         </div>
         <div class="section-footer">
-          <h1 class="landing-title">Sport</h1>
-          <h2 class="landing-sub-title">is connecting</h2>
+          <div class="landing-title-wrapper">
+            <h1 class="landing-title"><b>Sport</b>
+              <span class="landing-sub-title">is connecting</span>
+            </h1>
+          </div>
+
           <div class="landing-search">
             <div class="search-tabs-head">
               <div class="search-head-item">
                 Events
               </div>
-              <div class="search-head-item">
+              <div class="search-head-item m-head-item">
                 Partners
               </div>
             </div>
             <div class="search-tab-content">
-              <div class="search-content-item">
-                <form>
+              <form>
+                <div class="search-content-item">
+
                   <div class="search-input">
                     <input type="text">
                   </div>
-                </form>
-              </div>
-            </div>
+                  <div class="search-input">
+                    <input type="text">
+                  </div>
+                  <button type="button" class="btn">Search</button>
 
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-
     </section>
     <section class="landing-section">
       <div class="section-content">
+        <div class="widget-item">
+          <div class="widget-icon"></div>
+          <h3 class="widget-title">Gum section</h3>
+        </div>
+        <div class="widget-item">
+          <div class="widget-icon"></div>
+          <h3 class="widget-title">For child</h3>
+        </div>
+        <div class="widget-item">
+          <div class="widget-icon"></div>
+          <h3 class="widget-title">Open space</h3>
+        </div>
       </div>
     </section>
-
   </div>
   <div class="login-wrapper">
     <form [formGroup]="rForm" (ngSubmit)="login()">
