@@ -9,3 +9,15 @@
   font-style: normal;
   font-stretch: normal;
 }
+
+@font-face {
+  font-family:'UniSansThinCaps';
+  src: url('/../../assets/fonts/UniThin/Uni Sans Thin Caps Regular.eot');
+  src: url('/../../assets/fonts/UniThin/Uni Sans Thin Caps Regular.eot?#iefix') format('embedded-opentype'),
+  url('/../../assets/fonts/UniThin/Uni Sans Thin Caps Regular.woff2') format('woff2'),
+  url('/../../assets/fonts/UniThin/Uni Sans Thin Caps Regular.woff') format('woff'),
+  url('/../../assets/fonts/UniThin/Uni Sans Thin Caps Regular.svg#Uni Sans Thin Caps Regular') format('svg');
+  font-weight: 250;
+  font-style: normal;
+  font-stretch: normal;
+}

@@ -1,0 +1,24 @@
+.people-section {
+  background: #6d5cae;
+  .m-title-color {
+    color: #fff;
+  }
+  .team-img-wrapper img {
+    width: 100%;
+  }
+  .team-name ,
+  .team,
+  i{
+    color: #fff;
+  }
+  .team {
+    margin-bottom: 4rem;
+  }
+  .team-name {
+    display: block;
+    &:hover {
+      border-bottom: 2px solid transparent;
+    }
+  }
+
+}

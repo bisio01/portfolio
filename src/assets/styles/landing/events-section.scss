@@ -1,0 +1,51 @@
+.landing-timeline {
+  &-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1000px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: #d7d7d7;
+      left: 50%;
+      margin-left: -2px;
+    }
+  }
+  &-block {
+    margin: 4em 0;
+    position: relative;
+    .event {
+      margin-left: 0;
+      width: 460px;
+      position: relative;
+      background: #fafafa;
+      padding: 0;
+      border: 0;
+    }
+    .event-info span {
+      margin-bottom: 5px;
+    }
+    .event-description-wrapper {
+      padding: 10px 10px 10px 0;
+
+    }
+    .event-name {
+      font-size: 18px;
+    }
+    .event-date {
+      font-size: 14px;
+    }
+    .timeline-point.small {
+      left: 50%;
+      margin-left: -7px;
+    }
+    &:nth-child(2n) {
+      .event {
+        float: right;
+      }
+    }
+  }
+}

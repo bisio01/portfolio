@@ -11,6 +11,10 @@
     &.main-section {
       background: url("/../../assets/img/landing/landing-main-bg.jpg") center center  no-repeat;
       background-size: cover;
+      .section-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
   }
   &-logo {
@@ -72,6 +76,21 @@
     margin-left: 170px;
     margin-bottom: 120px;
   }
+  &-content {
+    padding-left: 170px;
+    padding-right: 130px;
+    &-title {
+      font-family: 'UniSansThinCaps', sans-serif;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      height: 48px;
+      line-height: 48px;
+      font-size: 18px;
+      padding: 0 50px;
+    }
+  }
 }
 
 .logo-wrapper {
@@ -108,18 +127,8 @@
     height: 100vh;
     min-height: 700px;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    &.events-section {
-      background-color: #eeeeee;
-      .landing-title-wrapper {
-        height: auto;
-      }
-      .landing-title {
-        color: #f4315a;
-        font-size: 100px;
-
-      }
+    &.notification-section {
+      background: #fafafa;
     }
   }
   &-footer {
@@ -127,4 +136,24 @@
     width: 100%;
 
   }
+
 }
+
+.m-title-wrapper-height {
+  height: auto;
+  padding-bottom: 25px;
+}
+
+.m-title-color {
+  color: #f4315a;
+  font-size: 100px;
+  text-shadow: none;
+}
+
+.m-section-padding {
+  padding-top: 80px;
+}
+.m-content-title {
+  color: #fff;
+}
+
