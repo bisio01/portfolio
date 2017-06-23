@@ -1,0 +1,49 @@
+
+.it-work-section {
+  background-color: #eeeeee;
+  .landing-timeline {
+    &-block {
+      .timeline-block-inner {
+        margin-left: 0;
+        width: 45%;
+        position: relative;
+        padding: 0;
+        border: 0;
+        text-align: right;
+        margin-top: -90px;
+        p {
+          width: 70%;
+          line-height: 21px;
+          float: right;
+        }
+      }
+      &:nth-child(2n) {
+        .timeline-block-inner {
+          float: right;
+          text-align: left;
+          p {
+            float: left;
+          }
+        }
+      }
+      &:first-child {
+        .timeline-block-inner {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.timeline-block-img {
+  margin-bottom: 20px;
+  img {
+    width: 130px;
+  }
+}
+
+.timeline-block-title {
+  font-size: 21px;
+  margin-bottom: 10px;
+}

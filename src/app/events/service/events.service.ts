@@ -66,7 +66,12 @@ export class EventsService {
   ];
 
   constructor() {
-    this.events = JSON.parse(localStorage.getItem('events') || '[]');
+    if(!!localStorage.getItem('events')){
+      this.events = JSON.parse(localStorage.getItem('events') || '[]');
+    }
+
+    this.updateStore();
+    console.log('constructor',this.events);
   }
 
   private updateStore() {

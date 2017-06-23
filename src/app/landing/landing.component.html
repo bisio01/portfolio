@@ -150,7 +150,7 @@
     <section class="landing-section">
       <div class="section-container notification-section m-section-padding">
         <div class="landing-title-wrapper m-title-wrapper-height">
-          <h2 class="landing-title m-title-color">Notification</h2>
+          <h2 class="landing-title m-title-color">Your timeline</h2>
         </div>
         <div class="landing-content">
           <h3 class="landing-content-title">Check your notification</h3>
@@ -339,9 +339,7 @@
           </div>
 
         </div>
-
       </div>
-
     </section>
     <section class="landing-section">
       <div class="section-container people-section m-section-padding">
@@ -545,15 +543,63 @@
       </div>
     </section>
     <section class="landing-section">
-      <div class="section-container m-section-padding">
+      <div class="section-container it-work-section m-section-padding">
         <div class="landing-title-wrapper m-title-wrapper-height">
           <h2 class="landing-title m-title-color">How it works</h2>
         </div>
         <div class="landing-content">
           <h3 class="landing-content-title">Open your skills with swibo</h3>
           <div class="landing-timeline-wrapper clearfix">
-            <div class="landing-timeline-block">
+            <div class="landing-timeline-block clearfix">
               <div class="timeline-point small"></div>
+              <div class="timeline-block-inner">
+                <div class="timeline-block-img">
+                  <img src="assets/img/landing/step-1.png">
+                </div>
+                <h5 class="timeline-block-title">Join to Swibo
+                </h5>
+                <p>Plan your workouts
+                  Find the best locations for classes
+                  Create your routes</p>
+              </div>
+
+            </div>
+            <div class="landing-timeline-block clearfix">
+              <div class="timeline-point small"></div>
+              <div class="timeline-block-inner">
+                <div class="timeline-block-img">
+                  <img src="assets/img/landing/1-step.png">
+                </div>
+                <h5 class="timeline-block-title">Participate in events
+                </h5>
+                <p>Win in competitions
+                  Participate in team meetings
+                  Create your events</p>
+              </div>
+            </div>
+            <div class="landing-timeline-block clearfix">
+              <div class="timeline-point small"></div>
+              <div class="timeline-block-inner">
+                <div class="timeline-block-img">
+                  <img src="assets/img/landing/step-3.png">
+                </div>
+                <h5 class="timeline-block-title">Find friends
+                </h5>
+                <p>Find partners for sports
+                  Create your team
+                  Participate in team meetings</p>
+              </div>
+            </div>
+            <div class="landing-timeline-block clearfix">
+              <div class="timeline-point small"></div>
+              <div class="timeline-block-inner">
+                <div class="timeline-block-img">
+                  <img src="assets/img/landing/step-4.png">
+                </div>
+                <h5 class="timeline-block-title">Share your achievement</h5>
+                <p>Tell us about your achievements
+                  Share plans and routes</p>
+              </div>
             </div>
           </div>
         </div>
@@ -561,12 +607,13 @@
     </section>
   </div>
   <div class="login-wrapper">
-    <form [formGroup]="rForm" (ngSubmit)="login()">
-      <div class="form-header">
-        <h3>Login</h3>
-        <p>Sign in to your account</p>
-      </div>
-      <div class="form-container">
+
+    <div class="form-header">
+      <h3>Login</h3>
+      <p>Sign in to your account</p>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="rForm" (ngSubmit)="login()">
         <div class="form-group">
           <label class="field-label">Email</label>
           <mz-input-container>
@@ -601,11 +648,29 @@
         <button class="btn light-blue waves-effect waves-light" value="" [disabled]="!rForm.valid">Submit Form</button>
         <button class="btn green accent-4 waves-effect waves-light" value="" routerLink="/registration">Registration
         </button>
+      </form>
+      <div class="login-share">
+        Connect with Facebook
+        <button class="facebook-button"></button>
+      </div>
+      <div class="login-statistic">
+        <h4 class="statistic-title">Events</h4>
+        <span class="statistic-number">6331</span>
+      </div>
+      <div class="login-statistic">
+        <h4 class="statistic-title">Place</h4>
+        <span class="statistic-number">28311</span>
+      </div>
+      <div class="login-statistic">
+        <h4 class="statistic-title">People</h4>
+        <span class="statistic-number">108412</span>
+      </div>
 
-      </div>
-      <div class="form-footer">
-        <p>&copy; Swibo 2017. All rights reserved.</p>
-      </div>
-    </form>
+
+    </div>
+    <div class="form-footer">
+      <p>&copy; Swibo 2017. All rights reserved.</p>
+    </div>
+
   </div>
 </div>

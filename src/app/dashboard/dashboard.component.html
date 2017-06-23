@@ -227,7 +227,7 @@
         </div>
       </div>
       <div class="team-footer">
-        <button mz-button class="yellow darken-1">
+        <button mz-button class="yellow darken-1" [routerLink]="['/people']">
           More friends
         </button>
       </div>
@@ -243,16 +243,16 @@
       <mz-navbar-item>
         <ul class="navigation">
           <li>
-            <a [routerLink]="['/user']">Profile</a>
+            <a [routerLink]="['/user']" [routerLinkActive]="['active']">Profile</a>
           </li>
           <li>
-            <a [routerLink]="['/events']">Events</a>
+            <a [routerLink]="['/events']" [routerLinkActive]="['active']">Events</a>
           </li>
           <li>
-            <a [routerLink]="['/places']">Places</a>
+            <a [routerLink]="['/places']" [routerLinkActive]="['active']">Places</a>
           </li>
           <li>
-            <a [routerLink]="['/people']">People</a>
+            <a [routerLink]="['/people']" [routerLinkActive]="['active']">People</a>
           </li>
         </ul>
       </mz-navbar-item>

@@ -19,6 +19,9 @@
   }
   &-description {
     margin-bottom: 15px;
+    &-wrapper {
+      width: 100%;
+    }
   }
   &-author {
     font-style: italic;
@@ -27,6 +30,8 @@
   }
   &-info {
     margin: auto;
+    width: 20%;
+    padding-right: 30px;
     span {
       display: flex;
       align-items: center;

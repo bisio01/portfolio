@@ -36,7 +36,7 @@
       padding-left: 170px;
       position: relative;
       height: 215px;
-      margin-bottom: 45px;
+      margin-bottom: 30px;
       width: 100%;
       &:before {
         content: '';
@@ -79,6 +79,7 @@
   &-content {
     padding-left: 170px;
     padding-right: 130px;
+    height: 75vh;
     &-title {
       font-family: 'UniSansThinCaps', sans-serif;
       font-size: 24px;
@@ -146,12 +147,12 @@
 
 .m-title-color {
   color: #f4315a;
-  font-size: 100px;
+  font-size: 4vw;
   text-shadow: none;
 }
 
 .m-section-padding {
-  padding-top: 80px;
+  padding-top: 50px;
 }
 .m-content-title {
   color: #fff;

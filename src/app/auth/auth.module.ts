@@ -8,6 +8,7 @@ import { ResetPassComponent } from './reset-pass/reset-pass.component';
 import { AuthenticationService } from './service/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterializeModule } from 'ng2-materialize';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,6 +21,7 @@ import { MaterializeModule } from 'ng2-materialize';
     FormsModule,
     ReactiveFormsModule,
     MaterializeModule.forRoot(),
+    RouterModule,
   ],
   declarations: [
     LoginComponent,

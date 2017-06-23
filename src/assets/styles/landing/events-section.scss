@@ -15,15 +15,18 @@
     }
   }
   &-block {
-    margin: 4em 0;
+    margin: 5em 0;
     position: relative;
     .event {
       margin-left: 0;
-      width: 460px;
+      width: 45%;
       position: relative;
       background: #fafafa;
       padding: 0;
       border: 0;
+    }
+    .event-info {
+      width: 100%;
     }
     .event-info span {
       margin-bottom: 5px;
