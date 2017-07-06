@@ -72,14 +72,7 @@ export class PeopleService {
     if (!!localStorage.getItem('people')) {
       this.people = JSON.parse(localStorage.getItem('people') || '[]');
     }
-
     this.updateStore();
-    console.log('constructor', this.people);
-  }
-
-  private updateStore() {
-    localStorage.setItem('people', JSON.stringify(this.people));
-    console.log(localStorage, 'local')
   }
 
 
@@ -87,11 +80,11 @@ export class PeopleService {
     return new Promise((resolve, reject) => {
       if (this.people) {
         let arr = [];
-        if(filter === 'friends'){
-          arr = this.people.filter(el =>  !!el.isFriend )
-        }else if(filter === 'notfriends'){
-          arr = this.people.filter(el =>  !(!!el.isFriend) )
-        }else{
+        if (filter === 'friends') {
+          arr = this.people.filter(el => !!el.isFriend)
+        } else if (filter === 'notfriends') {
+          arr = this.people.filter(el => !(!!el.isFriend))
+        } else {
           arr = this.people;
         }
         resolve(arr)
@@ -104,12 +97,31 @@ export class PeopleService {
 
 
   public addToFriend(id) {
-    return new Promise((resolve, reject)=>{
-      this.people = this.people.map(el=> {
+    return new Promise((resolve, reject) => {
+      this.people = this.people.map(el => {
         return Object.assign({}, el, {isFriend: el.isFriend ? true : el.id == id})
       });
+      this.updateStore();
       resolve(true)
     });
+
+  }
+
+  public deleteFriend(id) {
+    return new Promise((resolve, reject) => {
+      this.people = this.people.map(el => {
+        return Object.assign({}, el, {isFriend: el.id == id ? false : el.isFriend});
+
+      });
+      this.updateStore();
+      resolve(true);
+    });
+
+  }
+
+  public updateStore() {
+    localStorage.setItem('people', JSON.stringify(this.people));
+    console.log(localStorage, 'local')
   }
 
 }

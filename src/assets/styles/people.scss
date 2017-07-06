@@ -59,7 +59,7 @@
     button {
       width: 100%;
       text-align: center;
-      height: 50%;
+      height: 100%;
       transition: all 0.4s;
       cursor: pointer;
       i {
@@ -76,6 +76,11 @@
         &:hover {
           background: rgba(230, 77, 120, 0.9);
         }
+      }
+    }
+    &.m-half-button {
+      button {
+        height: 50%;
       }
     }
   }

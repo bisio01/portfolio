@@ -20,13 +20,18 @@ export class PeopleListComponent implements OnInit {
     });
 
     this.peopleService.getList('friends').then((res: any[])=>{
-      console.log('dsfds', res);
       this.peopleFriends = res;
     });
   }
 
   addToFriend(id){
     this.peopleService.addToFriend(id).then(()=>{
+      this.loadData();
+    });
+  }
+
+  deleteFriend(id){
+    this.peopleService.deleteFriend(id).then(()=>{
       this.loadData();
     });
   }

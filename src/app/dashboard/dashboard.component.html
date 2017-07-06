@@ -15,7 +15,7 @@
                [icon]="'account'"
                [size]="'24px'">
             </i>
-            Christopher Van Sanders
+            {{userLocal?.firstName}} {{userLocal?.lastName}}
           </span>
           <span class="profile-birthday">
             <i class="login-icon" mz-icon-mdi
@@ -31,7 +31,7 @@
                [icon]="'map-marker'"
                [size]="'24px'">
             </i>
-            Kharkov
+          {{userLocal?.country}} <span *ngIf="userLocal?.country">,</span> {{userLocal?.city}}
           </span>
         </div>
       </div>
@@ -40,7 +40,7 @@
   <div class="aside-content">
     <div class="aside-profile-info">
       <div class="profile-info-wrapper">
-        <button type="button" class="profile-info-item">
+        <button type="button" class="profile-info-item" [routerLink]="['/user/page/friends']">
           <span class="profile-info-number">
             11
           </span>
@@ -48,7 +48,7 @@
             Friends
           </span>
         </button>
-        <button type="button" class="profile-info-item">
+        <button type="button" class="profile-info-item" [routerLink]="['/user/page/places']">
           <span class="profile-info-number">
             23
           </span>
@@ -56,7 +56,7 @@
             Places
           </span>
         </button>
-        <button type="button" class="profile-info-item">
+        <button type="button" class="profile-info-item" [routerLink]="['/user/page/events']">
           <span class="profile-info-number">
             08
           </span>
@@ -64,7 +64,7 @@
             Events
           </span>
         </button>
-        <button type="button" class="profile-info-item">
+        <button type="button" class="profile-info-item" [routerLink]="['/user/page/photos']">
           <span class="profile-info-number">
             44
           </span>

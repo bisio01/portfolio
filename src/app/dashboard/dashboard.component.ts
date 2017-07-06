@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
+import { UserService } from '../user/service/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,17 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   notification: number;
 
-  constructor() { }
+  public user;
+
+  public userLocal;
+
+
+  constructor(public userService: UserService) {
+    this.user = this.userService.getData();
+
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
+
+  }
 
   notificationToggle(newValue: number) {
     if (this.notification === newValue) {

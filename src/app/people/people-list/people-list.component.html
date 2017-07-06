@@ -11,7 +11,6 @@
                   <img src="assets/img/team-img.png">
                   <div class="team-control">
                     <button type="button" (click)="addToFriend(people.id)" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
                   </div>
                 </div>
               </div>
@@ -21,25 +20,20 @@
               </div>
             </div>
           </div>
-
-
         </div>
-
       </div>
     </md-tab>
     <md-tab label="My friends">
       <div class="team-content">
 
         <div class="row">
-
           <div *ngFor="let people of peopleFriends" class="col s2">
             <div class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">
                   <img src="assets/img/team-img.png">
                   <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
+                    <button type="button" class="team-delete" (click)="deleteFriend(people.id)"><i class="material-icons">close</i></button>
                   </div>
                 </div>
               </div>
@@ -55,13 +49,12 @@
     <md-tab label="Recommended">
       <div class="team-content">
         <div class="row">
-
           <div *ngFor="let people of peopleService.people" class="col s2">
             <div class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">
                   <img src="assets/img/team-img.png">
-                  <div class="team-control">
+                  <div class="team-control m-half-button">
                     <button type="button" class="team-accept"><i class="material-icons">check</i></button>
                     <button type="button" class="team-delete"><i class="material-icons">close</i></button>
                   </div>
