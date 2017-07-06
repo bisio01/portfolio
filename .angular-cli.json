@@ -21,11 +21,16 @@
       "styles": [
         "../node_modules/materialize-css/dist/css/materialize.css",
         "../node_modules/mdi/css/materialdesignicons.css",
+        "../node_modules/photoswipe/dist/photoswipe.css",
+        "../node_modules/photoswipe/dist/default-skin/default-skin.css",
         "styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/materialize-css/dist/js/materialize.js"
+        "../node_modules/materialize-css/dist/js/materialize.js",
+        "../node_modules/photoswipe/dist/photoswipe.js",
+        "../node_modules/photoswipe/dist/photoswipe-ui-default.min.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

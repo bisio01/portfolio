@@ -63,7 +63,7 @@
 
       </div>
       <div class="profile-info-wrapper">
-        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/info']">
+        <button type="button" class="profile-info-item" [routerLink]="['/events', currentEvent.id,'info']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">info_outline</i>
           </span>
@@ -71,7 +71,7 @@
             Info
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/people']">
+        <button type="button" class="profile-info-item" [routerLink]="['/events', currentEvent.id, 'people']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">people</i>
           </span>
@@ -79,7 +79,7 @@
             People
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/contact']">
+        <button type="button" class="profile-info-item" [routerLink]="['/events', currentEvent.id, 'contact']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">place</i>
           </span>
@@ -87,7 +87,7 @@
             Contact
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/events/page/' + currentEvent.id + '/photos']">
+        <button type="button" class="profile-info-item" [routerLink]="['/events', currentEvent.id, 'photos']">
           <span class="profile-info-number m-profile-info-number">
            <i class="material-icons">photo_camera</i>
           </span>

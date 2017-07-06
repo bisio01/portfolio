@@ -35,7 +35,7 @@ export const EventsRoutes: Routes = [
         ]
       },
       {
-        path: 'page/:id',
+        path: ':id',
         component: EventsPageComponent,
         children: [
           {

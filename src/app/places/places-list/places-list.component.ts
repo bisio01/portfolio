@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
+import { PlacesService } from '../service/places.service';
 
 @Component({
   selector: 'app-places-list',
@@ -11,7 +12,14 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
 })
 export class PlacesListComponent implements OnInit {
 
-  constructor() { }
+  public places: any[] = [];
+
+  constructor(public placesService: PlacesService) {
+    placesService.getList().then((res: any[])=>{
+      this.places = res;
+    });
+
+  }
 
   ngOnInit() {
   }

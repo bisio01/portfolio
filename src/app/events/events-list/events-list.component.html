@@ -6,7 +6,7 @@
   <md-tab label="Recommended events">
 
       <div *ngFor="let event of eventsService.events">
-        <div [routerLink]="['/events/page', event.id]" class="event">
+        <div [routerLink]="['/events', event.id, 'info']" class="event">
           <div class="event-img-wrapper">
             <img src="assets/img/events-img.jpg"/>
           </div>
@@ -34,7 +34,7 @@
   </md-tab>
   <md-tab label="All events">
     <div *ngFor="let event of eventsService.events">
-      <div [routerLink]="['/events/page', event.id]" class="event">
+      <div [routerLink]="['/events', event.id,  'info']" class="event">
         <div class="event-img-wrapper">
           <img src="assets/img/events-img.jpg"/>
         </div>

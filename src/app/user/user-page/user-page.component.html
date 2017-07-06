@@ -16,7 +16,7 @@
           </span>
           <span class="user-city">
            <i class="material-icons">place</i>
-            Kharkov
+            {{userLocal?.country}} <span *ngIf="userLocal?.country">,</span> {{userLocal?.city}}
           </span>
           <button type="button" class="flex-pull-right" mz-button [routerLink]="['/user/update']">Info update</button>
         </div>

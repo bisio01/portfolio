@@ -21,6 +21,8 @@ import { NotificationComponent } from './notification/notification.component';
 import { LandingComponent } from './landing/landing.component';
 import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 import { EventsService } from './events/service/events.service';
+import { PeopleService } from './people/service/people.service';
+import { PlacesService } from './places/service/places.service';
 
 
 
@@ -45,13 +47,14 @@ import { EventsService } from './events/service/events.service';
     PeopleModule,
     AuthModule,
     UserModule,
-    EventsModule,
-    Angular2ImageGalleryModule
+    EventsModule
   ],
   providers: [
     AuthenticationService,
     UserService,
-    EventsService
+    EventsService,
+    PeopleService,
+    PlacesService
   ],
   bootstrap: [AppComponent]
 })

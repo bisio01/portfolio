@@ -17,8 +17,20 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
   private linksArr: any;
   private _subscribers: Subscription[] = [];
 
+  public user;
+
+  public userLocal;
+
 
   constructor(public userService: UserService) {
+
+    this.user = this.userService.getData();
+
+    this.userLocal = JSON.parse(localStorage.getItem('user'));
+    if(this.userLocal) {
+      this.UserForm.patchValue(this.userLocal)
+    }
+
   }
 
   ngOnInit() {
@@ -26,6 +38,7 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
 
   firstName: string = '';
   lastName: string = '';
+  city: string = '';
 
   public UserForm: FormGroup = new FormGroup({
     firstName: new FormControl('', [
@@ -38,14 +51,22 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
       Validators.minLength(3),
       Validators.maxLength(24),
     ]),
+    country: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
+    city: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
     form_type: new FormControl(''),
   });
 
   public update() {
     let user = this.UserForm.value;
-
     this.userService.setData(user);
-
     localStorage.setItem('user', JSON.stringify(user));
 
   }
