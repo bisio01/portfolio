@@ -132,99 +132,24 @@
       </div>
       <div class="team-content">
         <div class="row">
-          <div class="col s4">
+          <div *ngFor="let people of peopleFriends" class="col s4">
             <div class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">
                   <img src="assets/img/team-img.png">
                   <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
+                    <button type="button" class="team-delete" (click)="deleteFriend(people.id)"><i class="material-icons">close</i></button>
                   </div>
                 </div>
               </div>
-              <a href="#" class="team-name">Erin Stewart</a>
-              <span class="team-city"><i class="material-icons">place</i>Kharkov</span>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="team">
-              <div class="team-img-wrapper">
-                <div class="team-control-wrapper">
-                  <img src="assets/img/team-img.png">
-                  <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
-                  </div>
-                </div>
+              <div class="team-content">
+                <a href="#" class="team-name">{{people.name}}</a>
+                <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
               </div>
-              <a href="#" class="team-name">Erin Stewart</a>
-              <span class="team-city"><i class="material-icons">place</i>Kharkov</span>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="team">
-              <div class="team-img-wrapper">
-                <div class="team-control-wrapper">
-                  <img src="assets/img/team-img.png">
-                  <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
-                  </div>
-                </div>
-              </div>
-              <a href="#" class="team-name">Erin Stewart</a>
-              <span class="team-city"><i class="material-icons">place</i>Kharkov</span>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col s4">
-            <div class="team">
-              <div class="team-img-wrapper">
-                <div class="team-control-wrapper">
-                  <img src="assets/img/team-img.png">
-                  <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
-                  </div>
-                </div>
-              </div>
-              <a href="#" class="team-name">Erin Stewart</a>
-              <span class="team-city"><i class="material-icons">place</i>Kharkov</span>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="team">
-              <div class="team-img-wrapper">
-                <div class="team-control-wrapper">
-                  <img src="assets/img/team-img.png">
-                  <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
-                  </div>
-                </div>
-              </div>
-              <a href="#" class="team-name">Erin Stewart</a>
-              <span class="team-city"><i class="material-icons">place</i>Kharkov</span>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="team">
-              <div class="team-img-wrapper">
-                <div class="team-control-wrapper">
-                  <img src="assets/img/team-img.png">
-                  <div class="team-control">
-                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
-                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
-                  </div>
-                </div>
-              </div>
-              <a href="#" class="team-name">Erin Stewart</a>
-              <span class="team-city"><i class="material-icons">place</i>Kharkov</span>
-            </div>
-          </div>
-        </div>
+
       </div>
       <div class="team-footer">
         <button mz-button class="yellow darken-1" [routerLink]="['/people']">

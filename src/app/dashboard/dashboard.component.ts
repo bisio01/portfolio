@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { UserService } from '../user/service/user.service';
+import { PeopleService } from '../people/service/people.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,12 +17,22 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   public userLocal;
 
+  public people: any[] = [];
 
-  constructor(public userService: UserService) {
+  public peopleFriends: any[] = [];
+
+  constructor(public userService: UserService,
+              public peopleService: PeopleService) {
     this.user = this.userService.getData();
 
     this.userLocal = JSON.parse(localStorage.getItem('user'));
+    this.loadData();
+  }
 
+  loadData(){
+    this.peopleService.getList('friends').then((res: any[])=>{
+      this.peopleFriends = res;
+    });
   }
 
   notificationToggle(newValue: number) {
@@ -32,6 +43,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       this.notification = newValue;
     }
   }
+
+  deleteFriend(id){
+    this.peopleService.deleteFriend(id).then(()=>{
+      this.loadData();
+    });
+  }
+
+
 
   ngAfterViewInit() {
   }

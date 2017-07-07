@@ -15,5 +15,11 @@
     transform: translate(-50%, -50%);
     width: 100%;
   }
+  &-wrapper {
 
+    .row {
+      margin: 0 -0.75rem;
+    }
+  }
 }
+
