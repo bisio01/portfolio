@@ -19,10 +19,11 @@ import { UserModule } from './user/user.module';
 import { EventsModule } from './events/events.module';
 import { NotificationComponent } from './notification/notification.component';
 import { LandingComponent } from './landing/landing.component';
-import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 import { EventsService } from './events/service/events.service';
 import { PeopleService } from './people/service/people.service';
 import { PlacesService } from './places/service/places.service';
+import { SportListService } from './service/sport-list.service';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -32,7 +33,7 @@ import { PlacesService } from './places/service/places.service';
     AppComponent,
     DashboardComponent,
     NotificationComponent,
-    LandingComponent
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,15 +48,17 @@ import { PlacesService } from './places/service/places.service';
     PeopleModule,
     AuthModule,
     UserModule,
-    EventsModule
+    EventsModule,
+
   ],
   providers: [
     AuthenticationService,
     UserService,
     EventsService,
     PeopleService,
-    PlacesService
+    PlacesService,
+    SportListService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

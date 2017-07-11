@@ -86,3 +86,10 @@ button {
 .material-icons {
   color: #6c6c6c;
 }
+
+.delete-color {
+  background: rgba(230, 77, 120, 1);
+  &:hover {
+    background: lighten(#e64d78,15%);
+  }
+}

@@ -1,0 +1,50 @@
+/**
+ * Created by vladimirzinyak on 10.07.17.
+ */
+import * as _ from "lodash";
+import { Injectable }    from '@angular/core';
+
+
+@Injectable()
+export class SportListService {
+
+  public skills: any = [
+    {
+      id: '01',
+      name: 'Bike',
+      img: 'assets/img/sport-skills/ic_directions_bike_black_24px.svg'
+
+    },
+    {
+      id: '02',
+      name: 'Flash Mob',
+      img: 'assets/img/sport-skills/ic_directions_run_black_24px.svg'
+
+    },
+    {
+      id: '03',
+      name: 'Paint Battle',
+      img: 'assets/img/sport-skills/ic_palette_black_24px.svg'
+
+    }
+  ];
+
+  constructor() {
+    /*if(!!localStorage.getItem('sportSkills')){
+      this.sportSkills = JSON.parse(localStorage.getItem('sportSkills') || '[]');
+    }*/
+
+  }
+
+  public getList() {
+    return new Promise((resolve, reject)=> {
+      if(this.skills) {
+        resolve(this.skills)
+      } else {
+        reject();
+      }
+
+    })
+  }
+
+}

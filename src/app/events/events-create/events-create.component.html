@@ -5,7 +5,7 @@
       <div class="avatar">
         <i class="avatar-icon"></i>
       </div>
-      <button type="button" mz-button>Add kind of sport</button>
+      <button type="button" mz-button (click)="openDialog()">Add kind of sport</button>
       <p class="avatar-description">Add kind of sport</p>
     </div>
     <div class="profile-update-container">
@@ -51,7 +51,7 @@
           <div class="form-group">
             <label class="field-label">Date</label>
             <div class="form-datepicker">
-              <input [mdDatepicker]="myDatepicker">
+              <input [mdDatepicker]="myDatepicker" formControlName="date" >
               <button [mdDatepickerToggle]="myDatepicker"></button>
               <md-datepicker #myDatepicker></md-datepicker>
             </div>
@@ -61,7 +61,7 @@
           <div class="form-group">
             <label class="field-label">Hour</label>
             <mz-input-container>
-              <input type="text" mz-input>
+              <input type="text" mz-input formControlName="hour">
             </mz-input-container>
           </div>
         </div>
@@ -69,7 +69,7 @@
           <div class="form-group">
             <label class="field-label">Minute</label>
             <mz-input-container>
-              <input type="text" mz-input>
+              <input type="text" mz-input formControlName="minute">
             </mz-input-container>
           </div>
         </div>
@@ -111,7 +111,7 @@
             <label class="field-label">Add links</label>
             <mz-input-container>
               <i class="material-icons">link</i>
-              <input type="text" mz-input placeholder="https://...">
+              <input type="text" mz-input formControlName="link" placeholder="https://...">
             </mz-input-container>
           </div>
         </div>

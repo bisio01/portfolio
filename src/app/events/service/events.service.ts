@@ -1,8 +1,8 @@
 import * as _ from "lodash";
 import { Injectable }    from '@angular/core';
 
-
 @Injectable()
+
 export class EventsService {
 
   currentEventId:number;
@@ -16,8 +16,8 @@ export class EventsService {
       author: 'Sergiy Ivanenko',
       city: 'Kharkiv',
       time: '12:00',
-      people: '10'
-
+      people: '10',
+      join: true
     },
     {
       id: '02',
@@ -27,8 +27,8 @@ export class EventsService {
       author: 'Sergiy Ivanenko',
       city: 'Kharkiv',
       time: '12:00',
-      people: '10'
-
+      people: '10',
+      join: true
     },
     {
       id: '03',
@@ -69,15 +69,10 @@ export class EventsService {
     if(!!localStorage.getItem('events')){
       this.events = JSON.parse(localStorage.getItem('events') || '[]');
     }
-
     this.updateStore();
-    console.log('constructor',this.events);
   }
 
-  private updateStore() {
-    localStorage.setItem('events', JSON.stringify(this.events));
-    console.log(localStorage, 'local')
-  }
+
 
   public create(data: {}) {
     this.events.push({...data, id: Date.now()});
@@ -110,10 +105,18 @@ export class EventsService {
     })
   }
 
-  public getList() {
+  public getList(filter?: string) {
     return new Promise((resolve, reject)=> {
       if(this.events) {
-        resolve(this.events)
+        let arr = [];
+        if (filter === 'myEvents') {
+          arr = this.events.filter(el => !!el.join)
+        } else if (filter === 'events') {
+          arr = this.events.filter(el => !(!!el.join))
+        } else {
+          arr = this.events;
+        }
+        resolve(arr)
       } else {
         reject();
       }
@@ -121,6 +124,34 @@ export class EventsService {
     })
   }
 
+  public addEvent(id) {
+    return new Promise((resolve, reject) => {
+      this.events = this.events.map(el => {
+        return Object.assign({}, el, {
+          join: el.join ? true : el.id == id
+        })
+      });
+      this.updateStore();
+      resolve(true);
+    })
+  }
+
+  public exitEvent(id) {
+     return new Promise((resolve, reject) => {
+      this.events = this.events.map(el => {
+        return Object.assign({}, el,  {
+          join: el.id == id ? false : el.join
+        })
+      });
+       this.updateStore();
+       resolve(true)
+     })
+  }
+
+  public updateStore() {
+    localStorage.setItem('events', JSON.stringify(this.events));
+    console.log(this.events, 'local')
+  }
 
 }
 

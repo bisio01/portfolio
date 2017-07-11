@@ -1,7 +1,6 @@
 /**
  * Created by vladimirzinyak on 20.06.17.
  */
-
 import { Injectable }    from '@angular/core';
 
 @Injectable()
@@ -99,7 +98,9 @@ export class PeopleService {
   public addToFriend(id) {
     return new Promise((resolve, reject) => {
       this.people = this.people.map(el => {
-        return Object.assign({}, el, {isFriend: el.isFriend ? true : el.id == id})
+        return Object.assign({}, el, {
+          isFriend: el.isFriend ? true : el.id == id
+        })
       });
       this.updateStore();
       resolve(true)
@@ -110,7 +111,9 @@ export class PeopleService {
   public deleteFriend(id) {
     return new Promise((resolve, reject) => {
       this.people = this.people.map(el => {
-        return Object.assign({}, el, {isFriend: el.id == id ? false : el.isFriend});
+        return Object.assign({}, el, {
+          isFriend: el.id == id ? false : el.isFriend
+        });
 
       });
       this.updateStore();

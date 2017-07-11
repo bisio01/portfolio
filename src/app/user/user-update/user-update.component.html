@@ -50,51 +50,21 @@
           <div class="form-group">
             <label class="field-label">Day</label>
             <mz-select-container>
-              <select mz-select
-                      class="select-field">
-                <optgroup>
-                  <option class="left circle">1</option>
-                  <option class="left circle">2</option>
-                  <option class="left circle">3</option>
-                  <option class="left circle">4</option>
-                  <option class="left circle">5</option>
-                  <option class="left circle">6</option>
-                  <option class="left circle">7</option>
-                  <option class="left circle">8</option>
-                  <option class="left circle">9</option>
-                  <option class="left circle">10</option>
-                  <option class="left circle">11</option>
-                  <option class="left circle">12</option>
-                  <option class="left circle">13</option>
-                  <option class="left circle">14</option>
-                  <option class="left circle">15</option>
-                </optgroup>
-
+              <select mz-select class="select-field" formControlName="birthdayDay">
+                  <option class="left circle" *ngFor="let birthdayDay of birthdayDays">{{birthdayDay.id}}</option>
               </select>
             </mz-select-container>
+
           </div>
         </div>
         <div class="col s4">
           <div class="form-group">
             <label class="field-label">Month</label>
-            <mz-select-container>
-              <select mz-select
-                      class="select-field">
-                <optgroup>
-                  <option class="left circle">1</option>
-                  <option class="left circle">2</option>
-                  <option class="left circle">3</option>
-                  <option class="left circle">4</option>
-                  <option class="left circle">5</option>
-                  <option class="left circle">6</option>
-                  <option class="left circle">7</option>
-                  <option class="left circle">8</option>
-                  <option class="left circle">9</option>
-                  <option class="left circle">10</option>
-                  <option class="left circle">11</option>
-                  <option class="left circle">12</option>
-                </optgroup>
 
+
+            <mz-select-container>
+              <select mz-select class="select-field" formControlName="birthdayMonth">
+                <option class="left circle" *ngFor="let birthdayMonth of birthdayMonths">{{birthdayMonth.id}}</option>
               </select>
             </mz-select-container>
           </div>
@@ -103,15 +73,8 @@
           <div class="form-group">
             <label class="field-label">Year</label>
             <mz-select-container>
-              <select mz-select
-                      class="select-field">
-                <optgroup>
-                  <option class="left circle">1990</option>
-                  <option class="left circle">1989</option>
-                  <option class="left circle">1988</option>
-                  <option class="left circle">1987</option>
-                </optgroup>
-
+              <select mz-select class="select-field" formControlName="birthdayYear">
+                <option class="left circle" *ngFor="let birthdayYear of birthdayYears">{{birthdayYear.id}}</option>
               </select>
             </mz-select-container>
           </div>
@@ -124,6 +87,13 @@
           </div>
         </div>
       </div>
+
+      <span *ngFor="let sportSkill of sportSkills">
+        <button type="button">
+          <img src="{{sportSkill.img}}">
+          {{sportSkill.name}}
+        </button>
+      </span>
     </div>
   </div>
 </form>

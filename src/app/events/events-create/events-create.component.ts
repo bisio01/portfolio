@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { MdDatepicker } from '@angular/material';
+import { MdDatepicker, MdDialog } from '@angular/material';
 import { Observable, Subscription } from 'rxjs';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { EventsService } from '../service/events.service';
 import { Router } from '@angular/router';
+import { ModalDialog } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-events-create',
@@ -35,6 +36,11 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
       Validators.minLength(3),
       Validators.maxLength(24),
     ]),
+    link: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(24),
+    ]),
     author: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -45,12 +51,33 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
       Validators.minLength(3),
       Validators.maxLength(24),
     ]),
+    hour: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(2),
+    ]),
+    minute: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(2),
+    ]),
+    date: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(2),
+    ]),
   });
 
 
   constructor(public eventsService: EventsService,
-              private _router: Router,) {
+              private _router: Router,
+              public dialog: MdDialog) {
 
+
+  }
+
+  public openDialog() {
+    this.dialog.open(ModalDialog);
   }
 
   @ViewChild(MdDatepicker) datepicker: MdDatepicker<Date>;
@@ -70,7 +97,7 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
   public createEvent(event) {
     event.preventDefault();
     let eventVal = this.eventForm.value;
-
+    console.log(eventVal , 'qweqwe');
     this.eventsService.create(eventVal);
     this._router.navigate(['/events/list']);
   }

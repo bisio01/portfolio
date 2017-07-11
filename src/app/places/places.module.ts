@@ -13,6 +13,7 @@ import { PlacesInfoComponent } from './places-inner/places-info/places-info.comp
 import { PlacesPeopleComponent } from './places-inner/places-people/places-people.component';
 import { PlacesContactComponent } from './places-inner/places-contact/places-contact.component';
 import { PlacesPhotoComponent } from './places-inner/places-photo/places-photo.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -28,6 +29,9 @@ import { PlacesPhotoComponent } from './places-inner/places-photo/places-photo.c
     MaterializeModule.forRoot(),
     BrowserAnimationsModule,
     MdTabsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDT5TkDX1rcsi3HCVarGHccybdq05HZ048'
+    })
 
   ],
   declarations: [

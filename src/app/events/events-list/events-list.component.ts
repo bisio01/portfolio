@@ -11,14 +11,33 @@ import { EventsService } from '../service/events.service';
 export class EventsListComponent implements OnInit {
 
   public events: any[] = [];
+  public myEvents: any[] = [];
 
   constructor(public eventsService: EventsService) {
-    eventsService.getList().then((res: any[])=>{
-      this.events = res;
-    });
-
+   this.loadData();
   }
 
+  loadData() {
+    this.eventsService.getList('events').then((res: any[])=>{
+      this.events = res
+    });
+
+    this.eventsService.getList('myEvents').then((res: any[])=>{
+      this.myEvents = res
+    })
+  }
+
+  addEvent(id) {
+    this.eventsService.addEvent(id).then(() => {
+      this.loadData();
+    })
+  }
+
+  exitEvent(id) {
+    this.eventsService.exitEvent(id).then(() => {
+      this.loadData();
+    })
+  }
 
   ngOnInit() {
   }

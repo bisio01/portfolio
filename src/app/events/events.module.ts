@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdTabsModule, MdDatepickerModule, MdNativeDateModule } from '@angular/material';
+import { MdTabsModule, MdDatepickerModule, MdNativeDateModule, MdDialogModule } from '@angular/material';
 import { MaterializeModule } from 'ng2-materialize';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,10 +17,7 @@ import { EventsPeopleComponent } from './events-inner/events-people/events-peopl
 
 import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.component';
 import { EventsContactComponent } from './events-inner/events-contact/events-contact.component';
-
-
-
-
+import {  ModalDialog } from '../modal/modal.component';
 
 
 @NgModule({
@@ -34,7 +31,8 @@ import { EventsContactComponent } from './events-inner/events-contact/events-con
     FormsModule,
     ReactiveFormsModule,
     MdDatepickerModule,
-    MdNativeDateModule
+    MdNativeDateModule,
+    MdDialogModule,
   ],
   declarations: [
     EventsListComponent,
@@ -44,7 +42,8 @@ import { EventsContactComponent } from './events-inner/events-contact/events-con
     EventsPeopleComponent,
     EventsContactComponent,
     EventsPhotoComponent,
-  ]
-
+    ModalDialog
+  ],
+  entryComponents: [ModalDialog]
 })
 export class EventsModule { }
