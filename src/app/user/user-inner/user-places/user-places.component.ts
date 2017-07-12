@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlacesService } from '../../../places/service/places.service';
 
 @Component({
   selector: 'app-user-places',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserPlacesComponent implements OnInit {
 
-  constructor() { }
+  public places: any[] = [];
+
+  constructor(public placesService: PlacesService) {
+    placesService.getList().then((res: any[])=>{
+      this.places = res;
+    });
+  }
 
   ngOnInit() {
   }

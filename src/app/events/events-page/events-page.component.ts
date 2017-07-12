@@ -9,28 +9,42 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class EventsPageComponent implements OnInit {
 
-  public events: EventsService;
-
+  public events: any[] = [];
+  public myEvents: any[] = [];
   public currentEvent = {};
+  public id: any;
 
   constructor(public eventsService: EventsService,
               private activatedRoute: ActivatedRoute) {
-    this.events = eventsService;
+    this.loadCurrentEvent();
+  }
 
+  addEvent(id) {
+    this.eventsService.addEvent(id).then(() => {
+      this.loadCurrentEvent();
+    })
+  }
 
+  exitEvent(id) {
+    this.eventsService.exitEvent(id).then(() => {
+      this.loadCurrentEvent();
+    })
+  }
+
+  loadCurrentEvent() {
+    this.eventsService.getById(this.id).then((res) => {
+      this.currentEvent = res;
+      console.log(this.currentEvent, 'this.currentEvent')
+    }, (err)=>{
+      console.log('errrrrrror')
+    });
   }
 
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
-      let id = params['id'];
-
-
-      this.events.getById(id).then((res) => {
-        this.currentEvent = res;
-      }, (err)=>{
-        console.log('errrrrrror')
-      });
+    this.id = params['id'];
+      this.loadCurrentEvent();
     });
 
 

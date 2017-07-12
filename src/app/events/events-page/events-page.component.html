@@ -18,7 +18,8 @@
            <i class="material-icons">place</i>
             Kharkov
           </span>
-
+          <button type="button" class="flex-pull-right"  mz-button *ngIf="!currentEvent.join" (click)="addEvent(currentEvent.id)">Join</button>
+          <button type="button" class="flex-pull-right delete-color" *ngIf="currentEvent.join" mz-button (click)="exitEvent(currentEvent.id)">Exit</button>
         </div>
         <div class="user-skills">
           <ul class="user-skills-list">

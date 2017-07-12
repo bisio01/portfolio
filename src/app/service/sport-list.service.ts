@@ -12,19 +12,22 @@ export class SportListService {
     {
       id: '01',
       name: 'Bike',
-      img: 'assets/img/sport-skills/ic_directions_bike_black_24px.svg'
+      img: 'assets/img/sport-skills/ic_directions_bike_black_24px.svg',
+      value: 'Bike'
 
     },
     {
       id: '02',
       name: 'Flash Mob',
-      img: 'assets/img/sport-skills/ic_directions_run_black_24px.svg'
+      img: 'assets/img/sport-skills/ic_directions_run_black_24px.svg',
+      value: 'Flash Mob'
 
     },
     {
       id: '03',
       name: 'Paint Battle',
-      img: 'assets/img/sport-skills/ic_palette_black_24px.svg'
+      img: 'assets/img/sport-skills/ic_palette_black_24px.svg',
+      value: 'Paint Battle'
 
     }
   ];

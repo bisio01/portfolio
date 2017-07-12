@@ -66,6 +66,7 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
       Validators.minLength(1),
       Validators.maxLength(2),
     ]),
+    sportSkill: new FormControl('', [])
   });
 
 
@@ -77,8 +78,15 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
   }
 
   public openDialog() {
-    this.dialog.open(ModalDialog);
+    this.dialog.open(ModalDialog).afterClosed().subscribe(result => {
+
+      this.eventForm.get('sportSkill').setValue(result);
+      console.log(`Dialog result: ${result}`);
+    });
+
   }
+
+
 
   @ViewChild(MdDatepicker) datepicker: MdDatepicker<Date>;
 

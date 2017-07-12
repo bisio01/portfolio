@@ -4,313 +4,39 @@
   <md-tab label="My Gyms">
     <div class="place-wrapper">
       <div class="row">
-        <div class="col s4">
-          <div class="place-item">
+        <div *ngFor="let place of placesService.places" class="col s4">
+          <div class="place-item" [routerLink]="['/places/page']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
             </div>
             <div class="place-description">
               <div class="place-info clearfix">
             <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
+              <i class="material-icons">place</i>{{place.city}}</span>
+                <span class="place-date">{{place.date}}</span>
               </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
+              <span class="place-name">{{place.title}}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </md-tab>
-  <md-tab label="Recommended events">
+  <md-tab label="Recommended even">
     <div class="place-wrapper">
       <div class="row">
-        <div class="col s4">
-          <div class="place-item">
+        <div *ngFor="let place of placesService.places" class="col s4">
+          <div class="place-item" [routerLink]="['/places/page']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
             </div>
             <div class="place-description">
               <div class="place-info clearfix">
             <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
+              <i class="material-icons">place</i>{{place.city}}</span>
+                <span class="place-date">{{place.date}}</span>
               </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
-            </div>
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="place-item">
-            <div class="place-img">
-              <img src="assets/img/img-place2.jpg"/>
-            </div>
-            <div class="place-description">
-              <div class="place-info clearfix">
-            <span class="place-city">
-              <i class="material-icons">place</i>
-              New-York
-            </span>
-                <span class="place-date">12.08.2017</span>
-              </div>
-              <span class="place-name">
-            Expressa vero in iis aetatibus
-          </span>
+              <span class="place-name">{{place.title}}</span>
             </div>
           </div>
         </div>

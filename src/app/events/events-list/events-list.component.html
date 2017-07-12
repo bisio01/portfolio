@@ -15,7 +15,7 @@
             <h3 class="event-name">{{event.title}}</h3>
             <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
             <p class="event-description">{{event.description}}</p>
-            <i class="event-author">by {{event.author}}</i>
+            <i class="event-author" ><span *ngIf="event.author">by</span> {{event.author}}</i>
             <div class="event-skills-list">
               <div class="event-skill"><i mz-icon-mdi [flip]="'vertical'" [icon]="'gondola'"></i>Bike</div>
               <div class="event-skill"><i mz-icon-mdi [flip]="'vertical'" [icon]="'gondola'"></i>Bike</div>

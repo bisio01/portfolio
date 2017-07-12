@@ -10,7 +10,7 @@ export class EventsService {
   public events: any = [
     {
       id: '01',
-      title: 'Great Bike Ride',
+      title: 'Great Bike Ride11',
       date: '10.08.2017',
       description: 'If you like riding welcome!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
       author: 'Sergiy Ivanenko',
@@ -21,7 +21,7 @@ export class EventsService {
     },
     {
       id: '02',
-      title: 'Great Bike Ride',
+      title: 'Great Bike Ride22',
       date: '10.08.2017',
       description: 'If you like riding welcome!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
       author: 'Sergiy Ivanenko',
@@ -32,7 +32,7 @@ export class EventsService {
     },
     {
       id: '03',
-      title: 'Great Bike Ride',
+      title: 'Great Bike Ride33',
       date: '10.08.2017',
       description: 'If you like riding welcome!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
       author: 'Sergiy Ivanenko',

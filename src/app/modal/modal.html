@@ -1,4 +1,12 @@
 <div *ngFor="let skill of skills" class="col s2">
-  <img src="{{skill.img}}" />
-  <span>{{skill.name}}</span>
+  <label>
+      <input
+             type="radio"
+             name="sportSkill">
+      <span>{{skill.name}}</span>
+
+  </label>
+  <!--<img src="{{skill.img}}" />-->
+
 </div>
+<button md-button (click)="choseSkills()"  [md-dialog-close]="result">Yes</button>
