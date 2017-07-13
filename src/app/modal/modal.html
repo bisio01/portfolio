@@ -1,12 +1,26 @@
-<div *ngFor="let skill of skills" class="col s2">
-  <label>
+<div  class="col s2">
+  <!--<label>
       <input
              type="radio"
              name="sportSkill">
       <span>{{skill.name}}</span>
 
-  </label>
+  </label>-->
+
+
+
+
+
+
   <!--<img src="{{skill.img}}" />-->
 
 </div>
-<button md-button (click)="choseSkills()"  [md-dialog-close]="result">Yes</button>
+
+<div [formGroup]="eventSkillsForm">
+  <div *ngFor="let skill of skills">
+    <input formControlName="form_type" [checked]="eventSkillsForm.controls['form_type'].value === skill.id" id="{{skill.value}}" value="{{skill.id}}" type="radio">
+    <label for="{{skill.value}}">{{skill.name}}</label>
+  </div>
+
+</div>
+<button md-button (click)="choseSkills()"  [md-dialog-close]="eventSkillsForm.value.form_type">Yes</button>

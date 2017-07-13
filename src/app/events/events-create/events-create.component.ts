@@ -5,6 +5,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { EventsService } from '../service/events.service';
 import { Router } from '@angular/router';
 import { ModalDialog } from '../../modal/modal.component';
+import { SportListService } from '../../service/sport-list.service';
 
 @Component({
   selector: 'app-events-create',
@@ -15,6 +16,8 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
 
   private linksArr: any;
   private _subscribers: Subscription[] = [];
+  public skills: any[] = [];
+  public sillsInfo;
   public eventForm: FormGroup = new FormGroup({
     title: new FormControl('', [
       Validators.required,
@@ -72,21 +75,25 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
 
   constructor(public eventsService: EventsService,
               private _router: Router,
-              public dialog: MdDialog) {
-
+              public dialog: MdDialog,
+              public sportListService: SportListService) {
+    sportListService.getList().then((res: any[]) => {
+      this.skills = res;
+      console.log(this.skills, 'this.skills')
+    });
 
   }
 
   public openDialog() {
     this.dialog.open(ModalDialog).afterClosed().subscribe(result => {
-
       this.eventForm.get('sportSkill').setValue(result);
-      console.log(`Dialog result: ${result}`);
+
+      this.sportListService.getById(result).then((res: any[]) => {
+        this.sillsInfo = res;
+      });
+
     });
-
   }
-
-
 
   @ViewChild(MdDatepicker) datepicker: MdDatepicker<Date>;
 
@@ -105,13 +112,10 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
   public createEvent(event) {
     event.preventDefault();
     let eventVal = this.eventForm.value;
-    console.log(eventVal , 'qweqwe');
+    console.log(eventVal, 'qweqwe');
     this.eventsService.create(eventVal);
     this._router.navigate(['/events/list']);
   }
-
-
-
 
 
   ngOnInit() {

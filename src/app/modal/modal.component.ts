@@ -8,8 +8,6 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 })
 export class ModalDialog {
 
-  public result = 'hui';
-
   public skills: any[] = [];
 
   public eventSkillVal;
@@ -22,17 +20,27 @@ export class ModalDialog {
   }
 
   public eventSkillsForm: FormGroup = new FormGroup({
-    skills: new FormControl('', [])
+    form_type: new FormControl('')
   });
 
+
+  public result = this.eventSkillsForm.value;
+
+
   choseSkills(){
-    let eventSkillVal = this.eventSkillsForm.value;
-    console.log(this.eventSkillVal , 'eventSkillVal');
+    // this.result = this.eventSkillsForm.value.form_type;
+    console.log(this.result, this.eventSkillsForm.value);
+    //console.log(eventSkillVal , 'eventSkillVal');
   }
 
   dialogResult(){
-    console.log(this.eventSkillVal , 'eventSkillVal');
-    return 'sadsadadasd'
+    this.result = this.eventSkillsForm.value.form_type;
+    return this.result;
+
+   // let eventSkillVal = ;
+   // console.log(eventSkillVal , 'eventSkillVal');
+   // return this.result = eventSkillVal;
+
   }
 }
 

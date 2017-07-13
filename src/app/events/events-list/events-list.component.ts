@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../service/events.service';
+import { SportListService } from '../../service/sport-list.service';
+import { Observable } from 'rxjs';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-events-list',
@@ -10,10 +13,24 @@ import { EventsService } from '../service/events.service';
 
 export class EventsListComponent implements OnInit {
 
+  public data;
+
   public events: any[] = [];
   public myEvents: any[] = [];
 
-  constructor(public eventsService: EventsService) {
+  public skills: any[] = [];
+  public sillsInfo;
+
+
+
+
+  constructor(public eventsService: EventsService,
+              public sportListService: SportListService) {
+    sportListService.getList().then((res: any[]) => {
+      this.skills = res;
+      console.log(this.skills, 'this.skills')
+    });
+
    this.loadData();
   }
 
@@ -41,6 +58,33 @@ export class EventsListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data = Observable.forkJoin(
+      this.eventsService.getList('events'),
+      this.eventsService.getList('myEvents'),
+      this.sportListService.getList()
+    );
+    this.data.subscribe(
+      data => {
+
+        this.events = data[0];
+        this.myEvents = data[1];
+        this.skills = data[2];
+
+        this.events.forEach(function (item:any,) {
+          this.skills.forEach(function (skillItem:any) {
+            if(skillItem.id === item.sportSkill) {
+              item.sportSkill = skillItem;
+            }
+          });
+
+
+        }.bind(this));
+        console.log(this.events, 'qweqweqweqwe');
+        this.myEvents.forEach(function (item:any,) {
+        });
+
+      }
+    )
   }
 
 }
