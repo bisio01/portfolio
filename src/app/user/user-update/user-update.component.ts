@@ -4,6 +4,8 @@ import { UserService } from '../service/user.service';
 import { Subscription, Observable } from 'rxjs';
 import { fadeInAnimation } from '../../animations/animations';
 import { SportListService } from '../../service/sport-list.service';
+import { ModalDialog } from '../../modal/modal.component';
+import { MdDialog } from '@angular/material';
 
 @Component({
   selector: 'app-user-update',
@@ -65,10 +67,12 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
 
   public userLocal;
 
-  public sportSkills: any;
+  public skills: any[] = [];
+  public sillsInfo;
 
 
   constructor(public userService: UserService,
+              public dialog: MdDialog,
               public sportListService: SportListService) {
 
     this.user = this.userService.getData();
@@ -79,13 +83,12 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
     }
 
     sportListService.getList().then((res: any[])=>{
-      this.sportSkills = res;
+      this.skills = res;
     });
 
   }
 
   ngOnInit() {
-    console.log(   this.sportSkills , 'qweqwe')
   }
 
   firstName: string = '';
@@ -116,16 +119,28 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
     form_type: new FormControl(''),
     birthdayDay: new FormControl(''),
     birthdayMonth: new FormControl(''),
-    birthdayYear: new FormControl('')
+    birthdayYear: new FormControl(''),
+    sportSkill: new FormControl('', [])
   });
 
   public update() {
     let user = this.UserForm.value;
     this.userService.setData(user);
     localStorage.setItem('user', JSON.stringify(user));
-    console.log(this.UserForm.value, 'qweqweqwe')
-
   }
+
+  public openDialog() {
+    this.dialog.open(ModalDialog).afterClosed().subscribe(result => {
+      this.UserForm.get('sportSkill').setValue(result);
+
+      this.sportListService.getById(result).then((res: any[]) => {
+        this.sillsInfo = res;
+        console.log(this.sillsInfo, 'this.sillsInfo')
+      });
+
+    });
+  }
+
 
   private formToggle() {
     this.linksArr = $('.form-group');

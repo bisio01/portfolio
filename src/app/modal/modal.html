@@ -1,26 +1,16 @@
-<div  class="col s2">
-  <!--<label>
-      <input
-             type="radio"
-             name="sportSkill">
+<div class="modal-wrapper row" [formGroup]="eventSkillsForm">
+  <h4>Chose your type of sport</h4>
+  <div class="modal-item col s3" *ngFor="let skill of skills">
+    <label for="{{skill.value}}">
+      <input hidden formControlName="form_type" [checked]="eventSkillsForm.controls['form_type'].value === skill.id"
+             id="{{skill.value}}" value="{{skill.id}}" type="radio">
+      <div class="modal-img-wrapper">
+        <img class="modal-skill-img" src="{{skill.img}}"/>
+      </div>
       <span>{{skill.name}}</span>
-
-  </label>-->
-
-
-
-
-
-
-  <!--<img src="{{skill.img}}" />-->
-
-</div>
-
-<div [formGroup]="eventSkillsForm">
-  <div *ngFor="let skill of skills">
-    <input formControlName="form_type" [checked]="eventSkillsForm.controls['form_type'].value === skill.id" id="{{skill.value}}" value="{{skill.id}}" type="radio">
-    <label for="{{skill.value}}">{{skill.name}}</label>
+    </label>
   </div>
-
 </div>
-<button md-button (click)="choseSkills()"  [md-dialog-close]="eventSkillsForm.value.form_type">Yes</button>
+
+
+<button mz-button (click)="choseSkills()" [md-dialog-close]="eventSkillsForm.value.form_type">Chose</button>

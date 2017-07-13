@@ -3,6 +3,7 @@ import { EventsService } from '../service/events.service';
 import { SportListService } from '../../service/sport-list.service';
 import { Observable } from 'rxjs';
 import { forEach } from '@angular/router/src/utils/collection';
+import { UserService } from '../../user/service/user.service';
 
 @Component({
   selector: 'app-events-list',
@@ -15,6 +16,8 @@ export class EventsListComponent implements OnInit {
 
   public data;
 
+  public user;
+
   public events: any[] = [];
   public myEvents: any[] = [];
 
@@ -22,25 +25,28 @@ export class EventsListComponent implements OnInit {
   public sillsInfo;
 
 
-
-
   constructor(public eventsService: EventsService,
               public sportListService: SportListService) {
     sportListService.getList().then((res: any[]) => {
       this.skills = res;
-      console.log(this.skills, 'this.skills')
     });
 
-   this.loadData();
+    //this.user = this.userService.getData();
+
+    this.user = JSON.parse(localStorage.getItem('user'));
+
+    console.log(this.user, 'user')
+
+    this.loadData();
   }
 
   loadData() {
-    this.eventsService.getList('events').then((res: any[])=>{
+    this.eventsService.getList('events').then((res: any[]) => {
       this.events = res;
       console.log(this.events, 'this.events')
     });
 
-    this.eventsService.getList('myEvents').then((res: any[])=>{
+    this.eventsService.getList('myEvents').then((res: any[]) => {
       this.myEvents = res
     })
   }
@@ -70,9 +76,9 @@ export class EventsListComponent implements OnInit {
         this.myEvents = data[1];
         this.skills = data[2];
 
-        this.events.forEach(function (item:any,) {
-          this.skills.forEach(function (skillItem:any) {
-            if(skillItem.id === item.sportSkill) {
+        this.events.forEach(function (item: any,) {
+          this.skills.forEach(function (skillItem: any) {
+            if (skillItem.id === item.sportSkill) {
               item.sportSkill = skillItem;
             }
           });
@@ -80,7 +86,7 @@ export class EventsListComponent implements OnInit {
 
         }.bind(this));
         console.log(this.events, 'qweqweqweqwe');
-        this.myEvents.forEach(function (item:any,) {
+        this.myEvents.forEach(function (item: any,) {
         });
 
       }

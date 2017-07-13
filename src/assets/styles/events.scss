@@ -20,7 +20,7 @@
   &-description {
     margin-bottom: 15px;
     &-wrapper {
-      width: 100%;
+      width: 63%;
     }
   }
   &-author {
@@ -44,6 +44,16 @@
   }
   &-img-wrapper {
     margin-right: 5%;
+    position: relative;
+    height: 163px;
+    width: 163px;
+    overflow: hidden;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   &-skills-list {
     display: flex;
@@ -57,11 +67,12 @@
     justify-content: center;
     padding: 3px 15px;
     margin-right: 10px;
+    img {
+      width: 20px;
+      margin-right: 12px;
+    }
     &:last-child {
       margin-right: 0;
-    }
-    i {
-      margin-right: 12px;
     }
   }
 }

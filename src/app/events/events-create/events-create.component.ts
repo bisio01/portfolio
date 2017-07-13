@@ -79,7 +79,6 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
               public sportListService: SportListService) {
     sportListService.getList().then((res: any[]) => {
       this.skills = res;
-      console.log(this.skills, 'this.skills')
     });
 
   }
@@ -112,7 +111,6 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
   public createEvent(event) {
     event.preventDefault();
     let eventVal = this.eventForm.value;
-    console.log(eventVal, 'qweqwe');
     this.eventsService.create(eventVal);
     this._router.navigate(['/events/list']);
   }

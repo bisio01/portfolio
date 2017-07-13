@@ -3,10 +3,12 @@
   <div class="profile-update-wrapper">
     <div class="profile-avatar-wrapper">
       <div class="avatar">
-        <i class="avatar-icon"></i>
+        <i class="avatar-icon" *ngIf="!sillsInfo?.img"></i>
+        <img *ngIf="sillsInfo?.img" src="{{sillsInfo?.img}}" />
+        <div>{{sillsInfo?.name}}</div>
       </div>
       <button type="button" mz-button (click)="openDialog()">Add kind of sport</button>
-      <div>{{sillsInfo?.name}}</div>
+
       <p class="avatar-description">Add kind of sport</p>
     </div>
     <div class="profile-update-container">
