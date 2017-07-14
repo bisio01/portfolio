@@ -5,58 +5,34 @@
   <div class="user-content">
     <div class="user-header">
       <div class="user-img-wrapper">
-        <img class="user-img" src="assets/img/img-person.png"/>
+        <div class="user-img-inner">
+          <img class="user-img" src="{{currentEvent.sportSkill?.img}}"/>
+        </div>
       </div>
       <div class="user-container">
         <h4 class="user-name">{{currentEvent.title}}</h4>
         <div class="user-info">
           <span class="user-date">
           <i class="material-icons">today</i>
-            16 august 1984
+         {{currentEvent.date | date:'yyyy.MM.dd'}}  <span>{{currentEvent.hour}}:{{currentEvent.minute}}</span>
           </span>
           <span class="user-city">
            <i class="material-icons">place</i>
-            Kharkov
+            {{currentEvent.city}}
           </span>
-          <button type="button" class="flex-pull-right"  mz-button *ngIf="!currentEvent.join" (click)="addEvent(currentEvent.id)">Join</button>
-          <button type="button" class="flex-pull-right delete-color" *ngIf="currentEvent.join" mz-button (click)="exitEvent(currentEvent.id)">Exit</button>
+          <button type="button" class="flex-pull-right" mz-button *ngIf="!currentEvent.join"
+                  (click)="addEvent(currentEvent.id)">Join
+          </button>
+          <button type="button" class="flex-pull-right delete-color" *ngIf="currentEvent.join" mz-button
+                  (click)="exitEvent(currentEvent.id)">Exit
+          </button>
         </div>
         <div class="user-skills">
           <ul class="user-skills-list">
             <li>
               <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
+                <img src="{{currentEvent.sportSkill?.icon}}">
+                {{currentEvent.sportSkill?.name}}
               </button>
             </li>
           </ul>

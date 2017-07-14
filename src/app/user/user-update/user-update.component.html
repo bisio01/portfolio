@@ -2,8 +2,10 @@
 <form [formGroup]="UserForm">
   <div class="profile-update-wrapper">
     <div class="profile-avatar-wrapper">
-      <div class="avatar">
-        <i class="avatar-icon"></i>
+      <div class="avatar-border">
+        <div class="avatar">
+          <i class="avatar-icon"></i>
+        </div>
       </div>
       <button type="button" mz-button (click)="openDialog()">Add avatar</button>
       <p class="avatar-description">Profile image must be at least 320x320px</p>
@@ -51,17 +53,14 @@
             <label class="field-label">Day</label>
             <mz-select-container>
               <select mz-select class="select-field" formControlName="birthdayDay">
-                  <option class="left circle" *ngFor="let birthdayDay of birthdayDays">{{birthdayDay.id}}</option>
+                <option class="left circle" *ngFor="let birthdayDay of birthdayDays">{{birthdayDay.id}}</option>
               </select>
             </mz-select-container>
-
           </div>
         </div>
         <div class="col s4">
           <div class="form-group">
             <label class="field-label">Month</label>
-
-
             <mz-select-container>
               <select mz-select class="select-field" formControlName="birthdayMonth">
                 <option class="left circle" *ngFor="let birthdayMonth of birthdayMonths">{{birthdayMonth.id}}</option>

@@ -35,7 +35,7 @@ export class EventsListComponent implements OnInit {
 
     this.user = JSON.parse(localStorage.getItem('user'));
 
-    console.log(this.user, 'user')
+    console.log(this.user, 'user');
 
     this.loadData();
   }

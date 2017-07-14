@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { EventsService } from '../service/events.service';
 import { Router } from '@angular/router';
-import { ModalDialog } from '../../modal/modal.component';
+import { ModalDialog } from '../../modal/modal/modal.component';
 import { SportListService } from '../../service/sport-list.service';
 
 @Component({

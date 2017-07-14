@@ -4,7 +4,7 @@ import { UserService } from '../service/user.service';
 import { Subscription, Observable } from 'rxjs';
 import { fadeInAnimation } from '../../animations/animations';
 import { SportListService } from '../../service/sport-list.service';
-import { ModalDialog } from '../../modal/modal.component';
+import { ModalDialog } from '../../modal/modal/modal.component';
 import { MdDialog } from '@angular/material';
 
 @Component({

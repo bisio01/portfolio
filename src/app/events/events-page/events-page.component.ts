@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../service/events.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
+import { SportListService } from '../../service/sport-list.service';
 
 @Component({
   selector: 'app-events-page',
@@ -8,14 +10,17 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['events-page.component.css']
 })
 export class EventsPageComponent implements OnInit {
-
+  public data;
   public events: any[] = [];
   public myEvents: any[] = [];
   public currentEvent = {};
   public id: any;
+  public skills: any[] = [];
+
 
   constructor(public eventsService: EventsService,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              public sportListService: SportListService) {
     this.loadCurrentEvent();
   }
 
@@ -47,7 +52,36 @@ export class EventsPageComponent implements OnInit {
       this.loadCurrentEvent();
     });
 
+    this.data = Observable.forkJoin(
+      this.eventsService.getList('events'),
+      this.eventsService.getList('myEvents'),
+      this.sportListService.getList()
+    );
+    this.data.subscribe(
+      data => {
+
+        this.events = data[0];
+        this.myEvents = data[1];
+        this.skills = data[2];
+
+        this.events.forEach(function (item: any,) {
+          this.skills.forEach(function (skillItem: any) {
+            if (skillItem.id === item.sportSkill) {
+              item.sportSkill = skillItem;
+            }
+          });
+
+
+        }.bind(this));
+        console.log(this.events, 'qweqweqweqwe');
+        this.myEvents.forEach(function (item: any,) {
+        });
+
+      }
+    )
+
 
   }
+
 
 }

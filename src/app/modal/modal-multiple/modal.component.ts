@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import { SportListService } from '../service/sport-list.service';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { SportListService } from '../../service/sport-list.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'modal',
@@ -10,7 +10,6 @@ export class ModalDialog {
 
   public skills: any[] = [];
 
-  public eventSkillVal;
 
   constructor(public sportListService: SportListService) {
     sportListService.getList().then((res: any[])=>{
@@ -26,21 +25,9 @@ export class ModalDialog {
 
   public result = this.eventSkillsForm.value;
 
-
-  choseSkills(){
-    // this.result = this.eventSkillsForm.value.form_type;
-    console.log(this.result, this.eventSkillsForm.value);
-    //console.log(eventSkillVal , 'eventSkillVal');
-  }
-
   dialogResult(){
     this.result = this.eventSkillsForm.value.form_type;
     return this.result;
-
-   // let eventSkillVal = ;
-   // console.log(eventSkillVal , 'eventSkillVal');
-   // return this.result = eventSkillVal;
-
   }
 }
 

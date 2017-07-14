@@ -17,7 +17,7 @@ import { EventsPeopleComponent } from './events-inner/events-people/events-peopl
 
 import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.component';
 import { EventsContactComponent } from './events-inner/events-contact/events-contact.component';
-import {  ModalDialog } from '../modal/modal.component';
+import {  ModalDialog } from '../modal/modal/modal.component';
 
 
 @NgModule({
