@@ -2,9 +2,11 @@
   width: 440px;
   float: left;
   height: 100vh;
+  overflow: hidden;
   background: #fff;
-  padding: 0 0 60px 0;
+ // padding: 0 0 60px 0;
   border-right: 1px solid #dadada;
+  min-height: 700px;
   color: #555;
   &-header {
     padding: 0 20px;
@@ -91,7 +93,8 @@
   }
 }
 
-.aside-title-wrapper {
+.aside-title-wrapper,
+.team-footer {
   padding: 0 15px;
 }
 
