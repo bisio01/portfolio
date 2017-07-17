@@ -43,7 +43,6 @@ export class EventsListComponent implements OnInit {
   loadData() {
     this.eventsService.getList('events').then((res: any[]) => {
       this.events = res;
-      console.log(this.events, 'this.events')
     });
 
     this.eventsService.getList('myEvents').then((res: any[]) => {
