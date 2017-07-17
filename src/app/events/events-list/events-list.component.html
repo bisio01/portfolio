@@ -9,7 +9,10 @@
       <div *ngFor="let event of events">
         <div [routerLink]="['/events', event.id, 'info']" class="event">
           <div class="event-img-wrapper">
-            <img src="{{event.sportSkill?.img}}"/>
+            <div class="event-no-img" *ngIf="!event.sportSkill?.img">
+              <i class="no-img-icon"></i>
+            </div>
+            <img *ngIf="event.sportSkill?.img" src="{{event.sportSkill?.img}}"/>
           </div>
           <div class="event-description-wrapper">
             <h3 class="event-name">{{event.title}}</h3>
@@ -35,7 +38,7 @@
     <div *ngFor="let event of myEvents">
       <div [routerLink]="['/events', event.id,  'info']" class="event">
         <div class="event-img-wrapper">
-          <img src="assets/img/events-img.jpg"/>
+          <img src="{{event.sportSkill?.img}}"/>
         </div>
         <div class="event-description-wrapper">
           <h3 class="event-name">{{event.title}}</h3>
