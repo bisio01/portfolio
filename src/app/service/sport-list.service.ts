@@ -31,7 +31,7 @@ export class SportListService {
       name: 'Bicycle rider',
       img: 'assets/img/sport-skills/female-cyclist.jpg',
       value: 'Bicycle rider',
-      icon: 'assets/img/sport-skills/icons/bicycle-rider.svg'
+      icon: 'assets/img/sport-skills/icons/bicycleRider.svg'
     },
     {
       id: '04',
@@ -52,7 +52,7 @@ export class SportListService {
       name: 'Skier skiing',
       img: 'assets/img/sport-skills/skier-skiing-downhill.jpg',
       value: 'Skier skiing',
-      icon: 'assets/img/sport-skills/icons/snowboard-equipment.svg'
+      icon: 'assets/img/sport-skills/icons/snowboardEquipment.svg'
     },
     {
       id: '07',
@@ -66,7 +66,7 @@ export class SportListService {
       name: 'Swimming pool',
       img: 'assets/img/sport-skills/swimming-pool.jpg',
       value: 'Swimming pool',
-      icon: 'assets/img/sport-skills/icons/man-swimming.svg'
+      icon: 'assets/img/sport-skills/icons/manSwimming.svg'
     },
     {
       id: '09',
@@ -80,7 +80,7 @@ export class SportListService {
       name: 'Volleyball',
       img: 'assets/img/sport-skills/volleyball.jpg',
       value: 'Volleyball',
-      icon: 'assets/img/sport-skills/icons/volleyball-silhouette.svg'
+      icon: 'assets/img/sport-skills/icons/volleyballSilhouette.svg'
     }
 
   ];
