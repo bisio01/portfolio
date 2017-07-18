@@ -14,6 +14,7 @@ import { UserFriendsComponent } from './user-inner/user-friends/user-friends.com
 import { UserPhotosComponent } from './user-inner/user-photos/user-photos.component';
 import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
 import { MdTabsModule } from '@angular/material';
+import { UserChatComponent } from './user-inner/user-chat/user-chat.component';
 
 
 
@@ -36,7 +37,8 @@ import { MdTabsModule } from '@angular/material';
     UserEventsComponent,
     UserFriendsComponent,
     UserPhotosComponent,
-    UserPlacesComponent
+    UserPlacesComponent,
+    UserChatComponent
   ]
 
 })

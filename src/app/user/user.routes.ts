@@ -5,6 +5,7 @@ import { UserEventsComponent } from './user-inner/user-events/user-events.compon
 import { UserFriendsComponent } from './user-inner/user-friends/user-friends.component';
 import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
 import { UserPhotosComponent } from './user-inner/user-photos/user-photos.component';
+import { UserChatComponent } from './user-inner/user-chat/user-chat.component';
 
 export const UserRoutes: Routes = [
   {
@@ -37,6 +38,10 @@ export const UserRoutes: Routes = [
               {
                 path: 'places',
                 component: <any>UserPlacesComponent,
+              },
+              {
+                path: 'chat',
+                component: <any>UserChatComponent,
               },
             ]
           },
