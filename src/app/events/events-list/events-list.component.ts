@@ -31,11 +31,7 @@ export class EventsListComponent implements OnInit {
       this.skills = res;
     });
 
-    //this.user = this.userService.getData();
-
     this.user = JSON.parse(localStorage.getItem('user'));
-
-    console.log(this.user, 'user');
 
     this.loadData();
   }
@@ -84,7 +80,6 @@ export class EventsListComponent implements OnInit {
 
 
         }.bind(this));
-        console.log(this.events, 'qweqweqweqwe');
         this.myEvents.forEach(function (item: any,) {
         });
 

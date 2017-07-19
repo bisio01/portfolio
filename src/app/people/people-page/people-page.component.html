@@ -5,7 +5,9 @@
   <div class="user-content">
     <div class="user-header">
       <div class="user-img-wrapper">
-        <img class="user-img" src="assets/img/img-person.png"/>
+        <div class="user-img-inner">
+          <img class="user-img" src="assets/img/img-person.png"/>
+        </div>
       </div>
       <div class="user-container">
         <h4 class="user-name">Test test</h4>
@@ -63,7 +65,7 @@
 
       </div>
       <div class="profile-info-wrapper">
-        <button type="button" class="profile-info-item" [routerLink]="['/people/page/friends']">
+        <button type="button" class="profile-info-item" [routerLink]="['/people', currentPeople.id, 'friends']">
           <span class="profile-info-number">
             11
           </span>
@@ -71,7 +73,7 @@
             Friends
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/people/page/places']">
+        <button type="button" class="profile-info-item" [routerLink]="['/people', currentPeople.id, 'places']">
           <span class="profile-info-number">
             23
           </span>
@@ -79,7 +81,7 @@
             Places
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/people/page/events']">
+        <button type="button" class="profile-info-item" [routerLink]="['/people', currentPeople.id, 'events']">
           <span class="profile-info-number">
             08
           </span>
@@ -87,7 +89,7 @@
             Events
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/people/page/photos']">
+        <button type="button" class="profile-info-item" [routerLink]="['/people', currentPeople.id, 'photos']">
           <span class="profile-info-number">
             44
           </span>

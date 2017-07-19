@@ -5,7 +5,7 @@
       <div class="team-content">
         <div class="row">
           <div *ngFor="let people of people" class="col s2">
-            <div class="team">
+            <div [routerLink]="['/people', people.id, 'events']" class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">
                   <img src="assets/img/team-img.png">

@@ -76,12 +76,7 @@ export class EventsPageComponent implements OnInit {
         console.log(this.events, 'qweqweqweqwe');
         this.myEvents.forEach(function (item: any,) {
         });
-
       }
     )
-
-
   }
-
-
 }

@@ -18,28 +18,28 @@ export class PeopleService {
     },
     {
       id: '02',
-      name: 'Erin Stewart',
-      city: 'Kharkiv',
+      name: 'Katrin Lorem',
+      city: 'Kiev',
       avatar: '',
       isFriend: true
     },
     {
       id: '03',
-      name: 'Erin Stewart',
-      city: 'Kharkiv',
+      name: 'Kim Seme',
+      city: 'Paris',
       avatar: '',
       isFriend: ''
     },
     {
       id: '04',
-      name: 'Erin Stewart',
+      name: 'Erin22 Stewart',
       city: 'Kharkiv',
       avatar: '',
       isFriend: ''
     },
     {
       id: '05',
-      name: 'Erin Stewart',
+      name: 'Erin Stewart123',
       city: 'Kharkiv',
       avatar: '',
       isFriend: ''
@@ -53,7 +53,7 @@ export class PeopleService {
     },
     {
       id: '07',
-      name: 'Erin Stewart',
+      name: 'Erin22 Stewart',
       city: 'Kharkiv',
       avatar: '',
       isFriend: ''
@@ -125,6 +125,31 @@ export class PeopleService {
   public updateStore() {
     localStorage.setItem('people', JSON.stringify(this.people));
     console.log(localStorage, 'local')
+  }
+
+  public getById(id: number) {
+    return new Promise((resolve, reject) => {
+      const f = this.people.filter(el => el.id == id);
+      if(f.length){
+        this.currentPeopleId = id;
+        resolve(f[0]);
+      }else {
+        reject();
+      }
+
+    })
+  }
+
+  public getCurrentPeople() {
+    return new Promise((resolve, reject) => {
+      const f = this.people.filter(el => el.id == this.currentPeopleId);
+      if(f.length){
+        resolve(f[0]);
+      }else {
+        reject();
+      }
+
+    })
   }
 
 }

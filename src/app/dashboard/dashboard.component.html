@@ -23,7 +23,7 @@
                [icon]="'calendar-text'"
                [size]="'24px'">
             </i>
-            16 august 1984 <b> (31 year old)</b>
+          {{userLocal?.birthdayDay}}.{{userLocal?.birthdayMonth}}.{{userLocal?.birthdayYear}}
           </span>
           <span>
             <i class="login-icon" mz-icon-mdi
@@ -144,7 +144,8 @@
                 <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
               </div>
             </div>
-          </div>s
+          </div>
+          s
         </div>
 
       </div>

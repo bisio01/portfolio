@@ -25,33 +25,27 @@ export const PeopleRoutes: Routes = [
         ]
       },
       {
-        path: 'page',
+        path: ':id',
+        component: <any>PeoplePageComponent,
         children: [
           {
-            path: '',
-            component: <any>PeoplePageComponent,
-            children: [
-              {
-                path: 'events',
-                component: <any>PeopleEventsComponent,
-              },
-              {
-                path: 'friends',
-                component: <any>PeopleFriendsComponent,
-              },
-              {
-                path: 'photo',
-                component: <any>PeoplePhotosComponent,
-              },
-              {
-                path: 'places',
-                component: <any>PeoplePlacesComponent,
-              },
-            ]
+            path: 'events',
+            component: <any>PeopleEventsComponent,
+          },
+          {
+            path: 'friends',
+            component: <any>PeopleFriendsComponent,
+          },
+          {
+            path: 'photo',
+            component: <any>PeoplePhotosComponent,
+          },
+          {
+            path: 'places',
+            component: <any>PeoplePlacesComponent,
           },
         ]
       },
     ]
-  },
-
+  }
 ];
