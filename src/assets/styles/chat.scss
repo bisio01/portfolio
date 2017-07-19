@@ -1,21 +1,23 @@
 .chat {
+  display: flex;
+  min-height: 360px;
   &-list-group {
     float: left;
-    width: 320px;
+    min-width: 260px;
+    max-width: 320px;
     background: #FFF;
-    border-right: 1px solid #DBE0E4;
+    border: 1px solid #DBE0E4;
   }
   .list-group-item {
     position: relative;
     margin-bottom: -1px;
     background: #fff;
-    border-right: 1px solid #DBE0E4;
     border-top: 1px solid #DBE0E4;
     color: #555;
     transition: background .1s linear;
     line-height: 20px;
     width: 100%;
-    padding: 15px;
+    padding: 10px 15px;
     &:first-child {
       border-top: 0;
     }
@@ -47,26 +49,32 @@
   }
   &-container {
     background: #edeff0;
-    margin-left: 320px;
     padding: 10px;
   }
   &-block {
     position: relative;
-    margin-bottom: 15px;
-    background: #FFF;
-    border: 1px solid #DBE0E4;
     border-radius: 5px;
   }
   &-heading {
     padding: 10px 15px 15px;
-    border-bottom: 1px solid #DBE0E4;
-    margin-bottom: 15px;
+    border: 1px solid #DBE0E4;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
   }
   &-content {
-    padding: 0 15px 15px;
+    padding: 15px;
+    background: #FFF;
+    border: 1px solid #DBE0E4;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
   }
   &-footer {
     padding: 15px;
+    background: #fff;
+    margin-top: 15px;
+    border: 1px solid #DBE0E4;
+    border-radius: 5px;
+
   }
   &-form {
     display: flex;
