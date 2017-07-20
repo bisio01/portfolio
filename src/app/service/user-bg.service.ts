@@ -6,14 +6,14 @@ import { Injectable }    from '@angular/core';
 
 
 @Injectable()
-export class SportListService {
+export class UserBgList {
 
   currentBgId:number;
 
   public userBgList: any = [
     {
       id: '01',
-      img: 'assets/img/user-bg/cyclists-trail.jpg',
+      img: 'assets/img/user-bg/cyclists-trail.jpeg',
       value: 'cyclists-trail',
     },
     {
@@ -23,42 +23,42 @@ export class SportListService {
     },
     {
       id: '03',
-      img: 'assets/img/user-bg/pexels-photo-1.jpg',
+      img: 'assets/img/user-bg/pexels-photo-1.jpeg',
       value: 'pexels-photo-1',
     },
     {
       id: '04',
-      img: 'assets/img/user-bg/pexels-photo-2.jpg',
+      img: 'assets/img/user-bg/pexels-photo-2.jpeg',
       value: 'pexels-photo-2',
     },
     {
       id: '05',
-      img: 'assets/img/user-bg/pexels-photo-3.jpg',
+      img: 'assets/img/user-bg/pexels-photo-3.jpeg',
       value: 'pexels-photo-3',
     },
     {
       id: '06',
-      img: 'assets/img/user-bg/pexels-photo-4.jpg',
+      img: 'assets/img/user-bg/pexels-photo-4.jpeg',
       value: 'pexels-photo-4',
     },
     {
       id: '07',
-      img: 'assets/img/user-bg/pexels-photo-5.jpg',
+      img: 'assets/img/user-bg/pexels-photo-5.jpeg',
       value: 'pexels-photo-5',
     },
     {
       id: '08',
-      img: 'assets/img/user-bg/pexels-photo-6.jpg',
+      img: 'assets/img/user-bg/pexels-photo-6.jpeg',
       value: 'pexels-photo-6',
     },
     {
       id: '09',
-      img: 'assets/img/user-bg/pexels-photo-9.jpg',
+      img: 'assets/img/user-bg/pexels-photo-9.jpeg',
       value: 'pexels-photo-9',
     },
     {
       id: '10',
-      img: 'assets/img/user-bg/utah-mountain.jpg',
+      img: 'assets/img/user-bg/utah-mountain.jpeg',
       value: 'tah-mountain',
     }
 

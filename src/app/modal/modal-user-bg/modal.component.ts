@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { SportListService } from '../../service/sport-list.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { UserBgList } from '../../service/user-bg.service';
 
 @Component({
   selector: 'modal',
@@ -8,25 +9,26 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class ModalBgDialog {
 
-  public skills: any[] = [];
+  public userBg: any[] = [];
 
 
-  constructor(public sportListService: SportListService) {
-    sportListService.getList().then((res: any[])=>{
-      this.skills = res;
+  constructor(public userBgList: UserBgList) {
+    userBgList.getList().then((res: any[])=>{
+      this.userBg = res;
+      console.log(this.userBg, 'this.userBg')
     });
 
   }
 
-  public eventSkillsForm: FormGroup = new FormGroup({
+  public userBgForm: FormGroup = new FormGroup({
     form_type: new FormControl('')
   });
 
 
-  public result = this.eventSkillsForm.value;
+  public result = this.userBgForm.value;
 
   dialogResult(){
-    this.result = this.eventSkillsForm.value.form_type;
+    this.result = this.userBgForm.value.form_type;
     return this.result;
   }
 }

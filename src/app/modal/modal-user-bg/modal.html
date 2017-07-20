@@ -1,16 +1,18 @@
-<div class="modal-wrapper row" [formGroup]="eventSkillsForm">
+<div class="modal-wrapper user-bg-modal row" [formGroup]="userBgForm">
   <h4 class="modal-title">Chose your type of sport</h4>
-  <div class="modal-item col s3" *ngFor="let skill of skills">
-    <label for="{{skill.value}}">
-      <input hidden formControlName="form_type" [checked]="eventSkillsForm.controls['form_type'].value === skill.id"
-             id="{{skill.value}}" value="{{skill.id}}" type="checkbox">
+  <div class="modal-item col s3" *ngFor="let userBgItem of userBg">
+    <label for="{{userBgItem.value}}">
+      <input hidden formControlName="form_type" [checked]="userBgForm.controls['form_type'].value === userBgItem.id"
+             id="{{userBgItem.value}}" value="{{userBgItem.id}}" type="checkbox">
       <div class="modal-img-wrapper">
-        <img class="modal-skill-img" src="{{skill.img}}"/>
+        <img class="modal-skill-img" src="{{userBgItem.img}}"/>
       </div>
-      <span class="modal-item-name">{{skill.name}}</span>
+      <span class="modal-item-name">{{userBgItem.name}}</span>
     </label>
   </div>
+
 </div>
 
+<button mz-button [md-dialog-close]="userBgForm.value.form_type">Chose</button>
 
-<button mz-button >Chose</button>
+

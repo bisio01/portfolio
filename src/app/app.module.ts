@@ -24,6 +24,7 @@ import { PeopleService } from './people/service/people.service';
 import { PlacesService } from './places/service/places.service';
 import { SportListService } from './service/sport-list.service';
 import { AgmCoreModule } from '@agm/core';
+import { UserBgList } from './service/user-bg.service';
 
 
 
@@ -58,7 +59,8 @@ import { AgmCoreModule } from '@agm/core';
     EventsService,
     PeopleService,
     PlacesService,
-    SportListService
+    SportListService,
+    UserBgList
   ],
   bootstrap: [AppComponent],
 })
