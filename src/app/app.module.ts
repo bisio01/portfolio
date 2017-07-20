@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationService } from './auth/service/auth.service';
 import { UserService } from './user/service/user.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MdDatepickerModule } from '@angular/material';
+import { MdDatepickerModule, MdDialogModule } from '@angular/material';
 import { PlacesModule } from './places/places.module';
 import { PeopleModule } from './people/people.module';
 import { AuthModule } from './auth/auth.module';
@@ -34,6 +34,7 @@ import { AgmCoreModule } from '@agm/core';
     DashboardComponent,
     NotificationComponent,
     LandingComponent,
+
   ],
   imports: [
     BrowserModule,

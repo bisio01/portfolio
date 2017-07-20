@@ -138,7 +138,6 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
       this.sportListService.getById(result).then((res: any[]) => {
         this.sillsInfo = res;
       });
-
     });
   }
 

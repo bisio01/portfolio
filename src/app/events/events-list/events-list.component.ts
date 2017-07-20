@@ -24,7 +24,6 @@ export class EventsListComponent implements OnInit {
   public skills: any[] = [];
   public sillsInfo;
 
-
   constructor(public eventsService: EventsService,
               public sportListService: SportListService) {
     sportListService.getList().then((res: any[]) => {
@@ -66,7 +65,6 @@ export class EventsListComponent implements OnInit {
     );
     this.data.subscribe(
       data => {
-
         this.events = data[0];
         this.myEvents = data[1];
         this.skills = data[2];

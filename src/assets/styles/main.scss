@@ -59,6 +59,9 @@ button {
   &:focus{
     background: lighten(#66c33f,15%);
   }
+  &.button-color {
+    background: #3776f4;
+  }
 }
 
 .login-wrapper {
@@ -92,4 +95,9 @@ button {
   &:hover {
     background: lighten(#e64d78,15%);
   }
+}
+
+
+.margin-left{
+  margin-left: 20px;
 }

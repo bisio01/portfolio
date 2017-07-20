@@ -21,37 +21,14 @@
             {{userLocal?.country}} <span *ngIf="userLocal?.country">,</span> {{userLocal?.city}}
           </span>
           <button type="button" class="flex-pull-right" mz-button [routerLink]="['/user/update']">Info update</button>
+          <button type="button" class="flex-pull-right button-color margin-left" mz-button (click)="openDialog()"><i class="material-icons">wallpaper</i></button>
         </div>
         <div class="user-skills">
           <ul class="user-skills-list">
             <li>
               <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
-              </button>
-            </li>
-            <li>
-              <button type="button">
-                <i class="material-icons">directions_bike</i>
-                Football
+                <img src="{{user?.sportSkill?.icon}}" />
+                {{user?.sportSkill?.name}}
               </button>
             </li>
           </ul>

@@ -15,6 +15,7 @@ import { UserPhotosComponent } from './user-inner/user-photos/user-photos.compon
 import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
 import { MdTabsModule } from '@angular/material';
 import { UserChatComponent } from './user-inner/user-chat/user-chat.component';
+import { ModalBgDialog } from '../modal/modal-user-bg/modal.component';
 
 
 
@@ -38,8 +39,9 @@ import { UserChatComponent } from './user-inner/user-chat/user-chat.component';
     UserFriendsComponent,
     UserPhotosComponent,
     UserPlacesComponent,
-    UserChatComponent
-  ]
-
+    UserChatComponent,
+    ModalBgDialog,
+  ],
+  entryComponents: [ModalBgDialog]
 })
 export class UserModule { }
