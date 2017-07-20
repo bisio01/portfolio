@@ -1,3 +1,48 @@
-<p>
-  people-places works!
-</p>
+<h2 class="content-title m-tab-title">My place</h2>
+
+<md-tab-group>
+  <md-tab label="My Gyms">
+    <div class="place-wrapper">
+      <div class="row">
+        <div *ngFor="let place of placesService.places" class="col s4">
+          <div class="place-item" [routerLink]="['/places/page']">
+            <div class="place-img">
+              <img src="assets/img/img-place.jpg"/>
+            </div>
+            <div class="place-description">
+              <div class="place-info clearfix">
+            <span class="place-city">
+              <i class="material-icons">place</i>{{place.city}}</span>
+                <span class="place-date">{{place.date}}</span>
+              </div>
+              <span class="place-name">{{place.title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </md-tab>
+  <md-tab label="Recommended even">
+    <div class="place-wrapper">
+      <div class="row">
+        <div *ngFor="let place of placesService.places" class="col s4">
+          <div class="place-item" [routerLink]="['/places/page']">
+            <div class="place-img">
+              <img src="assets/img/img-place.jpg"/>
+            </div>
+            <div class="place-description">
+              <div class="place-info clearfix">
+            <span class="place-city">
+              <i class="material-icons">place</i>{{place.city}}</span>
+                <span class="place-date">{{place.date}}</span>
+              </div>
+              <span class="place-name">{{place.title}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </md-tab>
+</md-tab-group>
+
+

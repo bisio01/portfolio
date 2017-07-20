@@ -11,6 +11,8 @@ export class PeoplePageComponent implements OnInit {
 
   public currentPeople= {};
   public id: any;
+  public people: any[] = [];
+  public peopleFriends: any[] = [];
 
   constructor(public peopleService: PeopleService,
               private activatedRoute: ActivatedRoute,) {
@@ -22,6 +24,18 @@ export class PeoplePageComponent implements OnInit {
       this.currentPeople = res;
     }, (err)=>{
       console.log('errrrrrror')
+    });
+  }
+
+  addToFriend(id){
+    this.peopleService.addToFriend(id).then(()=>{
+      this.loadCurrentPeople();
+    });
+  }
+
+  deleteFriend(id){
+    this.peopleService.deleteFriend(id).then(()=>{
+      this.loadCurrentPeople();
     });
   }
 

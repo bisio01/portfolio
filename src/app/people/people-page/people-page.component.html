@@ -6,21 +6,26 @@
     <div class="user-header">
       <div class="user-img-wrapper">
         <div class="user-img-inner">
-          <img class="user-img" src="assets/img/img-person.png"/>
+          <img class="user-img" src="assets/img/team-img.png"/>
         </div>
       </div>
       <div class="user-container">
-        <h4 class="user-name">Test test</h4>
+        <h4 class="user-name">{{currentPeople.name}}</h4>
         <div class="user-info">
           <span class="user-date">
           <i class="material-icons">today</i>
-            16 august 1984 <b> (31 year old)</b>
+            16 august 1984
           </span>
           <span class="user-city">
            <i class="material-icons">place</i>
-            Kharkov
+            {{currentPeople.city}}
           </span>
-          <button type="button" class="flex-pull-right" mz-button [routerLink]="['/user/update']">Info update</button>
+          <button type="button" class="flex-pull-right" mz-button *ngIf="!currentPeople.isFriend"
+                  (click)="addToFriend(currentPeople.id)">Add to friends
+          </button>
+          <button type="button" class="flex-pull-right delete-color" *ngIf="currentPeople.isFriend" mz-button
+                  (click)="deleteFriend(currentPeople.id)">Remove
+          </button>
         </div>
         <div class="user-skills">
           <ul class="user-skills-list">
@@ -99,7 +104,7 @@
         </button>
       </div>
     </div>
-    <div class="user-container">
+    <div class="user-router-container">
       <router-outlet></router-outlet>
     </div>
   </div>

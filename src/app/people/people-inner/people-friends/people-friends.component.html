@@ -1,3 +1,28 @@
-<p>
-  people-friends works!
-</p>
+<h2 class="content-title m-tab-title">People</h2>
+<div class="people-wrapper">
+  <md-tab-group>
+    <md-tab label="Recommended">
+      <div class="team-content">
+        <div class="row">
+          <div *ngFor="let people of peopleService.people" class="col s2">
+            <div class="team">
+              <div class="team-img-wrapper">
+                <div class="team-control-wrapper">
+                  <img src="assets/img/team-img.png">
+                  <div class="team-control m-half-button">
+                    <button type="button" class="team-accept"><i class="material-icons">check</i></button>
+                    <button type="button" class="team-delete"><i class="material-icons">close</i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="team-content">
+                <a href="#" class="team-name">{{people.name}}</a>
+                <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </md-tab>
+  </md-tab-group>
+</div>
