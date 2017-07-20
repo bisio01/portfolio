@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import { SportListService } from '../../service/sport-list.service';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'modal',
@@ -9,7 +9,6 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 export class ModalDialog {
 
   public skills: any[] = [];
-
 
   constructor(public sportListService: SportListService) {
     sportListService.getList().then((res: any[])=>{
@@ -21,7 +20,6 @@ export class ModalDialog {
   public eventSkillsForm: FormGroup = new FormGroup({
     form_type: new FormControl('')
   });
-
 
   public result = this.eventSkillsForm.value;
 

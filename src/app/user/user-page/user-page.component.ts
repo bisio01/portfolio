@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { SportListService } from '../../service/sport-list.service';
 import { MdDialog } from '@angular/material';
 import { ModalBgDialog } from '../../modal/modal-user-bg/modal.component';
+import { UserBgList } from '../../service/user-bg.service';
 
 @Component({
   selector: 'app-user-page',
@@ -21,12 +22,13 @@ export class UserPageComponent implements OnInit {
 
   public userLocal;
   public skills: any[] = [];
-  public sillsInfo;
+  public userBg;
 
 
   constructor(public userService: UserService,
               public sportListService: SportListService,
-              public dialog: MdDialog) {
+              public dialog: MdDialog,
+              public userBgList: UserBgList) {
     this.user = this.userService.getData();
 
     this.userLocal = JSON.parse(localStorage.getItem('user'));
@@ -38,8 +40,9 @@ export class UserPageComponent implements OnInit {
 
   public openDialog() {
     this.dialog.open(ModalBgDialog).afterClosed().subscribe(result => {
-      this.sportListService.getById(result).then((res: any[]) => {
-        this.sillsInfo = res;
+      this.userBgList.getById(result).then((res: any[]) => {
+        this.userBg = res;
+        console.log(this.userBg, 'userBg')
       });
     });
   }

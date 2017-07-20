@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserPageComponent } from './user-page/user-page.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
-import { UserService } from './service/user.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterializeModule } from 'ng2-materialize';
@@ -13,7 +12,7 @@ import { UserEventsComponent } from './user-inner/user-events/user-events.compon
 import { UserFriendsComponent } from './user-inner/user-friends/user-friends.component';
 import { UserPhotosComponent } from './user-inner/user-photos/user-photos.component';
 import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
-import { MdTabsModule } from '@angular/material';
+import { MdTabsModule, MdDialogModule } from '@angular/material';
 import { UserChatComponent } from './user-inner/user-chat/user-chat.component';
 import { ModalBgDialog } from '../modal/modal-user-bg/modal.component';
 
@@ -30,7 +29,8 @@ import { ModalBgDialog } from '../modal/modal-user-bg/modal.component';
     ReactiveFormsModule,
     MaterializeModule.forRoot(),
     BrowserAnimationsModule,
-    MdTabsModule
+    MdTabsModule,
+    MdDialogModule,
   ],
   declarations: [
     UserPageComponent,
