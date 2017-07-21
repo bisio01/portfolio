@@ -1,6 +1,7 @@
 <div class="user-wrapper">
   <div class="user-main-bg-wrapper">
-    <img class="user-main-bg" src="{{userBg?.img}}"/>
+    <img class="user-main-bg" *ngIf="userBg?.img" src="{{userBg?.img}}"/>
+    <img class="user-main-bg" *ngIf="!userBg?.img" src="assets/img/cover.jpg"/>
   </div>
   <div class="user-content">
     <div class="user-header">

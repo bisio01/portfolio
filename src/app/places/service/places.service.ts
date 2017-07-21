@@ -7,7 +7,7 @@ import { Injectable }    from '@angular/core';
 @Injectable()
 
 export class PlacesService {
-  currentPlacesId: number;
+  currentPlaceId: number;
 
   public places: any = [
     {
@@ -58,23 +58,75 @@ export class PlacesService {
     }
 
     this.updateStore();
-    console.log('constructor',this.places);
   }
 
   private updateStore() {
     localStorage.setItem('places', JSON.stringify(this.places));
-    console.log(localStorage, 'local')
   }
 
+  public getById(id: number) {
+    return new Promise((resolve, reject) => {
+      const f = this.places.filter(el => el.id == id);
+      if(f.length){
+        this.currentPlaceId = id;
+        resolve(f[0]);
+      }else {
+        reject();
+      }
+    })
+  }
 
-  public getList() {
-    return new Promise((resolve, reject)=> {
-      if(this.places) {
-        resolve(this.places)
-      } else {
+  public getCurrentPlace() {
+    return new Promise((resolve, reject) => {
+      const f = this.places.filter(el => el.id == this.currentPlaceId);
+      if(f.length){
+        resolve(f[0]);
+      }else {
         reject();
       }
 
+    })
+  }
+
+  public getList(filter?: string) {
+    return new Promise((resolve, reject)=> {
+      if(this.places) {
+        let arr = [];
+        if (filter === 'myPlaces') {
+          arr = this.places.filter(el => !!el.join)
+        } else if (filter === 'places') {
+          arr = this.places.filter(el => !(!!el.join))
+        } else {
+          arr = this.places;
+        }
+        resolve(arr)
+      } else {
+        reject();
+      }
+    })
+  }
+
+  public addPlace(id) {
+    return new Promise((resolve, reject) => {
+      this.places = this.places.map(el => {
+        return Object.assign({}, el, {
+          join: el.join ? true : el.id == id
+        })
+      });
+      this.updateStore();
+      resolve(true);
+    })
+  }
+
+  public exitPlace(id) {
+    return new Promise((resolve, reject) => {
+      this.places = this.places.map(el => {
+        return Object.assign({}, el,  {
+          join: el.id == id ? false : el.join
+        })
+      });
+      this.updateStore();
+      resolve(true)
     })
   }
 }

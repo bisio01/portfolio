@@ -15,6 +15,7 @@ import { UserPlacesComponent } from './user-inner/user-places/user-places.compon
 import { MdTabsModule, MdDialogModule } from '@angular/material';
 import { UserChatComponent } from './user-inner/user-chat/user-chat.component';
 import { ModalBgDialog } from '../modal/modal-user-bg/modal.component';
+import { ModalMultipleDialog } from '../modal/modal-multiple/modal.component';
 
 
 
@@ -41,7 +42,8 @@ import { ModalBgDialog } from '../modal/modal-user-bg/modal.component';
     UserPlacesComponent,
     UserChatComponent,
     ModalBgDialog,
+    ModalMultipleDialog
   ],
-  entryComponents: [ModalBgDialog]
+  entryComponents: [ModalBgDialog, ModalMultipleDialog]
 })
 export class UserModule { }

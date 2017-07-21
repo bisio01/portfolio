@@ -24,30 +24,26 @@ export const PlacesRoutes: Routes = [
           },
         ]
       },
+
       {
-        path: 'page',
+        path: ':id',
+        component: <any>PlacesPageComponent,
         children: [
           {
-            path: '',
-            component: <any>PlacesPageComponent,
-            children: [
-              {
-                path: 'contact',
-                component: <any>PlacesContactComponent,
-              },
-              {
-                path: 'info',
-                component: <any>PlacesInfoComponent,
-              },
-              {
-                path: 'people',
-                component: <any>PlacesPeopleComponent,
-              },
-              {
-                path: 'photo',
-                component: <any>PlacesPhotoComponent,
-              },
-            ]
+            path: 'contact',
+            component: <any>PlacesContactComponent,
+          },
+          {
+            path: 'info',
+            component: <any>PlacesInfoComponent,
+          },
+          {
+            path: 'people',
+            component: <any>PlacesPeopleComponent,
+          },
+          {
+            path: 'photo',
+            component: <any>PlacesPhotoComponent,
           },
         ]
       },

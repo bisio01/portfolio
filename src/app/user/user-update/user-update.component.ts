@@ -4,8 +4,8 @@ import { UserService } from '../service/user.service';
 import { Subscription, Observable } from 'rxjs';
 import { fadeInAnimation } from '../../animations/animations';
 import { SportListService } from '../../service/sport-list.service';
-import { ModalDialog } from '../../modal/modal/modal.component';
 import { MdDialog } from '@angular/material';
+import { ModalMultipleDialog } from '../../modal/modal-multiple/modal.component';
 
 @Component({
   selector: 'app-user-update',
@@ -82,7 +82,7 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
       this.UserForm.patchValue(this.userLocal)
     }
 
-    sportListService.getList().then((res: any[])=>{
+    sportListService.getList().then((res: any[]) => {
       this.skills = res;
     });
 
@@ -127,17 +127,23 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
     let user = this.UserForm.value;
     this.userService.setData(user);
     localStorage.setItem('user', JSON.stringify(user));
-    console.log(user, 'user')
 
   }
 
   public openDialog() {
-    this.dialog.open(ModalDialog).afterClosed().subscribe(result => {
+    this.dialog.open(ModalMultipleDialog).afterClosed().subscribe(result => {
+      /* ;
+       console.log(  this.UserForm.get('sportSkill'), '  this.UserForm.get');
+       */
+
       this.UserForm.get('sportSkill').setValue(result);
-      console.log(  this.UserForm.get('sportSkill'), '  this.UserForm.get');
-      this.sportListService.getById(result).then((res: any[]) => {
+      //this.sportListService.getByIds(result);
+      /*this.sportListService.getByIds(result).then((res: any[]) => {
         this.sillsInfo = res;
-      });
+      });*/
+
+      console.log(result);
+      console.log(this.UserForm, 'this.UserForm')
     });
   }
 

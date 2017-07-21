@@ -1,9 +1,12 @@
-<div class="modal-wrapper row" [formGroup]="eventSkillsForm">
+<div class="modal-wrapper row" [formGroup]="userSkillsForm">
   <h4 class="modal-title">Chose your type of sport</h4>
   <div class="modal-item col s3" *ngFor="let skill of skills">
-    <label for="{{skill.value}}">
-      <input hidden formControlName="form_type" [checked]="eventSkillsForm.controls['form_type'].value === skill.id"
-             id="{{skill.value}}" value="{{skill.id}}" type="checkbox">
+    <label>
+      <input hidden
+             name="skills"
+             [checked]="skills.indexOf(skill) >= 0"
+             (change)="updateCheckedOptions(skill, $event)"
+          value="{{skill.id}}" type="checkbox">
       <div class="modal-img-wrapper">
         <img class="modal-skill-img" src="{{skill.img}}"/>
       </div>
@@ -13,4 +16,4 @@
 </div>
 
 
-<button mz-button >Chose</button>
+<button mz-button (click)="add()" [md-dialog-close]="skillsIds">Chose</button>

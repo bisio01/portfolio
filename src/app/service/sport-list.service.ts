@@ -3,12 +3,17 @@
  */
 import * as _ from "lodash";
 import { Injectable }    from '@angular/core';
+import { forEach } from '@angular/router/src/utils/collection';
+import { Observable } from 'rxjs';
 
 
 @Injectable()
 export class SportListService {
-
+  public data;
   currentSkillsId:number;
+
+  public skillsId;
+  public currentSkills;
 
   public skills: any = [
     {
@@ -104,6 +109,29 @@ export class SportListService {
 
     })
   }
+
+  /*public getByIds(ids: string[] = []) {
+    console.log(ids, 'ids');
+    return new Promise((resolve, reject) => {
+      this.data.subscribe(
+        data => {
+          this.skillsId = data[0];
+          this.currentSkills = data[1];
+
+          this.skills.forEach(function (item: any,) {
+            this.currentSkills.forEach(function (skillItem: any) {
+              if (skillItem.id === item.sportSkill) {
+                resolve(item.sportSkill = skillItem);
+              }
+            });
+
+
+          }.bind(this));
+        }
+      );
+      reject();
+    })
+  }*/
 
   public getList() {
     return new Promise((resolve, reject)=> {

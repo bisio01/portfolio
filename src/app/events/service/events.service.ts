@@ -89,7 +89,6 @@ export class EventsService {
       }else {
         reject();
       }
-
     })
   }
 
@@ -120,7 +119,6 @@ export class EventsService {
       } else {
         reject();
       }
-
     })
   }
 
@@ -150,7 +148,6 @@ export class EventsService {
 
   public updateStore() {
     localStorage.setItem('events', JSON.stringify(this.events));
-    console.log(this.events, 'local')
   }
 
 }

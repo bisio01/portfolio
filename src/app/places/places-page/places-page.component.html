@@ -14,13 +14,19 @@
         <div class="user-info">
           <span class="user-date">
           <i class="material-icons">today</i>
-            16 august 1984 <b> (31 year old)</b>
+            16 august 1984
           </span>
           <span class="user-city">
            <i class="material-icons">place</i>
             Kharkov
           </span>
-          <button type="button" class="flex-pull-right" mz-button>Add place</button>
+
+          <button type="button" class="flex-pull-right" mz-button *ngIf="!currentPlace.join"
+                  (click)="addPlace(currentPlace.id)">Add place
+          </button>
+          <button type="button" class="flex-pull-right delete-color" *ngIf="currentPlace.join" mz-button
+                  (click)="exitPlace(currentPlace.id)">Remove place
+          </button>
         </div>
         <div class="user-skills">
           <ul class="user-skills-list">
