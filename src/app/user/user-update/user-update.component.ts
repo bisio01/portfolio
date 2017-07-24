@@ -132,21 +132,18 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
 
   public openDialog() {
     this.dialog.open(ModalMultipleDialog).afterClosed().subscribe(result => {
-      /* ;
-       console.log(  this.UserForm.get('sportSkill'), '  this.UserForm.get');
-       */
 
       this.UserForm.get('sportSkill').setValue(result);
-      //this.sportListService.getByIds(result);
-      /*this.sportListService.getByIds(result).then((res: any[]) => {
-        this.sillsInfo = res;
-      });*/
 
       console.log(result);
       console.log(this.UserForm, 'this.UserForm')
     });
   }
 
+
+  public getSkillInfobyId(id) {
+    return this.skills.filter(el => el.id == id)[0]
+  }
 
   private formToggle() {
     this.linksArr = $('.form-group');

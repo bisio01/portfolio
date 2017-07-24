@@ -92,11 +92,10 @@
           <div class="form-group" (click)="openDialog()">
             <label class="field-label">Skills</label>
             <div class="skills-container">
-              <ul class="user-skills-list" *ngIf="sillsInfo?.name">
-                <li>
+              <ul class="user-skills-list" >
+                <li *ngFor="let skill of UserForm.value.sportSkill">
                   <button type="button">
-                    <img src="{{sillsInfo?.icon}}">
-                    {{sillsInfo?.name}}
+                    {{getSkillInfobyId(skill).name}}
                   </button>
                 </li>
               </ul>
