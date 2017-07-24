@@ -24,9 +24,6 @@ import { AuthenticationService } from '../auth/service/auth.service';
     ReactiveFormsModule,
 
   ],
-  declarations: [
-    LandingComponent
-  ],
   providers: [
     AuthenticationService
   ]

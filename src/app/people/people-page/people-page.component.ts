@@ -9,7 +9,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class PeoplePageComponent implements OnInit {
 
-  public currentPeople= {};
+  public currentPeople: any = {};
   public id: any;
   public people: any[] = [];
   public peopleFriends: any[] = [];

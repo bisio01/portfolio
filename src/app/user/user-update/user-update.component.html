@@ -93,9 +93,10 @@
             <label class="field-label">Skills</label>
             <div class="skills-container">
               <ul class="user-skills-list" >
-                <li *ngFor="let skill of UserForm?.value.sportSkill">
+                <li *ngFor="let skill of UserForm.value?.sportSkill">
                   <button type="button">
-                    {{getSkillInfobyId(skill).name}}
+                    <img src="{{getSkillInfoById(skill).icon}}" />
+                    {{getSkillInfoById(skill).name}}
                   </button>
                 </li>
               </ul>

@@ -13,7 +13,7 @@ export class EventsPageComponent implements OnInit {
   public data;
   public events: any[] = [];
   public myEvents: any[] = [];
-  public currentEvent = {};
+  public currentEvent: any = {};
   public id: any;
   public skills: any[] = [];
 

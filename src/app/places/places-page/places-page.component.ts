@@ -14,7 +14,7 @@ export class PlacesPageComponent implements OnInit {
   public data;
   public places: any[] = [];
   public myPlaces: any[] = [];
-  public currentPlace = {};
+  public currentPlace: any = {};
   public id: any;
   public skills: any[] = [];
 
