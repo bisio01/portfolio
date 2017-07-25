@@ -1,0 +1,18 @@
+<div class="modal-wrapper user-bg-modal row" [formGroup]="eventBgForm">
+  <h4 class="modal-title">Chose your type of sport</h4>
+  <div class="modal-item col s3" *ngFor="let eventBgItem of eventBg">
+    <label for="{{eventBgItem.value}}">
+      <input hidden formControlName="form_bg" [checked]="eventBgForm.controls['form_bg'].value === eventBgItem.id"
+             id="{{eventBgItem.value}}" value="{{eventBgItem.id}}" type="radio">
+      <div class="modal-img-wrapper">
+        <img class="modal-skill-img" src="{{eventBgItem.img}}"/>
+      </div>
+      <span class="modal-item-name">{{eventBgItem.name}}</span>
+    </label>
+  </div>
+
+</div>
+
+<button mz-button (click)="add()"  [md-dialog-close]="eventBgForm.value.form_bg">Chose</button>
+
+

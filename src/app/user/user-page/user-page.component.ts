@@ -12,7 +12,7 @@ import { UserBgList } from '../../service/user-bg.service';
   templateUrl: 'user-page.component.html',
   styleUrls: ['user-page.component.css'],
   animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }
+  host: {'[@fadeInAnimation]': ''}
 })
 export class UserPageComponent implements OnInit {
 
@@ -29,20 +29,15 @@ export class UserPageComponent implements OnInit {
               public sportListService: SportListService,
               public dialog: MdDialog,
               public userBgList: UserBgList) {
+
     this.user = this.userService.getData();
-
     this.userLocal = JSON.parse(localStorage.getItem('user'));
-
-    console.log(JSON.parse(localStorage.getItem('user')), 'user')
-
   }
-
 
   public openDialog() {
     this.dialog.open(ModalBgDialog).afterClosed().subscribe(result => {
       this.userBgList.getById(result).then((res: any[]) => {
         this.userBg = res;
-        console.log(this.userBg, 'userBg')
       });
     });
   }
@@ -56,22 +51,16 @@ export class UserPageComponent implements OnInit {
       Observable.of(JSON.parse(localStorage.getItem('user'))),
       this.sportListService.getList()
     );
-    console.log(JSON.parse(localStorage.getItem('user')), 'qweqwe');
     this.data.subscribe(
       data => {
 
         this.user = data[0];
         this.skills = data[1];
-
-
-          this.skills.forEach(function (skillItem: any) {
-            if (skillItem.id === this.user.sportSkill) {
-              this.user.sportSkill = skillItem;
-            }
-          }.bind(this));
-
-        console.log(this.user, 'this.user');
-
+        this.skills.forEach(function (skillItem: any) {
+          if (skillItem.id === this.user.sportSkill) {
+            this.user.sportSkill = skillItem;
+          }
+        }.bind(this));
       }
     )
   }

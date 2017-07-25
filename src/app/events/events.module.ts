@@ -18,6 +18,7 @@ import { EventsPeopleComponent } from './events-inner/events-people/events-peopl
 import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.component';
 import { EventsContactComponent } from './events-inner/events-contact/events-contact.component';
 import {  ModalDialog } from '../modal/modal/modal.component';
+import { ModalEventBgDialog } from '../modal/modal-event-bg/modal.component';
 
 
 @NgModule({
@@ -42,8 +43,9 @@ import {  ModalDialog } from '../modal/modal/modal.component';
     EventsPeopleComponent,
     EventsContactComponent,
     EventsPhotoComponent,
-    ModalDialog
+    ModalDialog,
+    ModalEventBgDialog
   ],
-  entryComponents: [ModalDialog]
+  entryComponents: [ModalDialog, ModalEventBgDialog]
 })
 export class EventsModule { }

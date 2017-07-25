@@ -6,6 +6,8 @@ import { EventsService } from '../service/events.service';
 import { Router } from '@angular/router';
 import { ModalDialog } from '../../modal/modal/modal.component';
 import { SportListService } from '../../service/sport-list.service';
+import { ModalEventBgDialog } from '../../modal/modal-event-bg/modal.component';
+import { EventBgList } from '../../service/event-bg.service';
 
 @Component({
   selector: 'app-events-create',
@@ -71,12 +73,13 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
     ]),
     sportSkill: new FormControl('', [])
   });
-
+  public eventBg;
 
   constructor(public eventsService: EventsService,
               private _router: Router,
               public dialog: MdDialog,
-              public sportListService: SportListService) {
+              public sportListService: SportListService,
+              public eventBgList: EventBgList) {
     sportListService.getList().then((res: any[]) => {
       this.skills = res;
     });
@@ -93,6 +96,15 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
 
     });
   }
+
+  public openBgDialog() {
+    this.dialog.open(ModalEventBgDialog).afterClosed().subscribe(result => {
+      this.eventBgList.getById(result).then((res: any[]) => {
+        this.eventBg = res;
+      });
+    });
+  }
+
 
   @ViewChild(MdDatepicker) datepicker: MdDatepicker<Date>;
 

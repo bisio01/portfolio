@@ -9,7 +9,8 @@
         </div>
         <div class="avatar-dual-color"></div>
       </div>
-      <div class="event-bg-wrapper">
+      <div class="event-bg-wrapper" (click)="openBgDialog()">
+        <img class="user-main-bg" *ngIf="eventBg?.img" src="{{eventBg?.img}}"/>
         <i class="material-icons">wallpaper</i>
       </div>
   <!--    <p class="profile-skill-name">{{sillsInfo?.name}}</p>-->
@@ -58,7 +59,6 @@
                   <option class="left circle">For all</option>
                   <option class="left circle">For friends</option>
                 </optgroup>
-
               </select>
             </mz-select-container>
           </div>

@@ -24,6 +24,7 @@ import { PeopleService } from './people/service/people.service';
 import { PlacesService } from './places/service/places.service';
 import { SportListService } from './service/sport-list.service';
 import { UserBgList } from './service/user-bg.service';
+import { EventBgList } from './service/event-bg.service';
 
 
 
@@ -59,7 +60,8 @@ import { UserBgList } from './service/user-bg.service';
     PeopleService,
     PlacesService,
     SportListService,
-    UserBgList
+    UserBgList,
+    EventBgList
   ],
   bootstrap: [AppComponent],
 })

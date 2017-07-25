@@ -111,6 +111,9 @@
     .avatar {
       width: 140px;
       height: 140px;
+      img {
+        width: 220px;
+      }
     }
   }
 
@@ -142,6 +145,14 @@
   margin-top: -75px;
   position: relative;
   margin-bottom: 30px;
+  overflow: hidden;
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
   .material-icons {
     position: absolute;
     right: 10px;
