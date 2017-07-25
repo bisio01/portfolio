@@ -54,8 +54,8 @@ export class PlacesListComponent implements OnInit {
 
   ngOnInit() {
     this.data = Observable.forkJoin(
-      this.placesService.getList('events'),
-      this.placesService.getList('myEvents'),
+      this.placesService.getList('places'),
+      this.placesService.getList('myPlaces'),
       this.sportListService.getList()
     );
     this.data.subscribe(

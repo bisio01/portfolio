@@ -4,8 +4,8 @@
   <md-tab label="My Gyms">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of placesService.places" class="col s4">
-          <div class="place-item" [routerLink]="['/places/page']">
+        <div *ngFor="let place of places" class="col s4">
+          <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
             </div>
@@ -25,8 +25,8 @@
   <md-tab label="Recommended even">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of placesService.places" class="col s4">
-          <div class="place-item" [routerLink]="['/places/page']">
+        <div *ngFor="let place of myPlaces" class="col s4">
+          <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
             </div>

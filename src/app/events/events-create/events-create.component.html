@@ -2,16 +2,17 @@
 <form [formGroup]="eventForm">
   <div class="profile-update-wrapper">
     <div class="profile-avatar-wrapper">
-      <div class="avatar-border">
+      <div class="avatar-border event-avatar-border">
         <div class="avatar">
           <i class="avatar-icon event-icon" *ngIf="!sillsInfo?.img"></i>
           <img *ngIf="sillsInfo?.img" src="{{sillsInfo?.img}}"/>
         </div>
+        <div class="avatar-dual-color"></div>
       </div>
       <div class="event-bg-wrapper">
-
+        <i class="material-icons">wallpaper</i>
       </div>
-      <p class="profile-skill-name">{{sillsInfo?.name}}</p>
+  <!--    <p class="profile-skill-name">{{sillsInfo?.name}}</p>-->
       <button type="button" mz-button (click)="openDialog()">Add kind of sport</button>
       <p class="avatar-description">Add kind of sport</p>
     </div>

@@ -9,11 +9,20 @@ import { PlacesService } from '../../../places/service/places.service';
 export class UserPlacesComponent implements OnInit {
 
   public places: any[] = [];
+  public myPlaces: any[] = [];
 
   constructor(public placesService: PlacesService) {
-    placesService.getList().then((res: any[])=>{
+    this.loadData();
+  }
+
+  loadData() {
+    this.placesService.getList('places').then((res: any[]) => {
       this.places = res;
     });
+
+    this.placesService.getList('myPlaces').then((res: any[]) => {
+      this.myPlaces = res
+    })
   }
 
   ngOnInit() {

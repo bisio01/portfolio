@@ -4,10 +4,11 @@
   <md-tab label="All">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of placesService.places" class="col s4">
+        <div *ngFor="let place of places" class="col s4">
           <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
+              <button type="button" mz-button (click)="addPlace(place.id)" >Add Place</button>
             </div>
             <div class="place-description">
               <div class="place-info clearfix">
@@ -22,13 +23,14 @@
       </div>
     </div>
   </md-tab>
-  <md-tab label="Gyms">
+  <md-tab label="My gyms">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of placesService.places" class="col s4">
+        <div *ngFor="let place of myPlaces" class="col s4">
           <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
+              <button type="button" mz-button class="delete-color" (click)="exitPlace(place.id)" >Exit Place</button>
             </div>
             <div class="place-description">
               <div class="place-info clearfix">
