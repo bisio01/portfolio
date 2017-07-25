@@ -21,8 +21,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   public people: any[] = [];
 
   public peopleFriends: any[] = [];
-  public sillsInfo;
 
+  public skills: any[] = [];
 
   constructor(public userService: UserService,
               public peopleService: PeopleService,
@@ -31,7 +31,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
     this.userLocal = JSON.parse(localStorage.getItem('user'));
     this.loadData();
-    console.log( this.userLocal, ' this.userLocal')
+    sportListService.getList().then((res: any[]) => {
+      this.skills = res;
+    });
   }
 
   loadData(){
@@ -53,13 +55,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
   }
 
-  deleteFriend(id){
-    this.peopleService.deleteFriend(id).then(()=>{
-      this.loadData();
-    });
+
+  public getSkillInfoById(id) {
+    return this.skills.filter(el => el.id == id)[0];
   }
-
-
 
   ngAfterViewInit() {
   }

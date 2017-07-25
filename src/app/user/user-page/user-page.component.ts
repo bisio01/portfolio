@@ -47,6 +47,10 @@ export class UserPageComponent implements OnInit {
     });
   }
 
+  public getSkillInfoById(id) {
+    return this.skills.filter(el => el.id == id)[0];
+  }
+
   ngOnInit() {
     this.data = Observable.forkJoin(
       Observable.of(JSON.parse(localStorage.getItem('user'))),

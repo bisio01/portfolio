@@ -79,47 +79,11 @@
         <h3 class="aside-title">Sport Skills</h3>
       </div>
       <div class="skills-content">
-        <ul class="skill-list">
-          <li class="skill-item">
+        <ul class="user-skills-list">
+          <li *ngFor="let skill of userLocal?.sportSkill">
             <button type="button">
-              <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football'"></i>
-              Football
-            </button>
-          </li>
-          <li class="skill-item">
-            <button type="button">
-              <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'gondola'"></i>
-              Snowboard
-            </button>
-          </li>
-          <li class="skill-item">
-            <button type="button">
-              <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football-australian'"></i>
-              Basketball
-            </button>
-          </li>
-          <li class="skill-item">
-            <button type="button">
-              <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football'"></i>
-              Football
-            </button>
-          </li>
-          <li class="skill-item">
-            <button type="button">
-              <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'football'"></i>
-              Football
-            </button>
-          </li>
-          <li class="skill-item">
-            <button type="button">
-              <i mz-icon-mdi [flip]="'vertical'"
-                 [icon]="'bike'"></i>
-              Bike
+              <img src="{{getSkillInfoById(skill)?.icon}}" />
+              {{getSkillInfoById(skill)?.name}}
             </button>
           </li>
         </ul>

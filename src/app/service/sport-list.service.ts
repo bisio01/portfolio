@@ -29,7 +29,7 @@ export class SportListService {
       name: 'Boxers',
       img: 'assets/img/sport-skills/boxers.jpg',
       value: 'boxers',
-      icon: 'assets/img/sport-skills/icons/boxing-groves.svg'
+      icon: 'assets/img/sport-skills/icons/boxing-gloves.svg'
     },
     {
       id: '03',

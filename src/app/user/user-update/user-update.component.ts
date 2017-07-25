@@ -68,8 +68,6 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
   public userLocal;
 
   public skills: any[] = [];
-  public sillsInfo;
-
 
   constructor(public userService: UserService,
               public dialog: MdDialog,
@@ -86,9 +84,6 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
       this.skills = res;
     });
 
-  }
-
-  ngOnInit() {
   }
 
   firstName: string = '';
@@ -139,10 +134,7 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
 
 
   public getSkillInfoById(id) {
-
     return this.skills.filter(el => el.id == id)[0];
-
-
   }
 
   private formToggle() {
@@ -157,6 +149,8 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
     }));
   }
 
+  ngOnInit() {
+  }
 
   ngAfterViewInit() {
     this.formToggle();
