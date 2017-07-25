@@ -71,7 +71,8 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
       Validators.minLength(1),
       Validators.maxLength(2),
     ]),
-    sportSkill: new FormControl('', [])
+    sportSkill: new FormControl('', []),
+    eventBg: new FormControl('', [])
   });
   public eventBg;
 
@@ -99,6 +100,8 @@ export class EventsCreateComponent implements OnInit, AfterViewInit {
 
   public openBgDialog() {
     this.dialog.open(ModalEventBgDialog).afterClosed().subscribe(result => {
+      this.eventForm.get('eventBg').setValue(result);
+
       this.eventBgList.getById(result).then((res: any[]) => {
         this.eventBg = res;
       });

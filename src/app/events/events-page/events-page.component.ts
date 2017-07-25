@@ -3,6 +3,7 @@ import { EventsService } from '../service/events.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SportListService } from '../../service/sport-list.service';
+import { EventBgList } from '../../service/event-bg.service';
 
 @Component({
   selector: 'app-events-page',
@@ -16,12 +17,15 @@ export class EventsPageComponent implements OnInit {
   public currentEvent: any = {};
   public id: any;
   public skills: any[] = [];
-
+  public bgImg: any[] = [];
+  public bgList: any[] = [];
 
   constructor(public eventsService: EventsService,
               private activatedRoute: ActivatedRoute,
-              public sportListService: SportListService) {
+              public sportListService: SportListService,
+              public eventBgList: EventBgList) {
     this.loadCurrentEvent();
+    // this.bgImg = this.eventBgList.getList()
   }
 
   addEvent(id) {
@@ -40,29 +44,34 @@ export class EventsPageComponent implements OnInit {
     this.eventsService.getById(this.id).then((res) => {
       this.currentEvent = res;
       console.log(this.currentEvent, 'this.currentEvent')
-    }, (err)=>{
+    }, (err) => {
       console.log('errrrrrror')
     });
+  }
+
+  public getBgById(id) {
+    return this.bgImg.filter(el => el.id == id)[0];
   }
 
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
-    this.id = params['id'];
+      this.id = params['id'];
       this.loadCurrentEvent();
     });
 
     this.data = Observable.forkJoin(
       this.eventsService.getList('events'),
-      this.eventsService.getList('myEvents'),
-      this.sportListService.getList()
+      this.sportListService.getList(),
+      this.eventBgList.getList()
     );
     this.data.subscribe(
       data => {
 
         this.events = data[0];
-        this.myEvents = data[1];
-        this.skills = data[2];
+
+        this.skills = data[1];
+        this.bgList = data[2];
 
         this.events.forEach(function (item: any,) {
           this.skills.forEach(function (skillItem: any) {
@@ -74,8 +83,13 @@ export class EventsPageComponent implements OnInit {
 
         }.bind(this));
         console.log(this.events, 'qweqweqweqwe');
-        this.myEvents.forEach(function (item: any,) {
-        });
+        this.events.forEach(function (item: any,) {
+          this.bgList.forEach(function (bgItem: any) {
+            if (bgItem.id === item.eventBg) {
+              item.eventBg = bgItem;
+            }
+          });
+        }.bind(this));
       }
     )
   }

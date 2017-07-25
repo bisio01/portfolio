@@ -32,10 +32,12 @@ export class UserPageComponent implements OnInit {
 
     this.user = this.userService.getData();
     this.userLocal = JSON.parse(localStorage.getItem('user'));
+    console.log(  this.userLocal , 'this.userLocal')
   }
 
   public openDialog() {
     this.dialog.open(ModalBgDialog).afterClosed().subscribe(result => {
+
       this.userBgList.getById(result).then((res: any[]) => {
         this.userBg = res;
       });

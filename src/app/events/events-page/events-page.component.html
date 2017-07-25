@@ -1,6 +1,7 @@
 <div class="user-wrapper">
   <div class="user-main-bg-wrapper">
-    <img class="user-main-bg" src="assets/img/event.jpg"/>
+    <img class="user-main-bg" *ngIf="!currentEvent.eventBg?.img" src="assets/img/event.jpg"/>
+    <img class="user-main-bg" *ngIf="currentEvent.eventBg?.img" src="{{currentEvent.eventBg?.img}}"/>
   </div>
   <div class="user-content">
     <div class="user-header">
@@ -14,7 +15,7 @@
         <div class="user-info">
           <span class="user-date">
           <i class="material-icons">today</i>
-         {{currentEvent.date | date:'yyyy.MM.dd'}}  <span>{{currentEvent.hour}}:{{currentEvent.minute}}</span>
+         {{currentEvent.date | date:'yyyy.MM.dd'}} <span>{{currentEvent.hour}}:{{currentEvent.minute}}</span>
           </span>
           <span class="user-city">
            <i class="material-icons">place</i>
