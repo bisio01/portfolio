@@ -51,6 +51,7 @@
   height: 100vh;
   min-height: 500px;
   position: relative;
+  overflow-y: auto;
   z-index: 1;
   .login-icon {
     border: 1px solid #DBE0E4;
@@ -93,13 +94,14 @@
 }
 
 .form-footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   background: #fafafa;
   padding: 15px 30px;
   text-align: center;
   border-radius: 0 0 5px 5px;
+  margin-top: 40px;
   p {
     margin: 0;
     display: inline-block;

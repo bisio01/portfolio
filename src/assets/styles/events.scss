@@ -26,32 +26,41 @@
     padding-right: 20px;
     &-wrapper {
       width: 63%;
+      margin-right: 5%;
     }
   }
   &-author {
     font-style: italic;
     display: block;
-    margin-bottom: 15px;
+    float: right;
+    margin: 10px 0 0 0;
   }
   &-info {
     margin: auto;
     width: 20%;
-    padding-right: 30px;
+    padding: 0 15px;
+    border-left: 1px solid #dfdede;
     span {
       display: flex;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
       i {
         margin-right: 10px;
         font-size: 18px;
       }
     }
+    .btn {
+      height: 30px;
+      line-height: 30px;
+      font-size: 12px;
+      padding: 0 16px;
+    }
   }
   &-img-wrapper {
     margin-right: 5%;
     position: relative;
-    height: 163px;
-    width: 163px;
+    height: 133px;
+    width: 133px;
     overflow: hidden;
     img {
       position: absolute;

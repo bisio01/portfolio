@@ -3,7 +3,7 @@
     <div class="profile-wrapper">
       <div class="aside-profile-bg-wrapper">
         <img class="aside-profile-bg" *ngIf="!userLocalBg.img" src="assets/img/img-2.jpg"/>
-        <img class="aside-profile-bg" *ngIf="userLocalBg.img"  src="{{userLocalBg?.img}}"/>
+        <img class="aside-profile-bg" *ngIf="userLocalBg.img" src="{{userLocalBg?.img}}"/>
       </div>
       <div class="aside-profile">
         <div class="profile-img-wrapper">
@@ -14,7 +14,7 @@
             <i class="login-icon" mz-icon-mdi
                [flip]="'vertical'"
                [icon]="'account'"
-               [size]="'24px'">
+               [size]="'18px'">
             </i>
             {{userLocal?.firstName}} {{userLocal?.lastName}}
           </span>
@@ -22,7 +22,7 @@
             <i class="login-icon" mz-icon-mdi
                [flip]="'vertical'"
                [icon]="'calendar-text'"
-               [size]="'24px'">
+               [size]="'18px'">
             </i>
           {{userLocal?.birthdayDay}}.{{userLocal?.birthdayMonth}}.{{userLocal?.birthdayYear}}
           </span>
@@ -30,7 +30,7 @@
             <i class="login-icon" mz-icon-mdi
                [flip]="'vertical'"
                [icon]="'map-marker'"
-               [size]="'24px'">
+               [size]="'18px'">
             </i>
           {{userLocal?.country}} <span *ngIf="userLocal?.country">,</span> {{userLocal?.city}}
           </span>
@@ -41,6 +41,14 @@
   <div class="aside-content">
     <div class="aside-profile-info">
       <div class="profile-info-wrapper">
+        <button type="button" class="profile-info-item" [routerLink]="['/user/page/chat']">
+          <span class="profile-info-number">
+            11
+          </span>
+          <span class="profile-info-name">
+            Chat
+          </span>
+        </button>
         <button type="button" class="profile-info-item" [routerLink]="['/user/page/friends']">
           <span class="profile-info-number">
             11
@@ -75,50 +83,75 @@
         </button>
       </div>
     </div>
-    <div class="aside-skills">
-      <div class="aside-title-wrapper">
-        <h3 class="aside-title">Sport Skills</h3>
-      </div>
-      <div class="skills-content">
-        <ul class="user-skills-list">
-          <li *ngFor="let skill of userLocal?.sportSkill">
-            <button type="button">
-              <img src="{{getSkillInfoById(skill)?.icon}}" />
-              {{getSkillInfoById(skill)?.name}}
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="aside-team">
-      <div class="aside-title-wrapper">
-        <h3 class="aside-title">Your Team</h3>
-        <p class="team-description">You can invite more friends to your team.</p>
-      </div>
-      <div class="team-content">
-        <div class="row">
-          <div *ngFor="let people of peopleFriends" class="col s4">
-            <div class="team">
-              <div class="team-img-wrapper">
-                <div class="team-control-wrapper">
-                  <img src="assets/img/team-img.png">
+    <div class="collapsible-wrapper">
+      <mz-collapsible
+        [mode]="'expandable'"
+        [onClose]="closeFunctionCallback"
+        [onOpen]="openFunctionCallback"
+        [popout]="false">
+
+        <mz-collapsible-item [active]="true">
+
+          <mz-collapsible-item-header>
+            <div class="aside-title-wrapper">
+              <h3 class="aside-title">Sport Skills</h3>
+              <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+          </mz-collapsible-item-header>
+          <mz-collapsible-item-body>
+            <div class="skills-content">
+              <ul class="user-skills-list">
+                <li *ngFor="let skill of userLocal?.sportSkill">
+                  <button type="button">
+                    <img src="{{getSkillInfoById(skill)?.icon}}"/>
+                    {{getSkillInfoById(skill)?.name}}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </mz-collapsible-item-body>
+
+        </mz-collapsible-item>
+        <mz-collapsible-item>
+          <mz-collapsible-item-header>
+            <div class="aside-title-wrapper">
+              <h3 class="aside-title">Your Team</h3>
+              <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+          </mz-collapsible-item-header>
+          <mz-collapsible-item-body>
+            <p class="team-description">You can invite more friends to your team.</p>
+            <div class="team-content">
+              <div class="row">
+                <div *ngFor="let people of peopleFriends" class="col s3">
+                  <div class="team">
+                    <div class="team-img-wrapper">
+                      <div class="team-control-wrapper">
+                        <img src="assets/img/team-img.png">
+                      </div>
+                    </div>
+                    <div class="team-content">
+                      <button type="button" class="team-name">{{people.name}}</button>
+                      <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="team-content">
-                <button type="button" class="team-name">{{people.name}}</button>
-                <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
+            </div>
+            <div class="aside-team">
+              <div class="team-footer">
+                <button mz-button class="yellow darken-1" [routerLink]="['/people']">
+                  More friends
+                </button>
               </div>
             </div>
-          </div>
-        </div>
+          </mz-collapsible-item-body>
 
-      </div>
-      <div class="team-footer">
-        <button mz-button class="yellow darken-1" [routerLink]="['/people']">
-          More friends
-        </button>
-      </div>
+        </mz-collapsible-item>
+      </mz-collapsible>
     </div>
+
+
   </div>
 </aside>
 <div class="content">
@@ -197,6 +230,7 @@
     </mz-navbar-item-container>
   </mz-navbar>
   <div class="content-inner">
+
     <router-outlet></router-outlet>
   </div>
 

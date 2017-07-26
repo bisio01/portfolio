@@ -3,66 +3,6 @@
 }
 
 @media (max-width: 1680px) {
-  .aside {
-    width: 360px;
-    font-size: 14px;
-  }
-  .content {
-    margin-left: 360px;
-  }
-  .aside-profile-bg-wrapper {
-    height: 180px;
-    margin: 0 -15px;
-  }
-  .aside-header {
-    padding: 0 15px;
-  }
-  .profile-wrapper {
-    padding: 0 0 10px 0;
-  }
-  .profile-img {
-    width: 80px;
-  }
-  .aside-profile {
-    margin-top: -50px;
-    padding-top: 3px;
-    padding-left: 100px;
-    min-height: 88px;
-    span {
-      margin-bottom: 7px;
-      font-size: 14px;
-    }
-  }
-  .profile-name {
-    font-size: 14px;
-  }
-  .mdi-24px.mdi-set, .mdi-24px.mdi:before {
-    font-size: 18px;
-  }
-
-  .profile-info-number {
-    font-size: 24px;
-  }
-
-  .profile-info-item {
-    font-size: 14px;
-  }
-  .aside-content {
-    padding: 15px;
-  }
-  .aside-profile-info {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-  }
-
-  .aside-skills {
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-  }
-  .team-content {
-    padding: 0 15px;
-    font-size: 14px;
-  }
   .logo {
     width: 75px;
     margin: 19px 20px 0 20px;
@@ -145,9 +85,7 @@
     font-size: 24px;
     margin-bottom: 20px;
   }
-  .form-header {
 
-  }
   .logo-invert {
     margin-bottom: 20px;
     width: 100px;
@@ -230,6 +168,7 @@
     height: 28px;
     line-height: 28px;
     font-size: 13px;
+    min-height: 28px !important;
   }
   .user-router-container {
     margin-top: 30px;
@@ -248,5 +187,32 @@
       font-size: 12px;
       line-height: 15px;
     }
+  }
+  .event {
+    font-size: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  .event-img-wrapper {
+    margin-right: 3%;
+    height: 120px;
+    width: 120px;
+  }
+  .event-info span {
+    margin-bottom: 10px;
+  }
+  .event-name {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .event-date {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .event-description {
+    margin-bottom: 8px;
+  }
+  .event-author {
+    font-size: 11px;
   }
 }

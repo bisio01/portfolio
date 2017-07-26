@@ -19,6 +19,7 @@ import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.c
 import { EventsContactComponent } from './events-inner/events-contact/events-contact.component';
 import {  ModalDialog } from '../modal/modal/modal.component';
 import { ModalEventBgDialog } from '../modal/modal-event-bg/modal.component';
+import { EventsUpdateComponent } from './events-update/events-update.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ModalEventBgDialog } from '../modal/modal-event-bg/modal.component';
     EventsContactComponent,
     EventsPhotoComponent,
     ModalDialog,
-    ModalEventBgDialog
+    ModalEventBgDialog,
+    EventsUpdateComponent
   ],
   entryComponents: [ModalDialog, ModalEventBgDialog]
 })

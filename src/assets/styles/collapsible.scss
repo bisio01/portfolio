@@ -1,0 +1,32 @@
+.collapsible-header,
+.collapsible-body{
+  padding: 0;
+}
+.collapsible {
+  border: none;
+  margin: 0;
+  box-shadow: none;
+
+}
+
+.collapsible-header,
+.collapsible-body{
+  border: none;
+}
+
+.collapsible-header {
+  line-height: 36px;
+  position: relative;
+  i {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    margin: 0;
+    transition: all 0.3s;
+  }
+  &.active {
+    i {
+      transform: rotate(180deg);
+    }
+  }
+}

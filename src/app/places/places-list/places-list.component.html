@@ -4,7 +4,7 @@
   <md-tab label="All">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of places" class="col s4">
+        <div *ngFor="let place of places" class="col s3">
           <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
@@ -26,7 +26,7 @@
   <md-tab label="My gyms">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of myPlaces" class="col s4">
+        <div *ngFor="let place of myPlaces" class="col s3">
           <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>
@@ -48,7 +48,7 @@
   <md-tab label="For children">
     <div class="place-wrapper">
       <div class="row">
-        <div *ngFor="let place of placesService.places" class="col s4">
+        <div *ngFor="let place of placesService.places" class="col s3">
           <div class="place-item" [routerLink]="['/places', place.id, 'info']">
             <div class="place-img">
               <img src="assets/img/img-place.jpg"/>

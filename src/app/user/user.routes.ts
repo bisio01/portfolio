@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { UserPageComponent } from './user-page/user-page.component';
-import {UserUpdateComponent} from "./user-update/user-update.component";
+import { UserUpdateComponent } from "./user-update/user-update.component";
 import { UserEventsComponent } from './user-inner/user-events/user-events.component';
 import { UserFriendsComponent } from './user-inner/user-friends/user-friends.component';
 import { UserPlacesComponent } from './user-inner/user-places/user-places.component';
@@ -17,33 +17,28 @@ export const UserRoutes: Routes = [
         pathMatch: 'prefix'
       },
       {
-        path: 'page',
+        path: '',
+        component: <any>UserPageComponent,
         children: [
           {
-            path: '',
-            component: <any>UserPageComponent,
-            children: [
-              {
-                path: 'events',
-                component: <any>UserEventsComponent,
-              },
-              {
-                path: 'friends',
-                component: <any>UserFriendsComponent,
-              },
-              {
-                path: 'photos',
-                component: <any>UserPhotosComponent,
-              },
-              {
-                path: 'places',
-                component: <any>UserPlacesComponent,
-              },
-              {
-                path: 'chat',
-                component: <any>UserChatComponent,
-              },
-            ]
+            path: 'events',
+            component: <any>UserEventsComponent,
+          },
+          {
+            path: 'friends',
+            component: <any>UserFriendsComponent,
+          },
+          {
+            path: 'photos',
+            component: <any>UserPhotosComponent,
+          },
+          {
+            path: 'places',
+            component: <any>UserPlacesComponent,
+          },
+          {
+            path: 'chat',
+            component: <any>UserChatComponent,
           },
         ]
       },

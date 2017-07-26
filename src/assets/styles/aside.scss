@@ -1,27 +1,25 @@
 .aside {
-  width: 440px;
+  width: 360px;
   float: left;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
   background: #fff;
- // padding: 0 0 60px 0;
+  // padding: 0 0 60px 0;
   border-right: 1px solid #dadada;
-  min-height: 700px;
+  min-height: 620px;
   color: #555;
-  &-header {
-    padding: 0 20px;
-  }
   &-profile {
-    padding-top: 10px;
-    padding-left: 120px;
+    padding-top: 5px;
+    padding-left: 95px;
     position: relative;
-    min-height: 100px;
-    margin-top: -73px;
+    min-height: 80px;
+    margin-top: -45px;
     z-index: 2;
     span {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 2px;
+      font-size: 12px;
       i {
         margin-right: 5px;
       }
@@ -37,12 +35,12 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-
+      width: 800px;
       &-wrapper {
-        margin: 0 -35px;
+        margin: 0 -30px;
         overflow: hidden;
         position: relative;
-        height: 240px;
+        height: 200px;
         &:before {
           content: '';
           position: absolute;
@@ -57,14 +55,46 @@
     }
   }
   &-content {
-    padding: 20px;
+    padding: 15px;
   }
+  .profile-info-item {
+    .profile-info-number {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+    span {
+      font-size: 14px;
+
+    }
+  }
+  .user-skills-list button {
+    font-size: 12px;
+  }
+  .user-skills-list {
+    margin-bottom: 0;
+  }
+  .team-img-wrapper img {
+    width: 100%;
+  }
+  .team-name {
+    font-size: 13px;
+  }
+  .team-city {
+    font-size: 12px;
+  }
+  .team-content .row {
+    margin: 0;
+  }
+  .team-city i {
+    font-size: 13px;
+  }
+;
 }
 
-.aside-skills {
-  margin-bottom: 20px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #dadada;
+.collapsible-wrapper {
+  .collapsible > li {
+    border-bottom: 1px solid #dadada;
+  }
 }
 
 .skill-item {
@@ -76,7 +106,7 @@
 }
 
 .skills-content {
-  padding: 0 9px;
+  padding: 0 9px 15px;
 }
 
 .skill-list {
@@ -101,16 +131,18 @@
   padding: 0 15px;
 }
 
+.aside-title-wrapper {
+
+}
+
 .aside-title {
-  margin: 0 0 15px 0;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   color: #1B2431;
 }
 
 .aside-profile-info {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   border-bottom: 1px solid #dadada;
 }
 
