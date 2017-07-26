@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   public user;
 
   public userLocal;
+  public userLocalBg;
 
   public people: any[] = [];
 
@@ -30,6 +31,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.user = this.userService.getData();
 
     this.userLocal = JSON.parse(localStorage.getItem('user'));
+    this.userLocalBg = JSON.parse(localStorage.getItem('userBg'));
     this.loadData();
     sportListService.getList().then((res: any[]) => {
       this.skills = res;
@@ -40,10 +42,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.peopleService.getList('friends').then((res: any[])=>{
       this.peopleFriends = res;
     });
-   /* this.sportListService.getById(result).then((res: any[]) => {
-      this.sillsInfo = res;
-      console.log(this.sillsInfo, 'this.sillsInfo')
-    });*/
   }
 
   notificationToggle(newValue: number) {

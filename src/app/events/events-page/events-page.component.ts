@@ -25,7 +25,6 @@ export class EventsPageComponent implements OnInit {
               public sportListService: SportListService,
               public eventBgList: EventBgList) {
     this.loadCurrentEvent();
-    // this.bgImg = this.eventBgList.getList()
   }
 
   addEvent(id) {
@@ -47,10 +46,6 @@ export class EventsPageComponent implements OnInit {
     }, (err) => {
       console.log('errrrrrror')
     });
-  }
-
-  public getBgById(id) {
-    return this.bgImg.filter(el => el.id == id)[0];
   }
 
 

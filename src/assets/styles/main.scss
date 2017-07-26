@@ -91,9 +91,12 @@ button {
 }
 
 .delete-color {
-  background: rgba(230, 77, 120, 1);
+  background: transparent;
+  border: 1px solid #e64d78;
+  color: #e64d78;
   &:hover {
     background: lighten(#e64d78,15%);
+    color: #fff;
   }
 }
 

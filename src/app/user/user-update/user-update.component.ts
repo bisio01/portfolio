@@ -87,7 +87,6 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
   }
 
   firstName: string = '';
-  lastName: string = '';
   city: string = '';
 
   public UserForm: FormGroup = new FormGroup({

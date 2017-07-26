@@ -21,6 +21,7 @@ export class UserPageComponent implements OnInit {
   public user;
 
   public userLocal;
+  public userBgLocal;
   public skills: any[] = [];
   public userBg;
 
@@ -32,14 +33,19 @@ export class UserPageComponent implements OnInit {
 
     this.user = this.userService.getData();
     this.userLocal = JSON.parse(localStorage.getItem('user'));
-    console.log(  this.userLocal , 'this.userLocal')
+    this.userBg = JSON.parse(localStorage.getItem('userBg'));
+
+    console.log(this.userLocal, 'this.userLocal');
   }
 
   public openDialog() {
     this.dialog.open(ModalBgDialog).afterClosed().subscribe(result => {
 
       this.userBgList.getById(result).then((res: any[]) => {
-        this.userBg = res;
+
+        localStorage.setItem('userBg', JSON.stringify(res));
+
+        this.userBg = JSON.parse(localStorage.getItem('userBg'));
       });
     });
   }

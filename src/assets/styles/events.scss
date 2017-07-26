@@ -95,7 +95,6 @@
   }
 }
 
-
 .profile-avatar-wrapper {
   .event-avatar-border {
     margin: 0 auto;
@@ -158,6 +157,17 @@
     right: 10px;
     bottom: 10px;
     color: #fff;
+  }
+}
+
+.event-info {
+  .button-color {
+    .material-icons {
+      color: #fff;
+    }
+  }
+  .margin-left {
+    margin-left: 10px;
   }
 }
 
