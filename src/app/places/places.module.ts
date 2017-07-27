@@ -14,6 +14,7 @@ import { PlacesPeopleComponent } from './places-inner/places-people/places-peopl
 import { PlacesContactComponent } from './places-inner/places-contact/places-contact.component';
 import { PlacesPhotoComponent } from './places-inner/places-photo/places-photo.component';
 import { AgmCoreModule } from '@agm/core';
+import { PlacesChatComponent } from './places-inner/places-chat/places-chat.component';
 
 
 
@@ -41,7 +42,8 @@ import { AgmCoreModule } from '@agm/core';
     PlacesInfoComponent,
     PlacesPeopleComponent,
     PlacesContactComponent,
-    PlacesPhotoComponent
+    PlacesPhotoComponent,
+    PlacesChatComponent
   ]
 
 })

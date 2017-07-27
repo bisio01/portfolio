@@ -41,6 +41,14 @@
 
       </div>
       <div class="profile-info-wrapper">
+        <button type="button" class="profile-info-item" [routerLink]="['/events/chat']">
+          <span class="profile-info-number m-profile-info-number">
+            <i class="material-icons">info_outline</i>
+          </span>
+          <span class="profile-info-name">
+            Chat
+          </span>
+        </button>
         <button type="button" class="profile-info-item" [routerLink]="['/events', currentEvent.id,'info']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">info_outline</i>

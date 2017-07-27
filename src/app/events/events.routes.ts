@@ -6,6 +6,7 @@ import { EventsContactComponent } from './events-inner/events-contact/events-con
 import { EventsInfoComponent } from './events-inner/events-info/events-info.component';
 import { EventsPeopleComponent } from './events-inner/events-people/events-people.component';
 import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.component';
+import { EventsChatComponent } from './events-inner/events-chat/events-chat.component';
 
 export const EventsRoutes: Routes = [
   {
@@ -38,6 +39,10 @@ export const EventsRoutes: Routes = [
         path: ':id',
         component: EventsPageComponent,
         children: [
+          {
+            path: 'chat',
+            component: <any>EventsChatComponent,
+          },
           {
             path: 'contact',
             component: <any>EventsContactComponent,

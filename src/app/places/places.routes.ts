@@ -5,6 +5,7 @@ import { PlacesContactComponent } from './places-inner/places-contact/places-con
 import { PlacesInfoComponent } from './places-inner/places-info/places-info.component';
 import { PlacesPeopleComponent } from './places-inner/places-people/places-people.component';
 import { PlacesPhotoComponent } from './places-inner/places-photo/places-photo.component';
+import { PlacesChatComponent } from './places-inner/places-chat/places-chat.component';
 
 export const PlacesRoutes: Routes = [
   {
@@ -29,6 +30,10 @@ export const PlacesRoutes: Routes = [
         path: ':id',
         component: <any>PlacesPageComponent,
         children: [
+          {
+            path: 'chat',
+            component: <any>PlacesChatComponent,
+          },
           {
             path: 'contact',
             component: <any>PlacesContactComponent,

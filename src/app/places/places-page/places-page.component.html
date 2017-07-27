@@ -71,7 +71,15 @@
 
       </div>
       <div class="profile-info-wrapper">
-        <button type="button" class="profile-info-item" [routerLink]="['/places/page/info']">
+        <button type="button" class="profile-info-item" [routerLink]="['/places/chat']">
+          <span class="profile-info-number m-profile-info-number">
+            <i class="material-icons">info_outline</i>
+          </span>
+          <span class="profile-info-name">
+            Chat
+          </span>
+        </button>
+        <button type="button" class="profile-info-item" [routerLink]="['/places', currentPlace.id,'info']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">info_outline</i>
           </span>
@@ -79,7 +87,7 @@
             Info
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/places/page/people']">
+        <button type="button" class="profile-info-item" [routerLink]="['/places', currentPlace.id,'people']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">people</i>
           </span>
@@ -87,7 +95,7 @@
             People
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/places/page/contact']">
+        <button type="button" class="profile-info-item" [routerLink]="['/places', currentPlace.id,'contact']">
           <span class="profile-info-number m-profile-info-number">
             <i class="material-icons">place</i>
           </span>
@@ -95,7 +103,7 @@
             Contact
           </span>
         </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/places/page/photo']">
+        <button type="button" class="profile-info-item" [routerLink]="['/places', currentPlace.id,'photo']">
           <span class="profile-info-number m-profile-info-number">
            <i class="material-icons">photo_camera</i>
           </span>

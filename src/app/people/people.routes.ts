@@ -5,6 +5,7 @@ import { PeoplePhotosComponent } from './people-inner/people-photos/people-photo
 import { PeopleFriendsComponent } from './people-inner/people-friends/people-friends.component';
 import { PeopleEventsComponent } from './people-inner/people-events/people-events.component';
 import { PeoplePlacesComponent } from './people-inner/people-places/people-places.component';
+import { PeopleChatComponent } from './people-inner/people-chat/people-chat.component';
 
 export const PeopleRoutes: Routes = [
   {
@@ -28,6 +29,10 @@ export const PeopleRoutes: Routes = [
         path: ':id',
         component: <any>PeoplePageComponent,
         children: [
+          {
+            path: 'chat',
+            component: <any>PeopleChatComponent,
+          },
           {
             path: 'events',
             component: <any>PeopleEventsComponent,

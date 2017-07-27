@@ -12,6 +12,7 @@ import { PeoplePhotosComponent } from './people-inner/people-photos/people-photo
 import { RouterModule } from '@angular/router';
 import { MaterializeModule } from 'ng2-materialize';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PeopleChatComponent } from './people-inner/people-chat/people-chat.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PeopleFriendsComponent,
     PeopleEventsComponent,
     PeoplePlacesComponent,
-    PeoplePhotosComponent
+    PeoplePhotosComponent,
+    PeopleChatComponent
   ]
 
 })
