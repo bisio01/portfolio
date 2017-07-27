@@ -1,8 +1,12 @@
-import { trigger, state, animate, transition, style } from '@angular/animations';
+import { style, animate, transition, trigger } from '@angular/animations';
+export function routerTransition() {
+  return slideToRight();
+}
 
-export const fadeInAnimation = trigger('fadeInAnimation', [
-  transition(':enter', [
-    style({opacity: 0}),
-    animate('0.3s', style({opacity: 1}))
+function slideToRight() {
+  return trigger('pageAnimation', [
+    transition(':leave', [
+      animate('0.5s ease-in-out', style({opacity: 0}))
+    ])
   ])
-]);
+}

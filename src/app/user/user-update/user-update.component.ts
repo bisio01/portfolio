@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from "@angular/forms";
 import { UserService } from '../service/user.service';
 import { Subscription, Observable } from 'rxjs';
-import { fadeInAnimation } from '../../animations/animations';
 import { SportListService } from '../../service/sport-list.service';
 import { MdDialog } from '@angular/material';
 import { ModalMultipleDialog } from '../../modal/modal-multiple/modal.component';
@@ -11,8 +10,6 @@ import { ModalMultipleDialog } from '../../modal/modal-multiple/modal.component'
   selector: 'app-user-update',
   templateUrl: './user-update.component.html',
   styleUrls: ['./user-update.component.css'],
-  animations: [fadeInAnimation],
-  host: {'[@fadeInAnimation]': ''}
 
 })
 export class UserUpdateComponent implements OnInit, AfterViewInit {

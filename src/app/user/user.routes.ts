@@ -23,10 +23,20 @@ export const UserRoutes: Routes = [
           {
             path: 'events',
             component: <any>UserEventsComponent,
+            data: {
+              animation: {
+                value: 'events',
+              }
+            }
           },
           {
             path: 'friends',
             component: <any>UserFriendsComponent,
+            data: {
+              animation: {
+                value: 'friends',
+              }
+            }
           },
           {
             path: 'photos',
