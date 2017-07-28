@@ -6,14 +6,17 @@
       <p> All work copyright of respective owner, otherwise &copy; 2017-2018 Swibo.</p>
     </div>
   </div>
-  <div class="login-wrapper">
-    <form [formGroup]="regForm" (ngSubmit)="register()">
+  <form [formGroup]="regForm" (ngSubmit)="register()">
+    <div class="login-wrapper">
+
       <div class="form-header">
         <a class="logo-invert">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 148 50" style="enable-background:new 0 0 148 50;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#EF3B60;}
+	.st0 {
+    fill: #EF3B60;
+  }
 </style>
 <g>
 	<path class="st0" d="M145.1,33.7c0.2,2.8,0,5.7-1.4,8.3c-2.2,4-5.9,5.7-10.1,6.4c-5.4,0.9-10.7,0.6-15.7-2
@@ -86,7 +89,8 @@
         <button class="btn light-blue waves-effect waves-light" value="" [disabled]="!regForm.valid">Create account
         </button>
         <div class="login-share">
-          Connect with Facebook <button class="facebook-button"></button>
+          Connect with Facebook
+          <button class="facebook-button"></button>
         </div>
         <div class="login-statistic">
           <h4 class="statistic-title">Events</h4>
@@ -104,6 +108,7 @@
       <div class="form-footer">
         <p>&copy; Swibo 2017. All rights reserved.</p>
       </div>
-    </form>
-  </div>
+
+    </div>
+  </form>
 </div>

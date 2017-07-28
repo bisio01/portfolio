@@ -68,9 +68,7 @@
     content: '';
     height: 168px;
     width: 100%;
-
     box-sizing: content-box;
-
     transition: all 0.4s;
     position: absolute;
     border: 1px solid transparent;
@@ -103,6 +101,21 @@
       filter: grayscale(100%);
     }
   }
+  input:not(:checked) ~ .modal-item-name {
+    color: #000
+  }
+
+  input:not(:checked) + .modal-img-border {
+    .modal-skill-img {
+      filter: grayscale(100%);
+    }
+    :before {
+      transform: translate(-5px, -5px);
+      padding: 5px;
+      border: 1px solid #000;
+    }
+  }
+
 }
 
 
@@ -127,3 +140,5 @@
     width: 300px;
   }
 }
+
+

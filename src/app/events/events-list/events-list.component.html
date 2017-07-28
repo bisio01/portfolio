@@ -2,37 +2,66 @@
   <h2 class="content-title">My events</h2>
   <button class="pull-right" type="button" mz-button [routerLink]="['/events/create']">Create New</button>
 </div>
+<form>
+  <div class="filter-wrapper">
+    <div class="filter-form-group">
+      <label class="filter-label">Sport type</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+    <div class="filter-form-group">
+      <label class="filter-label">Country</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+    <div class="filter-form-group">
+      <label class="filter-label">City</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+    <div class="filter-form-group">
+      <label class="filter-label">Cost</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+  </div>
+</form>
 <md-tab-group>
 
   <md-tab label="Recommended events">
 
-      <div *ngFor="let event of events">
-        <div [routerLink]="['/events', event.id, 'info']" class="event">
-          <div class="event-img-wrapper">
-            <div class="event-no-img" *ngIf="!event.sportSkill?.img">
-              <i class="no-img-icon"></i>
-            </div>
-            <img *ngIf="event.sportSkill?.img" src="{{event.sportSkill?.img}}"/>
+    <div *ngFor="let event of events">
+      <div [routerLink]="['/events', event.id, 'info']" class="event">
+        <div class="event-img-wrapper">
+          <div class="event-no-img" *ngIf="!event.sportSkill?.img">
+            <i class="no-img-icon"></i>
           </div>
-          <div class="event-description-wrapper">
-            <h3 class="event-name">{{event.title}}</h3>
-            <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
-            <p class="event-description">{{event.description}}</p>
-            <i class="event-author" *ngIf="user.firstName">by {{user?.firstName}}</i>
-            <div class="event-skills-list" *ngIf="event.sportSkill">
-              <div class="event-skill"><img src="{{event.sportSkill?.icon}}">{{event.sportSkill?.name}}</div>
-            </div>
-          </div>
-          <div class="event-info">
-            <span class="event-place"><i class="material-icons">location_on</i>{{event.city}}</span>
-            <span class="event-time"><i class="material-icons">access_time</i>{{event.hour}}:{{event.minute}}</span>
-            <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
-            <button type="button" mz-button (click)="addEvent(event.id)">Join</button>
-            <button type="button" class="flex-pull-right button-color margin-left" mz-button ><i class="material-icons">create</i></button>
+          <img *ngIf="event.sportSkill?.img" src="{{event.sportSkill?.img}}"/>
+        </div>
+        <div class="event-description-wrapper">
+          <h3 class="event-name">{{event.title}}</h3>
+          <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
+          <p class="event-description">{{event.description}}</p>
+          <i class="event-author" *ngIf="user.firstName">by {{user?.firstName}}</i>
+          <div class="event-skills-list" *ngIf="event.sportSkill">
+            <div class="event-skill"><img src="{{event.sportSkill?.icon}}">{{event.sportSkill?.name}}</div>
           </div>
         </div>
-
+        <div class="event-info">
+          <span class="event-place"><i class="material-icons">location_on</i>{{event.city}}</span>
+          <span class="event-time"><i class="material-icons">access_time</i>{{event.hour}}:{{event.minute}}</span>
+          <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
+          <button type="button" mz-button (click)="addEvent(event.id)">Join</button>
+          <button type="button" class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
+          </button>
+        </div>
       </div>
+
+    </div>
 
   </md-tab>
   <md-tab label="My events">
@@ -55,7 +84,8 @@
           <span class="event-time"><i class="material-icons">access_time</i>{{event.time}}</span>
           <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
           <button type="button" class="delete-color" mz-button (click)="exitEvent(event.id)">Exit</button>
-          <button type="button" class="flex-pull-right button-color margin-left" mz-button ><i class="material-icons">create</i></button>
+          <button type="button" class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
+          </button>
         </div>
       </div>
 
@@ -82,7 +112,8 @@
           <span class="event-time"><i class="material-icons">access_time</i>{{event.time}}</span>
           <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
           <button type="button" mz-button (click)="addEvent(event.id)">Join</button>
-          <button type="button" class="flex-pull-right button-color margin-left" mz-button ><i class="material-icons">create</i></button>
+          <button type="button" class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
+          </button>
         </div>
       </div>
 

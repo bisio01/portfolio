@@ -79,7 +79,7 @@
   &-form {
     display: flex;
   }
-  .chat-input {
+  input[type=text]:not(.browser-default).chat-input {
     width: 100%;
     padding: 5px 10px;
     font-size: 13px;
@@ -111,7 +111,6 @@
   padding-right: 65px;
   position: relative;
   margin-bottom: 20px;
-  overflow: hidden;
   font-size: 14px;
 }
 
@@ -122,10 +121,8 @@
   border: 1px solid #50B85A;
   background: #62bf6e;
   color: #FFF;
-  padding: 10px 15px;
+  padding: 7px 9px;
   margin-bottom: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
   text-align: left;
   &:before {

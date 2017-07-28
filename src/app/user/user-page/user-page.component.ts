@@ -15,7 +15,7 @@ import { trigger, animate, style, group, animateChild, query, stagger, transitio
   animations: [
     trigger('routerAnimations', [
       transition('* => *', [
-        query(':enter, :leave', style({position: 'absolute',width: '100%', opacity: 0})),
+        query(':enter, :leave', style({position: 'absolute', width: '100%', opacity: 0})),
         group([
           query(':leave', group([
             style({transform: 'translateY(0%)'}),

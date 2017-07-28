@@ -3,11 +3,12 @@
   position: relative;
   z-index: 1;
   div.mat-tab-label {
-    padding: 0 18px;
+    padding: 0;
     min-width: inherit;
     height: 36px;
     text-align: left;
     line-height: 36px;
+    margin-right: 20px;
   }
   .mat-tab-label:focus {
     min-width: inherit;

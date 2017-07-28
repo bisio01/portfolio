@@ -137,7 +137,69 @@
     }
   }
 }
+
 @media (max-width: 1560px) {
+  .aside {
+    width: 280px;
+  }
+  .content {
+    margin-left: 280px;
+  }
+
+  .profile-wrapper {
+    padding: 0 0 15px;
+  }
+
+  .aside-profile-bg-wrapper {
+    margin: 0 -15px;
+  }
+
+  .aside-profile-bg-wrapper {
+    height: 160px;
+  }
+
+  .profile-img {
+    width: 50px;
+  }
+
+  .aside-profile {
+    padding-left: 70px;
+    min-height: 60px;
+  }
+  .aside .profile-info-item span {
+    font-size: 12px;
+  }
+
+
+  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 48px;
+    line-height: 48px;
+  }
+  .navigation-search-button i {
+    height: 28px !important;
+    line-height: 28px !important;
+  }
+
+  .navigation-search-button {
+    top: 10px;
+    height: 30px;
+  }
+
+  .logo {
+    width: 65px;
+    margin: 13px 20px 0 20px;
+  }
+
+  .mdi-24px.mdi-set, .mdi-24px.mdi:before {
+    font-size: 21px;
+  }
+
+  input[type="search"].navigation-search {
+    width: 260px;
+    font-size: 12px;
+    height: 28px;
+  }
+
   .user-img-wrapper {
     width: 118px;
   }
@@ -171,7 +233,7 @@
     min-height: 28px !important;
   }
   .user-router-container {
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .profile-info-item {
     font-size: 12px;

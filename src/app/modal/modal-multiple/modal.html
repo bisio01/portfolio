@@ -6,9 +6,11 @@
              name="skills"
              [checked]="skills.indexOf(skill) >= 0"
              (change)="updateCheckedOptions(skill, $event)"
-          value="{{skill.id}}" type="checkbox">
-      <div class="modal-img-wrapper">
-        <img class="modal-skill-img" src="{{skill.img}}"/>
+             value="{{skill.id}}" type="checkbox">
+      <div class="modal-img-border">
+        <div class="modal-img-wrapper">
+          <img class="modal-skill-img" src="{{skill.img}}"/>
+        </div>
       </div>
       <span class="modal-item-name">{{skill.name}}</span>
     </label>
