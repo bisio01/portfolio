@@ -46,7 +46,7 @@
           <h3 class="event-name">{{event.title}}</h3>
           <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
           <p class="event-description">{{event.description}}</p>
-          <i class="event-author" *ngIf="user.firstName">by {{user?.firstName}}</i>
+          <i class="event-author" *ngIf="user?.firstName">by {{user?.firstName}}</i>
           <div class="event-skills-list" *ngIf="event.sportSkill">
             <div class="event-skill"><img src="{{event.sportSkill?.icon}}">{{event.sportSkill?.name}}</div>
           </div>

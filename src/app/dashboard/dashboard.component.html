@@ -2,8 +2,8 @@
   <div class="aside-header">
     <div class="profile-wrapper">
       <div class="aside-profile-bg-wrapper">
-        <img class="aside-profile-bg" *ngIf="!userLocalBg.img" src="assets/img/img-2.jpg"/>
-        <img class="aside-profile-bg" *ngIf="userLocalBg.img" src="{{userLocalBg?.img}}"/>
+        <img class="aside-profile-bg" *ngIf="!userLocalBg?.img" src="assets/img/img-2.jpg"/>
+        <img class="aside-profile-bg" *ngIf="userLocalBg?.img" src="{{userLocalBg?.img}}"/>
       </div>
       <div class="aside-profile">
         <div class="profile-img-wrapper">
