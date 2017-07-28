@@ -11,6 +11,7 @@
   z-index: 1000;
   .mat-dialog-container {
     padding: 1.5rem;
+    width: 800px;
   }
   .row {
     margin: 0 -0.75rem;
@@ -101,11 +102,11 @@
       filter: grayscale(100%);
     }
   }
-  input:not(:checked) ~ .modal-item-name {
+  input[type="checkbox"]:not(:checked) ~ .modal-item-name {
     color: #000
   }
 
-  input:not(:checked) + .modal-img-border {
+  input[type="checkbox"]:not(:checked) + .modal-img-border {
     .modal-skill-img {
       filter: grayscale(100%);
     }
@@ -115,7 +116,20 @@
       border: 1px solid #000;
     }
   }
+  input[type="radio"]:checked ~ .modal-item-name {
+    color: #000
+  }
 
+  input[type="radio"]:checked + .modal-img-border {
+    .modal-skill-img {
+      filter: grayscale(100%);
+    }
+    :before {
+      transform: translate(-5px, -5px);
+      padding: 5px;
+      border: 1px solid #000;
+    }
+  }
 }
 
 
@@ -131,14 +145,9 @@
   transition: all 0.3s;
 }
 
+
 .user-bg-modal {
   .modal-skill-img {
-    width: 100%;
-  }
-  .modal-img-wrapper {
-    height: 120px;
-    width: 300px;
+    width: 540px;
   }
 }
-
-

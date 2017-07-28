@@ -1,7 +1,28 @@
 <h2 class="content-title">Place</h2>
-
+<form>
+  <div class="filter-wrapper">
+    <div class="filter-form-group">
+      <label class="filter-label">Search</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+    <div class="filter-form-group">
+      <label class="filter-label">Country</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+    <div class="filter-form-group">
+      <label class="filter-label">City</label>
+      <mz-input-container>
+        <input mz-input placeholder="" class="filter-field" type="text">
+      </mz-input-container>
+    </div>
+  </div>
+</form>
 <md-tab-group>
-  <md-tab label="All">
+  <md-tab label="All place">
     <div class="place-wrapper">
       <div class="row">
         <div *ngFor="let place of places" class="col s3">

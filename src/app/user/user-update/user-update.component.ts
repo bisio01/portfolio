@@ -5,6 +5,7 @@ import { Subscription, Observable } from 'rxjs';
 import { SportListService } from '../../service/sport-list.service';
 import { MdDialog } from '@angular/material';
 import { ModalMultipleDialog } from '../../modal/modal-multiple/modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-update',
@@ -68,6 +69,7 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
 
   constructor(public userService: UserService,
               public dialog: MdDialog,
+              private router: Router,
               public sportListService: SportListService) {
 
     this.user = this.userService.getData();
@@ -118,7 +120,7 @@ export class UserUpdateComponent implements OnInit, AfterViewInit {
     let user = this.UserForm.value;
     this.userService.setData(user);
     localStorage.setItem('user', JSON.stringify(user));
-
+    this.router.navigate(['/user']);
   }
 
   public openDialog() {

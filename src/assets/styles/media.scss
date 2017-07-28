@@ -82,7 +82,7 @@
   }
   .content-title,
   .title-wrapper {
-    font-size: 24px;
+    font-size: 21px;
     margin-bottom: 20px;
   }
 
@@ -276,5 +276,8 @@
   }
   .event-author {
     font-size: 11px;
+  }
+  nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    font-size: 20px;
   }
 }

@@ -123,7 +123,7 @@
             <p class="team-description">You can invite more friends to your team.</p>
             <div class="team-content">
               <div class="row">
-                <div *ngFor="let people of peopleFriends" class="col s3">
+                <div *ngFor="let people of peopleFriends" class="col s4">
                   <div class="team">
                     <div class="team-img-wrapper">
                       <div class="team-control-wrapper">
@@ -163,7 +163,7 @@
       <mz-navbar-item>
         <ul class="navigation">
           <li>
-            <a [routerLink]="['/user']" [routerLinkActive]="['active']">Profile</a>
+            <a [routerLink]="['/user/events']" [routerLinkActive]="['active']">Profile</a>
           </li>
           <li>
             <a [routerLink]="['/events']" [routerLinkActive]="['active']">Events</a>

@@ -154,6 +154,11 @@
   position: relative;
   margin-bottom: 30px;
   overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: darken(#6d5cae, 20%);
+  }
   img {
     position: absolute;
     left: 50%;

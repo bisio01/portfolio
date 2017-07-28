@@ -195,6 +195,11 @@
       margin: 0 auto;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: darken(#eee, 15%);
+      }
       img {
         width: 320px;
       }

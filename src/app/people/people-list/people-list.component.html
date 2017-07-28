@@ -1,10 +1,32 @@
 <h2 class="content-title">People</h2>
 <div class="people-wrapper">
+  <form>
+    <div class="filter-wrapper">
+      <div class="filter-form-group">
+        <label class="filter-label">Search</label>
+        <mz-input-container>
+          <input mz-input placeholder="" class="filter-field" type="text">
+        </mz-input-container>
+      </div>
+      <div class="filter-form-group">
+        <label class="filter-label">Country</label>
+        <mz-input-container>
+          <input mz-input placeholder="" class="filter-field" type="text">
+        </mz-input-container>
+      </div>
+      <div class="filter-form-group">
+        <label class="filter-label">City</label>
+        <mz-input-container>
+          <input mz-input placeholder="" class="filter-field" type="text">
+        </mz-input-container>
+      </div>
+    </div>
+  </form>
   <md-tab-group>
-    <md-tab label="All">
+    <md-tab label="All people">
       <div class="team-content">
-        <div class="row">
-          <div *ngFor="let people of people" class="col s2">
+        <div class="flex-parent">
+          <div *ngFor="let people of people" class="flex-item">
             <div [routerLink]="['/people', people.id, 'events']" class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">
@@ -25,8 +47,8 @@
     </md-tab>
     <md-tab label="My friends">
       <div class="team-content">
-        <div class="row">
-          <div *ngFor="let people of peopleFriends" class="col s2">
+        <div class="flex-parent">
+          <div *ngFor="let people of peopleFriends" class="flex-item">
             <div [routerLink]="['/people', people.id, 'events']" class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">
@@ -47,8 +69,8 @@
     </md-tab>
     <md-tab label="Recommended">
       <div class="team-content">
-        <div class="row">
-          <div *ngFor="let people of peopleService.people" class="col s2">
+        <div class="flex-parent">
+          <div *ngFor="let people of peopleService.people" class="flex-item">
             <div class="team">
               <div class="team-img-wrapper">
                 <div class="team-control-wrapper">

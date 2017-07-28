@@ -21,6 +21,7 @@ import {  ModalDialog } from '../modal/modal/modal.component';
 import { ModalEventBgDialog } from '../modal/modal-event-bg/modal.component';
 import { EventsUpdateComponent } from './events-update/events-update.component';
 import { EventsChatComponent } from './events-inner/events-chat/events-chat.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -36,6 +37,9 @@ import { EventsChatComponent } from './events-inner/events-chat/events-chat.comp
     MdDatepickerModule,
     MdNativeDateModule,
     MdDialogModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDT5TkDX1rcsi3HCVarGHccybdq05HZ048'
+    })
   ],
   declarations: [
     EventsListComponent,

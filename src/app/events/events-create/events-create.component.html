@@ -3,7 +3,7 @@
   <div class="profile-update-wrapper">
     <div class="profile-avatar-wrapper">
       <div class="avatar-border event-avatar-border">
-        <div class="avatar">
+        <div class="avatar" mz-button (click)="openDialog()">
           <i class="avatar-icon event-icon" *ngIf="!sillsInfo?.img"></i>
           <img *ngIf="sillsInfo?.img" src="{{sillsInfo?.img}}"/>
         </div>
@@ -13,8 +13,6 @@
         <img class="user-main-bg" *ngIf="eventBg?.img" src="{{eventBg?.img}}"/>
         <i class="material-icons">wallpaper</i>
       </div>
-  <!--    <p class="profile-skill-name">{{sillsInfo?.name}}</p>-->
-      <button type="button" mz-button (click)="openDialog()">Add kind of sport</button>
       <p class="avatar-description">Add kind of sport</p>
     </div>
     <div class="profile-update-container">

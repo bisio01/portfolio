@@ -1,11 +1,13 @@
 <div class="modal-wrapper user-bg-modal row" [formGroup]="userBgForm">
-  <h4 class="modal-title">Chose your type of sport</h4>
+  <h4 class="modal-title">Chose your profile bg</h4>
   <div class="modal-item col s3" *ngFor="let userBgItem of userBg">
     <label for="{{userBgItem.value}}">
       <input hidden formControlName="form_bg" [checked]="userBgForm.controls['form_bg'].value === userBgItem.id"
              id="{{userBgItem.value}}" value="{{userBgItem.id}}" type="radio">
-      <div class="modal-img-wrapper">
-        <img class="modal-skill-img" src="{{userBgItem.img}}"/>
+      <div class="modal-img-border">
+        <div class="modal-img-wrapper">
+          <img class="modal-skill-img" src="{{userBgItem.img}}"/>
+        </div>
       </div>
       <span class="modal-item-name">{{userBgItem.name}}</span>
     </label>
@@ -13,6 +15,6 @@
 
 </div>
 
-<button mz-button (click)="add()"  [md-dialog-close]="userBgForm.value.form_bg">Chose</button>
+<button mz-button (click)="add()" [md-dialog-close]="userBgForm.value.form_bg">Chose</button>
 
 
