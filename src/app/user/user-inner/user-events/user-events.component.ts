@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding, ViewEncapsulation } from '@angular/core';
 import { EventsService } from '../../../events/service/events.service';
 import { trigger, style, animate, transition, query } from '@angular/animations';
-import { routerTransition } from '../../../animations/animations';
+//import { routerTransition } from '../../../animations/animations';
 
 
 
@@ -9,9 +9,9 @@ import { routerTransition } from '../../../animations/animations';
   selector: 'app-user-events',
   templateUrl: 'user-events.component.html',
   styleUrls: ['user-events.component.css'],
-  animations: [
+/*  animations: [
     routerTransition()
-  ]
+  ]*/
 
 })
 export class UserEventsComponent implements OnInit {
@@ -32,8 +32,8 @@ export class UserEventsComponent implements OnInit {
     })
   }
 
-  @HostBinding('@pageAnimation')
-  public doAnimate = true;
+/*  @HostBinding('@pageAnimation')
+  public doAnimate = true;*/
 
   addEvent(id) {
     this.eventsService.addEvent(id).then(() => {

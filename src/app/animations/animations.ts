@@ -1,3 +1,4 @@
+/*
 import { style, animate, transition, trigger } from '@angular/animations';
 export function routerTransition() {
   return slideToRight();
@@ -10,3 +11,4 @@ function slideToRight() {
     ])
   ])
 }
+*/

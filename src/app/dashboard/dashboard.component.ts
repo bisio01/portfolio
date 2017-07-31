@@ -25,6 +25,9 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   public skills: any[] = [];
 
+  public closeFunctionCallback: true;
+  public openFunctionCallback: false;
+
   constructor(public userService: UserService,
               public peopleService: PeopleService,
               public sportListService: SportListService) {

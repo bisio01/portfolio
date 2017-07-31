@@ -11,7 +11,7 @@ import { trigger, animate, style, group, animateChild, query, stagger, transitio
   selector: 'app-user-page',
   templateUrl: 'user-page.component.html',
   styleUrls: ['user-page.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  /*encapsulation: ViewEncapsulation.None,
   animations: [
     trigger('routerAnimations', [
       transition('* => *', [
@@ -30,7 +30,7 @@ import { trigger, animate, style, group, animateChild, query, stagger, transitio
         ])
       ])
     ])
-  ]
+  ]*/
 })
 
 export class UserPageComponent implements OnInit {
@@ -69,10 +69,10 @@ export class UserPageComponent implements OnInit {
     });
   }
 
-  prepareRouteTransition(outlet) {
+/*  prepareRouteTransition(outlet) {
     const animation = outlet.activatedRouteData['animation'] || {};
     return animation['value'] || null;
-  }
+  }*/
 
   public getSkillInfoById(id) {
     return this.skills.filter(el => el.id == id)[0];
