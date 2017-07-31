@@ -133,6 +133,7 @@
     bottom: 0;
     overflow: hidden;
     height: 50%;
+    z-index: -1;
     &:after {
       content: '';
       position: absolute;

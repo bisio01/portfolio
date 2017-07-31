@@ -25,6 +25,7 @@ import { PlacesService } from './places/service/places.service';
 import { SportListService } from './service/sport-list.service';
 import { UserBgList } from './service/user-bg.service';
 import { EventBgList } from './service/event-bg.service';
+import { NoContentComponent } from './core/no-content/no-content.component';
 
 
 
@@ -35,6 +36,7 @@ import { EventBgList } from './service/event-bg.service';
     DashboardComponent,
     NotificationComponent,
     LandingComponent,
+    NoContentComponent,
 
   ],
   imports: [
