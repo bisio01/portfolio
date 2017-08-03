@@ -1,15 +1,103 @@
-<aside class="aside">
-  <div class="aside-header">
-    <div class="profile-wrapper">
-      <div class="aside-profile-bg-wrapper">
-        <img class="aside-profile-bg" *ngIf="!userLocalBg?.img" src="assets/img/img-2.jpg"/>
-        <img class="aside-profile-bg" *ngIf="userLocalBg?.img" src="{{userLocalBg?.img}}"/>
-      </div>
-      <div class="aside-profile">
-        <div class="profile-img-wrapper">
-          <img class="profile-img" src="assets/img/img-person.png">
+<mz-navbar [navbarClass]="'navbar-bg'">
+  <mz-navbar-item-container>
+    <div class="menu-wrapper">
+      <button mz-button class="menu-trigger-inner" (click)="sidenav.toggle()">
+        <div class="menu-trigger" >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="profile-container">
+      </button>
+    </div>
+  </mz-navbar-item-container>
+  <mz-navbar-item-container>
+    <a href="#" class="logo"></a>
+  </mz-navbar-item-container>
+  <mz-navbar-item-container>
+    <mz-navbar-item>
+      <ul class="navigation">
+        <li>
+          <a [routerLink]="['/user/events']" [routerLinkActive]="['active']">Profile</a>
+        </li>
+        <li>
+          <a [routerLink]="['/events']" [routerLinkActive]="['active']">Events</a>
+        </li>
+        <li>
+          <a [routerLink]="['/places']" [routerLinkActive]="['active']">Places</a>
+        </li>
+        <li>
+          <a [routerLink]="['/people']" [routerLinkActive]="['active']">People</a>
+        </li>
+      </ul>
+    </mz-navbar-item>
+  </mz-navbar-item-container>
+  <mz-navbar-item-container>
+    <div class="navigation-search-wrapper">
+      <div class="navigation-search-container">
+        <input class="navigation-search" type="search" placeholder="Search"/>
+        <button type="button" class="navigation-search-button">
+          <i mz-icon-mdi
+             [flip]="'vertical'"
+             [icon]="'magnify'">
+          </i>
+        </button>
+      </div>
+    </div>
+  </mz-navbar-item-container>
+  <mz-navbar-item-container [align]="'right'">
+    <mz-navbar-item>
+      <button type="button" class="nav-element nav-message"><i class="material-icons">email</i></button>
+    </mz-navbar-item>
+    <mz-navbar-item>
+      <div class="nav-notification">
+        <button type="button" (click)="notificationToggle(1)" [ngClass]="{'active': notification === 1}"
+                class="nav-element nav-notification-toggle "><i class="material-icons">notifications</i>
+        </button>
+        <div class="nav-notification-wrapper" [ngClass]="{'active': notification === 1}">
+          <div class="nav-notification-container">
+            <div class="notification-header">
+              <h4>Last Notifications</h4>
+              <button type="button" class="pull-right" [routerLink]="['/notification']">View all</button>
+            </div>
+            <div class="notification-content">
+              <div class="notification-item">
+                <div class="notification-inner">
+                  <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
+                  <span class="notification-date">1 day ago</span>
+                </div>
+              </div>
+              <div class="notification-item">
+                <div class="notification-img">
+                  <img src=""/>
+                </div>
+                <div class="notification-inner">
+                  <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
+                  <span class="notification-date">1 day ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mz-navbar-item>
+    <mz-navbar-item><a class="nav-exit" routerLink="/login">Log out</a></mz-navbar-item>
+  </mz-navbar-item-container>
+</mz-navbar>
+<md-sidenav-container class="example-sidenav-fab-container">
+
+  <md-sidenav #sidenav mode="side" opened="true">
+    <aside class="aside">
+      <div class="aside-header">
+        <div class="profile-wrapper">
+          <div class="aside-profile-bg-wrapper">
+            <img class="aside-profile-bg" *ngIf="!userLocalBg?.img" src="assets/img/img-2.jpg"/>
+            <img class="aside-profile-bg" *ngIf="userLocalBg?.img" src="{{userLocalBg?.img}}"/>
+          </div>
+          <div class="aside-profile">
+            <div class="profile-img-wrapper">
+              <img class="profile-img" src="assets/img/img-person.png">
+            </div>
+            <div class="profile-container">
           <span class="profile-name" href="#">
             <i class="login-icon" mz-icon-mdi
                [flip]="'vertical'"
@@ -18,7 +106,7 @@
             </i>
             {{userLocal?.firstName}} {{userLocal?.lastName}}
           </span>
-          <span class="profile-birthday">
+              <span class="profile-birthday">
             <i class="login-icon" mz-icon-mdi
                [flip]="'vertical'"
                [icon]="'calendar-text'"
@@ -26,7 +114,7 @@
             </i>
           {{userLocal?.birthdayDay}}.{{userLocal?.birthdayMonth}}.{{userLocal?.birthdayYear}}
           </span>
-          <span>
+              <span>
             <i class="login-icon" mz-icon-mdi
                [flip]="'vertical'"
                [icon]="'map-marker'"
@@ -34,205 +122,133 @@
             </i>
           {{userLocal?.country}} <span *ngIf="userLocal?.country">,</span> {{userLocal?.city}}
           </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="aside-content">
-    <div class="aside-profile-info">
-      <div class="profile-info-wrapper">
-        <button type="button" class="profile-info-item" [routerLink]="['/user/page/chat']">
-          <span class="profile-info-number">
-            11
-          </span>
-          <span class="profile-info-name">
-            Chat
-          </span>
-        </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/user/page/friends']">
-          <span class="profile-info-number">
-            11
-          </span>
-          <span class="profile-info-name">
-            Friends
-          </span>
-        </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/user/page/places']">
-          <span class="profile-info-number">
-            23
-          </span>
-          <span class="profile-info-name">
-            Places
-          </span>
-        </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/user/page/events']">
-          <span class="profile-info-number">
-            08
-          </span>
-          <span class="profile-info-name">
-            Events
-          </span>
-        </button>
-        <button type="button" class="profile-info-item" [routerLink]="['/user/page/photos']">
-          <span class="profile-info-number">
-            44
-          </span>
-          <span class="profile-info-name">
-            Photo
-          </span>
-        </button>
-      </div>
-    </div>
-    <div class="collapsible-wrapper">
-      <mz-collapsible
-        [mode]="'expandable'"
-        [onClose]="closeFunctionCallback"
-        [onOpen]="openFunctionCallback"
-        [popout]="false">
-
-        <mz-collapsible-item [active]="true">
-
-          <mz-collapsible-item-header>
-            <div class="aside-title-wrapper">
-              <h3 class="aside-title">Sport Skills</h3>
-              <i class="material-icons">keyboard_arrow_down</i>
-            </div>
-          </mz-collapsible-item-header>
-          <mz-collapsible-item-body>
-            <div class="skills-content">
-              <ul class="user-skills-list">
-                <li *ngFor="let skill of userLocal?.sportSkill">
-                  <button type="button">
-                    <img src="{{getSkillInfoById(skill)?.icon}}"/>
-                    {{getSkillInfoById(skill)?.name}}
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </mz-collapsible-item-body>
-
-        </mz-collapsible-item>
-        <mz-collapsible-item>
-          <mz-collapsible-item-header>
-            <div class="aside-title-wrapper">
-              <h3 class="aside-title">Your Team</h3>
-              <i class="material-icons">keyboard_arrow_down</i>
-            </div>
-          </mz-collapsible-item-header>
-          <mz-collapsible-item-body>
-            <p class="team-description">You can invite more friends to your team.</p>
-            <div class="team-content">
-              <div class="row">
-                <div *ngFor="let people of peopleFriends" class="col s4">
-                  <div class="team">
-                    <div class="team-img-wrapper">
-                      <div class="team-control-wrapper">
-                        <img src="assets/img/team-img.png">
-                      </div>
-                    </div>
-                    <div class="team-content">
-                      <button type="button" class="team-name">{{people.name}}</button>
-                      <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="aside-team">
-              <div class="team-footer">
-                <button mz-button class="yellow darken-1" [routerLink]="['/people']">
-                  More friends
-                </button>
-              </div>
-            </div>
-          </mz-collapsible-item-body>
-
-        </mz-collapsible-item>
-      </mz-collapsible>
-    </div>
-
-
-  </div>
-</aside>
-<div class="content">
-  <mz-navbar [navbarClass]="'navbar-bg'">
-    <mz-navbar-item-container>
-      <a href="#" class="logo"></a>
-    </mz-navbar-item-container>
-    <mz-navbar-item-container>
-      <mz-navbar-item>
-        <ul class="navigation">
-          <li>
-            <a [routerLink]="['/user/events']" [routerLinkActive]="['active']">Profile</a>
-          </li>
-          <li>
-            <a [routerLink]="['/events']" [routerLinkActive]="['active']">Events</a>
-          </li>
-          <li>
-            <a [routerLink]="['/places']" [routerLinkActive]="['active']">Places</a>
-          </li>
-          <li>
-            <a [routerLink]="['/people']" [routerLinkActive]="['active']">People</a>
-          </li>
-        </ul>
-      </mz-navbar-item>
-    </mz-navbar-item-container>
-    <mz-navbar-item-container>
-      <div class="navigation-search-wrapper">
-        <div class="navigation-search-container">
-          <input class="navigation-search" type="search" placeholder="Search"/>
-          <button type="button" class="navigation-search-button">
-            <i mz-icon-mdi
-               [flip]="'vertical'"
-               [icon]="'magnify'">
-            </i>
-          </button>
-        </div>
-      </div>
-    </mz-navbar-item-container>
-    <mz-navbar-item-container [align]="'right'">
-      <mz-navbar-item>
-        <button type="button" class="nav-element nav-message"><i class="material-icons">email</i></button>
-      </mz-navbar-item>
-      <mz-navbar-item>
-        <div class="nav-notification">
-          <button type="button" (click)="notificationToggle(1)" [ngClass]="{'active': notification === 1}"
-                  class="nav-element nav-notification-toggle "><i class="material-icons">notifications</i>
-          </button>
-          <div class="nav-notification-wrapper" [ngClass]="{'active': notification === 1}">
-            <div class="nav-notification-container">
-              <div class="notification-header">
-                <h4>Last Notifications</h4>
-                <button type="button" class="pull-right" [routerLink]="['/notification']">View all</button>
-              </div>
-              <div class="notification-content">
-                <div class="notification-item">
-                  <div class="notification-inner">
-                    <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
-                    <span class="notification-date">1 day ago</span>
-                  </div>
-                </div>
-                <div class="notification-item">
-                  <div class="notification-img">
-                    <img src=""/>
-                  </div>
-                  <div class="notification-inner">
-                    <p class="notification-description">You’ve been invited to <a>Sports Day.</a></p>
-                    <span class="notification-date">1 day ago</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-      </mz-navbar-item>
-      <mz-navbar-item><a class="nav-exit" routerLink="/login">Log out</a></mz-navbar-item>
-    </mz-navbar-item-container>
-  </mz-navbar>
-  <div class="content-inner">
+      </div>
+      <div class="aside-content">
+        <div class="aside-profile-info">
+          <div class="profile-info-wrapper">
+            <button type="button" class="profile-info-item" [routerLink]="['/user/page/chat']">
+          <span class="profile-info-number">
+            11
+          </span>
+              <span class="profile-info-name">
+            Chat
+          </span>
+            </button>
+            <button type="button" class="profile-info-item" [routerLink]="['/user/page/friends']">
+          <span class="profile-info-number">
+            11
+          </span>
+              <span class="profile-info-name">
+            Friends
+          </span>
+            </button>
+            <button type="button" class="profile-info-item" [routerLink]="['/user/page/places']">
+          <span class="profile-info-number">
+            23
+          </span>
+              <span class="profile-info-name">
+            Places
+          </span>
+            </button>
+            <button type="button" class="profile-info-item" [routerLink]="['/user/page/events']">
+          <span class="profile-info-number">
+            08
+          </span>
+              <span class="profile-info-name">
+            Events
+          </span>
+            </button>
+            <button type="button" class="profile-info-item" [routerLink]="['/user/page/photos']">
+          <span class="profile-info-number">
+            44
+          </span>
+              <span class="profile-info-name">
+            Photo
+          </span>
+            </button>
+          </div>
+        </div>
+        <div class="collapsible-wrapper">
+          <mz-collapsible
+            [mode]="'expandable'"
+            [onClose]="closeFunctionCallback"
+            [onOpen]="openFunctionCallback"
+            [popout]="false">
 
-    <router-outlet></router-outlet>
+            <mz-collapsible-item [active]="true">
+
+              <mz-collapsible-item-header>
+                <div class="aside-title-wrapper">
+                  <h3 class="aside-title">Sport Skills</h3>
+                  <i class="material-icons">keyboard_arrow_down</i>
+                </div>
+              </mz-collapsible-item-header>
+              <mz-collapsible-item-body>
+                <div class="skills-content">
+                  <ul class="user-skills-list">
+                    <li *ngFor="let skill of userLocal?.sportSkill">
+                      <button type="button">
+                        <img src="{{getSkillInfoById(skill)?.icon}}"/>
+                        {{getSkillInfoById(skill)?.name}}
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </mz-collapsible-item-body>
+
+            </mz-collapsible-item>
+            <mz-collapsible-item>
+              <mz-collapsible-item-header>
+                <div class="aside-title-wrapper">
+                  <h3 class="aside-title">Your Team</h3>
+                  <i class="material-icons">keyboard_arrow_down</i>
+                </div>
+              </mz-collapsible-item-header>
+              <mz-collapsible-item-body>
+                <p class="team-description">You can invite more friends to your team.</p>
+                <div class="team-content">
+                  <div class="row">
+                    <div *ngFor="let people of peopleFriends" class="col s4">
+                      <div class="team">
+                        <div class="team-img-wrapper">
+                          <div class="team-control-wrapper">
+                            <img src="assets/img/team-img.png">
+                          </div>
+                        </div>
+                        <div class="team-content">
+                          <button type="button" class="team-name">{{people.name}}</button>
+                          <span class="team-city"><i class="material-icons">place</i>{{people.city}}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="aside-team">
+                  <div class="team-footer">
+                    <button mz-button class="yellow darken-1" [routerLink]="['/people']">
+                      More friends
+                    </button>
+                  </div>
+                </div>
+              </mz-collapsible-item-body>
+
+            </mz-collapsible-item>
+          </mz-collapsible>
+        </div>
+
+
+      </div>
+    </aside>
+  </md-sidenav>
+  <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+  </button>
+  <div class="content">
+
+    <div class="content-inner">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-
-
-</div>
+</md-sidenav-container>

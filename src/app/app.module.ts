@@ -26,8 +26,7 @@ import { SportListService } from './service/sport-list.service';
 import { UserBgList } from './service/user-bg.service';
 import { EventBgList } from './service/event-bg.service';
 import { NoContentComponent } from './core/no-content/no-content.component';
-
-
+import {MdSidenavModule} from '@angular/material';
 
 
 @NgModule({
@@ -48,6 +47,7 @@ import { NoContentComponent } from './core/no-content/no-content.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MdDatepickerModule,
+    MdSidenavModule,
     PlacesModule,
     PeopleModule,
     AuthModule,

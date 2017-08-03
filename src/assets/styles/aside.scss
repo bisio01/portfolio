@@ -4,7 +4,6 @@
   height: 100vh;
   overflow-y: auto;
   background: #fff;
-  // padding: 0 0 60px 0;
   border-right: 1px solid #dadada;
   min-height: 620px;
   color: #555;
@@ -35,7 +34,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 400px;
+      width: 800px;
       &-wrapper {
         margin: 0 -30px;
         overflow: hidden;
@@ -160,4 +159,20 @@
     background: #F5F5F5;
     color: #454545;
   }
+}
+
+.example-sidenav-fab-container .mat-sidenav-content,
+.example-sidenav-fab-container md-sidenav {
+  display: flex;
+  overflow: visible;
+}
+
+.example-scrolling-content {
+  overflow: auto;
+}
+
+.example-fab {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
 }
