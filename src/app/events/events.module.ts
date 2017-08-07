@@ -22,6 +22,7 @@ import { ModalEventBgDialog } from '../modal/modal-event-bg/modal.component';
 import { EventsUpdateComponent } from './events-update/events-update.component';
 import { EventsChatComponent } from './events-inner/events-chat/events-chat.component';
 import { AgmCoreModule } from '@agm/core';
+import { MyDateRangePickerModule } from 'mydaterangepicker';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AgmCoreModule } from '@agm/core';
     MdTabsModule,
     MaterializeModule.forRoot(),
     RouterModule,
+    MyDateRangePickerModule,
     FormsModule,
     ReactiveFormsModule,
     MdDatepickerModule,

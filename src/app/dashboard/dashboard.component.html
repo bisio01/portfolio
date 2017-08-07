@@ -1,6 +1,6 @@
 <mz-navbar [navbarClass]="'navbar-bg'">
   <mz-navbar-item-container>
-    <div class="menu-wrapper">
+    <!--<div class="menu-wrapper">
       <button mz-button class="menu-trigger-inner" (click)="sidenav.toggle()">
         <div class="menu-trigger" >
           <span></span>
@@ -8,7 +8,7 @@
           <span></span>
         </div>
       </button>
-    </div>
+    </div>-->
   </mz-navbar-item-container>
   <mz-navbar-item-container>
     <a href="#" class="logo"></a>
@@ -17,11 +17,12 @@
     <mz-navbar-item>
       <ul class="navigation">
         <li>
-          <a [routerLink]="['/user/events']" [routerLinkActive]="['active']">Profile</a>
-        </li>
-        <li>
           <a [routerLink]="['/events']" [routerLinkActive]="['active']">Events</a>
         </li>
+        <li>
+          <a [routerLink]="['/user/events']" [routerLinkActive]="['active']">Profile</a>
+        </li>
+
         <li>
           <a [routerLink]="['/places']" [routerLinkActive]="['active']">Places</a>
         </li>
@@ -83,7 +84,7 @@
     <mz-navbar-item><a class="nav-exit" routerLink="/login">Log out</a></mz-navbar-item>
   </mz-navbar-item-container>
 </mz-navbar>
-<md-sidenav-container class="example-sidenav-fab-container">
+<!--<md-sidenav-container class="example-sidenav-fab-container">
 
   <md-sidenav #sidenav mode="side" opened="true">
     <aside class="aside">
@@ -245,10 +246,11 @@
   </md-sidenav>
   <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
   </button>
-  <div class="content">
 
-    <div class="content-inner">
-      <router-outlet></router-outlet>
-    </div>
+</md-sidenav-container>-->
+<div class="content">
+
+  <div class="content-inner">
+    <router-outlet></router-outlet>
   </div>
-</md-sidenav-container>
+</div>

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../service/events.service';
 import { SportListService } from '../../service/sport-list.service';
 import { Observable } from 'rxjs';
-import { forEach } from '@angular/router/src/utils/collection';
-import { UserService } from '../../user/service/user.service';
+import { IMyDrpOptions } from 'mydaterangepicker';
 
 @Component({
   selector: 'app-events-list',
@@ -23,6 +22,16 @@ export class EventsListComponent implements OnInit {
 
   public skills: any[] = [];
   public sillsInfo;
+
+  private myDateRangePickerOptions: IMyDrpOptions = {
+    // other options...
+    dateFormat: 'dd.mm.yyyy',
+  };
+
+  // For example initialize to specific date (09.10.2018 - 19.10.2018). It is also possible
+  // to set initial date range value using the selDateRange attribute.
+  private model: Object = {beginDate: {year: 2018, month: 10, day: 9},
+    endDate: {year: 2018, month: 10, day: 19}};
 
   constructor(public eventsService: EventsService,
               public sportListService: SportListService) {

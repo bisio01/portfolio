@@ -47,6 +47,7 @@
   }
   .navigation a {
     font-size: 14px;
+    padding: 0 20px;
   }
   .place-description {
     padding: 10px;
@@ -277,5 +278,31 @@
   }
   nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
     font-size: 20px;
+  }
+
+  .menu-trigger {
+    width: 15px;
+    height: 12px;
+    margin-top: 9px;
+  }
+
+  .menu-trigger span:nth-of-type(2) {
+    top: 5px;
+  }
+
+  .menu-wrapper .btn {
+    padding: 0 8px;
+    height: 31px;
+  }
+
+
+}
+
+@media (max-width: 1366px) {
+  .flex-item {
+    width: 11%;
+  }
+  .team-name {
+    font-size: 13px;
   }
 }

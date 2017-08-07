@@ -1,5 +1,5 @@
 <div class="title-wrapper">
-  <h2 class="content-title">My events</h2>
+  <h2 class="content-title">Events</h2>
   <button class="pull-right" type="button" mz-button [routerLink]="['/events/create']">Create New</button>
 </div>
 <form>
@@ -21,6 +21,11 @@
       <mz-input-container>
         <input mz-input placeholder="" class="filter-field" type="text">
       </mz-input-container>
+    </div>
+    <div class="filter-form-group">
+      <label class="filter-label">From - To</label>
+      <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions"
+                            [(ngModel)]="model" required></my-date-range-picker>
     </div>
     <div class="filter-form-group">
       <label class="filter-label">Cost</label>

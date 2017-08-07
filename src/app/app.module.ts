@@ -27,6 +27,7 @@ import { UserBgList } from './service/user-bg.service';
 import { EventBgList } from './service/event-bg.service';
 import { NoContentComponent } from './core/no-content/no-content.component';
 import {MdSidenavModule} from '@angular/material';
+import { MyDateRangePickerModule } from 'mydaterangepicker';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import {MdSidenavModule} from '@angular/material';
     AuthModule,
     UserModule,
     EventsModule,
+    MyDateRangePickerModule
 
   ],
   providers: [
