@@ -8,6 +8,7 @@ import { PlacesRoutes } from './places/places.routes';
 import { PeopleRoutes } from './people/people.routes';
 import { NotificationRoutes } from './notification/notification.routes';
 import { LandingComponent } from './landing/landing.component';
+import { CoreRoutes } from './core/core.routes';
 
 
 export const ROUTES:RouterModule = [
@@ -27,7 +28,8 @@ export const ROUTES:RouterModule = [
       ...EventsRoutes,
       ...PlacesRoutes,
       ...PeopleRoutes,
-      ...NotificationRoutes
+      ...NotificationRoutes,
+      ...CoreRoutes
     ]
   },
   {
