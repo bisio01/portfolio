@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { EventsService } from '../service/events.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MdDialog, MdDatepicker } from '@angular/material';
 import { SportListService } from '../../service/sport-list.service';
 import { EventBgList } from '../../service/event-bg.service';
@@ -15,13 +15,16 @@ import { ModalEventBgDialog } from '../../modal/modal-event-bg/modal.component';
   styleUrls: ['./events-update.component.css']
 })
 export class EventsUpdateComponent implements OnInit, AfterViewInit{
-
-
+  public data;
+  public events: any[] = [];
+  public bgList: any[] = [];
+  public currentEvent: any = {};
+  public id: any;
   private linksArr: any;
   private _subscribers: Subscription[] = [];
   public skills: any[] = [];
   public sillsInfo;
-  public eventForm: FormGroup = new FormGroup({
+  public updateEventForm: FormGroup = new FormGroup({
     title: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -79,6 +82,7 @@ export class EventsUpdateComponent implements OnInit, AfterViewInit{
 
   constructor(public eventsService: EventsService,
               private _router: Router,
+              private activatedRoute: ActivatedRoute,
               public dialog: MdDialog,
               public sportListService: SportListService,
               public eventBgList: EventBgList) {
@@ -86,12 +90,40 @@ export class EventsUpdateComponent implements OnInit, AfterViewInit{
       this.skills = res;
     });
 
+    this.loadCurrentEvent();
+
+  }
+
+  loadCurrentEvent() {
+    this.eventsService.getById(this.id).then((res) => {
+      this.currentEvent = res;
+
+      this.updateEventForm.patchValue({
+        title: this.currentEvent.title,
+        address: this.currentEvent.address,
+        description: this.currentEvent.description,
+        website: this.currentEvent.website
+        link: this.currentEvent.link,
+        author: this.currentEvent.author,
+        city: this.currentEvent.city,
+        hour: this.currentEvent.hour,
+        minute: this.currentEvent.minute,
+        date: this.currentEvent.date,
+        sportSkill: this.currentEvent.sportSkill,
+        eventBg: this.currentEvent.eventBg,
+
+      });
+
+      console.log(this.currentEvent.sportSkill.icon, 'this.currentEvent');
+      console.log(this.currentEvent, 'this.current')
+    }, (err) => {
+      console.log('errrrrrror')
+    });
   }
 
   public openDialog() {
     this.dialog.open(ModalDialog).afterClosed().subscribe(result => {
-      this.eventForm.get('sportSkill').setValue(result);
-
+      this.updateEventForm.get('sportSkill').setValue(result);
       this.sportListService.getById(result).then((res: any[]) => {
         this.sillsInfo = res;
       });
@@ -101,8 +133,7 @@ export class EventsUpdateComponent implements OnInit, AfterViewInit{
 
   public openBgDialog() {
     this.dialog.open(ModalEventBgDialog).afterClosed().subscribe(result => {
-      this.eventForm.get('eventBg').setValue(result);
-
+      this.updateEventForm.get('eventBg').setValue(result);
       this.eventBgList.getById(result).then((res: any[]) => {
         this.eventBg = res;
       });
@@ -124,15 +155,55 @@ export class EventsUpdateComponent implements OnInit, AfterViewInit{
     }));
   }
 
-  public createEvent(event) {
+  public updateEvent(event) {
     event.preventDefault();
-    let eventVal = this.eventForm.value;
-    this.eventsService.create(eventVal);
+    let eventId = this.currentEvent.id;
+    let eventVal = this.updateEventForm.value;
+    console.log(eventId, 'eventId');
+    this.eventsService.update(eventId, eventVal);
     this._router.navigate(['/events/list']);
   }
 
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.id = params['id'];
+      this.loadCurrentEvent();
+    });
+
+    this.data = Observable.forkJoin(
+      this.eventsService.getList('events'),
+      this.sportListService.getList(),
+      this.eventBgList.getList()
+    );
+    this.data.subscribe(
+      data => {
+
+        this.events = data[0];
+
+        this.skills = data[1];
+        this.bgList = data[2];
+
+        this.events.forEach(function (item: any,) {
+          this.skills.forEach(function (skillItem: any) {
+            if (skillItem.id === item.sportSkill) {
+              item.sportSkill = skillItem;
+            }
+          });
+
+
+        }.bind(this));
+
+        this.events.forEach(function (item: any,) {
+          this.bgList.forEach(function (bgItem: any) {
+            if (bgItem.id === item.eventBg) {
+              item.eventBg = bgItem;
+            }
+          });
+        }.bind(this));
+      }
+    )
+
 
   }
 

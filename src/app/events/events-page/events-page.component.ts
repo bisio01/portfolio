@@ -77,7 +77,7 @@ export class EventsPageComponent implements OnInit {
 
 
         }.bind(this));
-        console.log(this.events, 'qweqweqweqwe');
+
         this.events.forEach(function (item: any,) {
           this.bgList.forEach(function (bgItem: any) {
             if (bgItem.id === item.eventBg) {

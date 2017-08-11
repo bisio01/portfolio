@@ -40,7 +40,7 @@
   <md-tab label="Recommended events">
 
     <div *ngFor="let event of events">
-      <div [routerLink]="['/events', event.id, 'info']" class="event">
+      <div class="event">
         <div class="event-img-wrapper">
           <div class="event-no-img" *ngIf="!event.sportSkill?.img">
             <i class="no-img-icon"></i>
@@ -48,7 +48,9 @@
           <img *ngIf="event.sportSkill?.img" src="{{event.sportSkill?.img}}"/>
         </div>
         <div class="event-description-wrapper">
-          <h3 class="event-name">{{event.title}}</h3>
+          <div class="event-name-wrapper">
+            <h3 [routerLink]="['/events', event.id, 'info']" class="event-name">{{event.title}}</h3>
+          </div>
           <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
           <p class="event-description">{{event.description}}</p>
           <i class="event-author" *ngIf="user?.firstName">by {{user?.firstName}}</i>
@@ -61,7 +63,8 @@
           <span class="event-time"><i class="material-icons">access_time</i>{{event.hour}}:{{event.minute}}</span>
           <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
           <button type="button" mz-button (click)="addEvent(event.id)">Join</button>
-          <button type="button" class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
+          <button type="button" [routerLink]="['/events/update', event.id]"
+                  class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
           </button>
         </div>
       </div>
@@ -71,12 +74,14 @@
   </md-tab>
   <md-tab label="My events">
     <div *ngFor="let event of myEvents">
-      <div [routerLink]="['/events', event.id,  'info']" class="event">
+      <div class="event">
         <div class="event-img-wrapper">
           <img src="{{event.sportSkill?.img}}"/>
         </div>
         <div class="event-description-wrapper">
-          <h3 class="event-name">{{event.title}}</h3>
+          <div class="event-name-wrapper">
+            <h3 [routerLink]="['/events', event.id,  'info']" class="event-name">{{event.title}}</h3>
+          </div>
           <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
           <p class="event-description">{{event.description}}</p>
           <i class="event-author">by {{event.author}}</i>
@@ -89,7 +94,8 @@
           <span class="event-time"><i class="material-icons">access_time</i>{{event.time}}</span>
           <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
           <button type="button" class="delete-color" mz-button (click)="exitEvent(event.id)">Exit</button>
-          <button type="button" class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
+          <button type="button" [routerLink]="['/events/update', event.id]"
+                  class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
           </button>
         </div>
       </div>
@@ -99,12 +105,14 @@
 
   <md-tab label="All events">
     <div *ngFor="let event of events">
-      <div [routerLink]="['/events', event.id,  'info']" class="event">
+      <div class="event">
         <div class="event-img-wrapper">
           <img src="{{event.sportSkill?.img}}"/>
         </div>
         <div class="event-description-wrapper">
-          <h3 class="event-name">{{event.title}}</h3>
+          <div class="event-name-wrapper">
+            <h3 [routerLink]="['/events', event.id,  'info']" class="event-name">{{event.title}}</h3>
+          </div>
           <span class="event-date">{{event.date | date:'yyyy.MM.dd'}}</span>
           <p class="event-description">{{event.description}}</p>
           <i class="event-author">by {{event.author}}</i>
@@ -117,7 +125,8 @@
           <span class="event-time"><i class="material-icons">access_time</i>{{event.time}}</span>
           <span class="event-team"><i class="material-icons">person</i>{{event.people}} participants </span>
           <button type="button" mz-button (click)="addEvent(event.id)">Join</button>
-          <button type="button" class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
+          <button type="button" [routerLink]="['/events/update', event.id]"
+                  class="flex-pull-right button-color margin-left" mz-button><i class="material-icons">create</i>
           </button>
         </div>
       </div>

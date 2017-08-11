@@ -5,7 +5,7 @@ import { Injectable }    from '@angular/core';
 
 export class EventsService {
 
-  currentEventId:number;
+  currentEventId: number;
 
   public events: any = [
     {
@@ -66,27 +66,30 @@ export class EventsService {
   ];
 
   constructor() {
-    if(!!localStorage.getItem('events')){
+    if (!!localStorage.getItem('events')) {
       this.events = JSON.parse(localStorage.getItem('events') || '[]');
     }
     this.updateStore();
   }
 
 
-
   public create(data: {}) {
     this.events.push({...data, id: Date.now()});
-    console.log(this.events, 'events');
+    this.updateStore();
+  }
+
+  public update(id, data: {}) {
+    this.updateEvent( id ,data);
     this.updateStore();
   }
 
   public getById(id: number) {
     return new Promise((resolve, reject) => {
       const f = this.events.filter(el => el.id == id);
-      if(f.length){
+      if (f.length) {
         this.currentEventId = id;
         resolve(f[0]);
-      }else {
+      } else {
         reject();
       }
     })
@@ -95,9 +98,9 @@ export class EventsService {
   public getCurrentEvent() {
     return new Promise((resolve, reject) => {
       const f = this.events.filter(el => el.id == this.currentEventId);
-      if(f.length){
+      if (f.length) {
         resolve(f[0]);
-      }else {
+      } else {
         reject();
       }
 
@@ -105,8 +108,8 @@ export class EventsService {
   }
 
   public getList(filter?: string) {
-    return new Promise((resolve, reject)=> {
-      if(this.events) {
+    return new Promise((resolve, reject) => {
+      if (this.events) {
         let arr = [];
         if (filter === 'myEvents') {
           arr = this.events.filter(el => !!el.join)
@@ -135,15 +138,24 @@ export class EventsService {
   }
 
   public exitEvent(id) {
-     return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       this.events = this.events.map(el => {
-        return Object.assign({}, el,  {
+        return Object.assign({}, el, {
           join: el.id == id ? false : el.join
         })
       });
-       this.updateStore();
-       resolve(true)
-     })
+      this.updateStore();
+      resolve(true)
+    })
+  }
+
+  public updateEvent(id, data) {
+    for (let i in this.events) {
+      if (this.events[i].id == id) {
+        this.events[i] = data;
+        break;
+      }
+    }
   }
 
   public updateStore() {
@@ -151,11 +163,6 @@ export class EventsService {
   }
 
 }
-
-
-
-
-
 
 
 /*  private getWithCompleted(completed: Boolean) {

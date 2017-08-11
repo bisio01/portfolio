@@ -7,6 +7,7 @@ import { EventsInfoComponent } from './events-inner/events-info/events-info.comp
 import { EventsPeopleComponent } from './events-inner/events-people/events-people.component';
 import { EventsPhotoComponent } from './events-inner/events-photo/events-photo.component';
 import { EventsChatComponent } from './events-inner/events-chat/events-chat.component';
+import { EventsUpdateComponent } from './events-update/events-update.component';
 
 export const EventsRoutes: Routes = [
   {
@@ -59,6 +60,15 @@ export const EventsRoutes: Routes = [
             path: 'photo',
             component: <any>EventsPhotoComponent,
           },
+        ]
+      },
+      {
+        path: 'update/:id',
+        children: [
+          {
+            path: '',
+            component: <any>EventsUpdateComponent
+          }
         ]
       },
     ]
