@@ -102,7 +102,7 @@ export class EventsUpdateComponent implements OnInit, AfterViewInit{
         title: this.currentEvent.title,
         address: this.currentEvent.address,
         description: this.currentEvent.description,
-        website: this.currentEvent.website
+        website: this.currentEvent.website,
         link: this.currentEvent.link,
         author: this.currentEvent.author,
         city: this.currentEvent.city,
